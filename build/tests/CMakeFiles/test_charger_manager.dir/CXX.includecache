@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/evtol_simulation/ChargerManager.cpp
+ChargerManager.hpp
+/workspaces/evtol_simulation/ChargerManager.hpp
+iostream
+-
+
+/workspaces/evtol_simulation/ChargerManager.hpp
+EVTOL.hpp
+/workspaces/evtol_simulation/EVTOL.hpp
+vector
+-
+
+/workspaces/evtol_simulation/EVTOL.cpp
+EVTOL.hpp
+/workspaces/evtol_simulation/EVTOL.hpp
+cstdlib
+-
+
+/workspaces/evtol_simulation/EVTOL.hpp
+

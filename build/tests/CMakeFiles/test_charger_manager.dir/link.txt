@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_charger_manager.dir/test_charger_manager.o CMakeFiles/test_charger_manager.dir/__/ChargerManager.o CMakeFiles/test_charger_manager.dir/__/EVTOL.o  -o test_charger_manager 

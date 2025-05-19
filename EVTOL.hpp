@@ -1,33 +1,17 @@
 #pragma once
-#include <string>
-#include <random>
-#include "VehicleType.hpp"
-
-struct Statistics {
-    double totalFlightTime = 0;
-    double totalDistance = 0;
-    double totalChargeTime = 0;
-    int faultCount = 0;
-    double passengerMiles = 0;
-    int flightCount = 0;
-    int chargeCount = 0;
-};
-
+// Represents an EVTOL vehicle and its runtime state
 class EVTOL {
 public:
-    EVTOL(const VehicleType& type);
-    void update(double dt, std::default_random_engine& rng);
-    bool isWaiting() const;
-    bool isCharging() const;
-    bool isFlying() const;
-    void startCharging();
-    void startFlight();
-    Statistics stats;
-    std::string getCompany() const;
-
+    EVTOL(int id);                         // Constructor
+    void simulateStep();                  // Time: O(1), Space: O(1) — Random state update
+    bool hasFault() const;                // Time: O(1), Space: O(1)
+    bool needsCharging() const;           // Time: O(1), Space: O(1)
+    int getId() const;                    // Time: O(1), Space: O(1)
+    int getFaultCode() const;             // Time: O(1), Space: O(1)
 private:
-    VehicleType type;
-    double battery;
-    std::string state;
-    double timeInState;
+    int id;
+    bool fault;
+    bool chargingNeeded;
+    int faultCode;
+    bool coinFlip(int odds);              // Time: O(1), Space: O(1)
 };

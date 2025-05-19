@@ -1,45 +1,13 @@
 #include "EVTOL.hpp"
-
-EVTOL::EVTOL(const VehicleType& type) : type(type), battery(type.batteryCapacity), state("flying"), timeInState(0) {}
-
-void EVTOL::update(double dt, std::default_random_engine& rng) {
-    timeInState += dt;
-    if (state == "flying") {
-        double energyUsed = type.cruiseSpeed * type.energyUse * dt / 60.0;
-        battery -= energyUsed;
-        stats.totalFlightTime += dt;
-        stats.totalDistance += type.cruiseSpeed * dt / 60.0;
-        stats.passengerMiles += type.passengers * type.cruiseSpeed * dt / 60.0;
-        if (battery <= 0) {
-            state = "waiting";
-            battery = 0;
-            stats.flightCount++;
-            timeInState = 0;
-        }
-        std::bernoulli_distribution fault(type.faultProb * dt / 60.0);
-        if (fault(rng)) stats.faultCount++;
-    } else if (state == "charging") {
-        if (timeInState >= type.chargeTime * 60.0) {
-            battery = type.batteryCapacity;
-            startFlight();
-        }
-    }
+#include <cstdlib>
+EVTOL::EVTOL(int id) : id(id), fault(false), chargingNeeded(false), faultCode(0) {}
+bool EVTOL::coinFlip(int odds) { return (rand() % odds) == 0; }
+void EVTOL::simulateStep() {
+    fault = coinFlip(10);               // 10% chance
+    chargingNeeded = coinFlip(3);       // ~33% chance
+    faultCode = fault ? (100 + rand() % 50) : 0;
 }
-
-bool EVTOL::isWaiting() const { return state == "waiting"; }
-bool EVTOL::isCharging() const { return state == "charging"; }
-bool EVTOL::isFlying() const { return state == "flying"; }
-
-void EVTOL::startCharging() {
-    state = "charging";
-    stats.totalChargeTime += timeInState;
-    stats.chargeCount++;
-    timeInState = 0;
-}
-
-void EVTOL::startFlight() {
-    state = "flying";
-    timeInState = 0;
-}
-
-std::string EVTOL::getCompany() const { return type.name; }
+bool EVTOL::hasFault() const { return fault; }
+bool EVTOL::needsCharging() const { return chargingNeeded; }
+int EVTOL::getId() const { return id; }
+int EVTOL::getFaultCode() const { return faultCode; }

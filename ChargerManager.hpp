@@ -1,29 +1,14 @@
 #pragma once
-#include <vector>
-#include <queue>
 #include "EVTOL.hpp"
-
+#include <vector>
+// Manages available chargers and assignments
 class ChargerManager {
 public:
-    ChargerManager(int n);
-    void assignChargers(std::vector<EVTOL*>& vehicles);
-
+    ChargerManager(int portCount);            // Time: O(1), Space: O(1)
+    void assignCharger(EVTOL& evtol);         // Time: O(1) amortized, Space: O(k)
+    void update();                            // Time: O(k), Space: O(1)
+    void report() const;                      // Time: O(1), Space: O(1)
 private:
-    int available;
-    std::queue<EVTOL*> queue;
+    int availablePorts;
+    std::vector<int> chargingEVTOLs;
 };
-
-inline ChargerManager::ChargerManager(int n) : available(n) {}
-
-inline void ChargerManager::assignChargers(std::vector<EVTOL*>& vehicles) {
-    for (std::vector<EVTOL*>::iterator it = vehicles.begin(); it != vehicles.end(); ++it) {
-        if ((*it)->isWaiting()) queue.push(*it);
-    }
-    while (!queue.empty() && available > 0) {
-        EVTOL* v = queue.front();
-        queue.pop();
-        v->startCharging();
-        --available;
-    }
-    available = 3;
-}

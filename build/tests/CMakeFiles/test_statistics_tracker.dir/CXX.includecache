@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/evtol_simulation/EVTOL.cpp
+EVTOL.hpp
+/workspaces/evtol_simulation/EVTOL.hpp
+cstdlib
+-
+
+/workspaces/evtol_simulation/EVTOL.hpp
+
+/workspaces/evtol_simulation/StatisticsTracker.cpp
+StatisticsTracker.hpp
+/workspaces/evtol_simulation/StatisticsTracker.hpp
+iostream
+-
+
+/workspaces/evtol_simulation/StatisticsTracker.hpp
+EVTOL.hpp
+/workspaces/evtol_simulation/EVTOL.hpp
+vector
+-
+
+/workspaces/evtol_simulation/tests/test_statistics_tracker.cpp
+../StatisticsTracker.hpp
+/workspaces/evtol_simulation/StatisticsTracker.hpp
+../EVTOL.hpp
+/workspaces/evtol_simulation/EVTOL.hpp
+vector
+-
+iostream
+-
+

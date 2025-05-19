@@ -1,33 +1,56 @@
+#include "EVTOL.hpp"
+#include "ChargerManager.hpp"
+#include "FaultManager.hpp"
+#include "StatisticsTracker.hpp"
 #include <iostream>
 #include <vector>
-#include <random>
-#include "VehicleType.hpp"
-#include "FleetManager.hpp"
-#include "ChargerManager.hpp"
-#include "Simulation.hpp"
-#include "StatisticsManager.hpp"
 
+// Entry point for the EVTOL simulation
 int main() {
-    std::vector<VehicleType> types;
-    types.push_back({"Alpha", 120, 320, 0.6, 1.6, 4, 0.25});
-    types.push_back({"Bravo", 100, 100, 0.2, 1.5, 5, 0.10});
-    types.push_back({"Charlie", 160, 220, 0.8, 2.2, 3, 0.05});
-    types.push_back({"Delta", 90, 120, 0.62, 0.8, 2, 0.22});
-    types.push_back({"Echo", 30, 150, 0.3, 5.8, 2, 0.61});
+    // Initialize core managers
+    ChargerManager chargerManager(4); // 4 available chargers
+    FaultManager faultManager;
+    StatisticsTracker statsTracker;
 
-    std::random_device rd;
-    std::default_random_engine rng(rd());
+    // Create and register 8 EVTOLs
+    // Time: O(1) per emplace_back, total O(n) for n EVTOLs
+    // Space: O(n) for storing EVTOLs
+    std::vector<EVTOL> evtols;
+    for (int i = 1; i <= 8; ++i) {
+        evtols.emplace_back(i);
+    }
 
-    FleetManager fleetManager(types, rng);
-    std::vector<EVTOL>& fleet = fleetManager.getFleet();
+    // Run the simulation for 3 steps
+    // Time: O(s × n) for s steps and n EVTOLs
+    // Space: Mainly accumulative for stats and fault/charging logs (O(n) max)
+    for (int step = 1; step <= 3; ++step) {
+        std::cout << "\n--- Simulation Step " << step << " ---\n";
 
-    ChargerManager chargers(3);
-    Simulation simulation(fleet, chargers, rng, 180.0, 1.0);
-    simulation.run();
+        // Simulate each EVTOL
+        // Time: O(n)
+        for (size_t i = 0; i < evtols.size(); ++i) {
+            evtols[i].simulateStep();  // Time: O(1), Space: O(1)
 
-    StatisticsManager stats;
-    stats.collect(fleet);
-    stats.report();
+            // Record fault if any
+            if (evtols[i].hasFault()) {
+                faultManager.recordFault(evtols[i].getId(), evtols[i].getFaultCode()); // Time: O(1) amortized, Space: O(f)
+            }
+
+            // Assign to charger if needed
+            if (evtols[i].needsCharging()) {
+                chargerManager.assignCharger(evtols[i]); // Time: O(1) amortized, Space: O(k) max active charges
+            }
+        }
+
+        // Recharge and update statistics
+        chargerManager.update();       // Time: O(k), Space: clears k charging slots
+        statsTracker.record(evtols);   // Time: O(n), Space: O(1) for counters
+    }
+
+    // Display final reports
+    statsTracker.report();  // Time: O(1), Space: O(1)
+    faultManager.report();  // Time: O(f), Space: O(f)
+    chargerManager.report();// Time: O(1), Space: O(1)
 
     return 0;
 }
