@@ -20,4 +20,4 @@ set(HEADERS
     StatisticsTracker.hpp
 )
 
-add_executable(evtol_simulation ${SOURCES} ${HEADERS})
+add_executable(main ${SOURCES} ${HEADERS})
