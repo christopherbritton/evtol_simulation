@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Add all source files
 set(SOURCES
-    evtol_simulation.cpp
+    main.cpp
     EVTOL.cpp
     ChargerManager.cpp
     FaultManager.cpp
