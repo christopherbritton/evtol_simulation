@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/test_chargermanager.dir/tests/test_chargermanager.cpp.o CMakeFiles/test_chargermanager.dir/EVTOL.cpp.o CMakeFiles/test_chargermanager.dir/FleetManager.cpp.o CMakeFiles/test_chargermanager.dir/ChargerManager.cpp.o CMakeFiles/test_chargermanager.dir/StatisticsTracker.cpp.o CMakeFiles/test_chargermanager.dir/FaultManager.cpp.o  -o test_chargermanager 

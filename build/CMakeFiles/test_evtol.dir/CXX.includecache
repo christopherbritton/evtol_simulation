@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../EVTOL.hpp
+VehicleType.hpp
+../VehicleType.hpp
+VehicleProfile.hpp
+../VehicleProfile.hpp
+
+../VehicleProfile.hpp
+
+../VehicleType.hpp
+
+/workspaces/evtol_simulation/tests/test_evtol.cpp
+EVTOL.hpp
+/workspaces/evtol_simulation/tests/EVTOL.hpp
+cassert
+-
+iostream
+-
+

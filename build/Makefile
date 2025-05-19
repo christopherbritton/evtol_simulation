@@ -122,43 +122,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named evtol_simulation
+# Target rules for targets named test_statisticstracker
 
 # Build rule for target.
-evtol_simulation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 evtol_simulation
-.PHONY : evtol_simulation
+test_statisticstracker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_statisticstracker
+.PHONY : test_statisticstracker
 
 # fast build rule for target.
-evtol_simulation/fast:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/build
-.PHONY : evtol_simulation/fast
-
-#=============================================================================
-# Target rules for targets named test_charger_manager
-
-# Build rule for target.
-test_charger_manager: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_charger_manager
-.PHONY : test_charger_manager
-
-# fast build rule for target.
-test_charger_manager/fast:
-	$(MAKE) -f tests/CMakeFiles/test_charger_manager.dir/build.make tests/CMakeFiles/test_charger_manager.dir/build
-.PHONY : test_charger_manager/fast
-
-#=============================================================================
-# Target rules for targets named test_statistics_tracker
-
-# Build rule for target.
-test_statistics_tracker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_statistics_tracker
-.PHONY : test_statistics_tracker
-
-# fast build rule for target.
-test_statistics_tracker/fast:
-	$(MAKE) -f tests/CMakeFiles/test_statistics_tracker.dir/build.make tests/CMakeFiles/test_statistics_tracker.dir/build
-.PHONY : test_statistics_tracker/fast
+test_statisticstracker/fast:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/build
+.PHONY : test_statisticstracker/fast
 
 #=============================================================================
 # Target rules for targets named test_fault_manager
@@ -170,8 +144,34 @@ test_fault_manager: cmake_check_build_system
 
 # fast build rule for target.
 test_fault_manager/fast:
-	$(MAKE) -f tests/CMakeFiles/test_fault_manager.dir/build.make tests/CMakeFiles/test_fault_manager.dir/build
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/build
 .PHONY : test_fault_manager/fast
+
+#=============================================================================
+# Target rules for targets named test_fleetmanager
+
+# Build rule for target.
+test_fleetmanager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_fleetmanager
+.PHONY : test_fleetmanager
+
+# fast build rule for target.
+test_fleetmanager/fast:
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/build
+.PHONY : test_fleetmanager/fast
+
+#=============================================================================
+# Target rules for targets named test_chargermanager
+
+# Build rule for target.
+test_chargermanager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_chargermanager
+.PHONY : test_chargermanager
+
+# fast build rule for target.
+test_chargermanager/fast:
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/build
+.PHONY : test_chargermanager/fast
 
 #=============================================================================
 # Target rules for targets named test_evtol
@@ -183,83 +183,338 @@ test_evtol: cmake_check_build_system
 
 # fast build rule for target.
 test_evtol/fast:
-	$(MAKE) -f tests/CMakeFiles/test_evtol.dir/build.make tests/CMakeFiles/test_evtol.dir/build
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/build
 .PHONY : test_evtol/fast
 
-# target to build an object file
-ChargerManager.o:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/ChargerManager.o
+ChargerManager.o: ChargerManager.cpp.o
+
 .PHONY : ChargerManager.o
 
-# target to preprocess a source file
-ChargerManager.i:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/ChargerManager.i
+# target to build an object file
+ChargerManager.cpp.o:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/ChargerManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/ChargerManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/ChargerManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/ChargerManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/ChargerManager.cpp.o
+.PHONY : ChargerManager.cpp.o
+
+ChargerManager.i: ChargerManager.cpp.i
+
 .PHONY : ChargerManager.i
 
-# target to generate assembly for a file
-ChargerManager.s:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/ChargerManager.s
+# target to preprocess a source file
+ChargerManager.cpp.i:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/ChargerManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/ChargerManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/ChargerManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/ChargerManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/ChargerManager.cpp.i
+.PHONY : ChargerManager.cpp.i
+
+ChargerManager.s: ChargerManager.cpp.s
+
 .PHONY : ChargerManager.s
 
-# target to build an object file
-EVTOL.o:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/EVTOL.o
+# target to generate assembly for a file
+ChargerManager.cpp.s:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/ChargerManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/ChargerManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/ChargerManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/ChargerManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/ChargerManager.cpp.s
+.PHONY : ChargerManager.cpp.s
+
+EVTOL.o: EVTOL.cpp.o
+
 .PHONY : EVTOL.o
 
-# target to preprocess a source file
-EVTOL.i:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/EVTOL.i
+# target to build an object file
+EVTOL.cpp.o:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/EVTOL.cpp.o
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/EVTOL.cpp.o
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/EVTOL.cpp.o
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/EVTOL.cpp.o
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/EVTOL.cpp.o
+.PHONY : EVTOL.cpp.o
+
+EVTOL.i: EVTOL.cpp.i
+
 .PHONY : EVTOL.i
 
-# target to generate assembly for a file
-EVTOL.s:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/EVTOL.s
+# target to preprocess a source file
+EVTOL.cpp.i:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/EVTOL.cpp.i
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/EVTOL.cpp.i
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/EVTOL.cpp.i
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/EVTOL.cpp.i
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/EVTOL.cpp.i
+.PHONY : EVTOL.cpp.i
+
+EVTOL.s: EVTOL.cpp.s
+
 .PHONY : EVTOL.s
 
-# target to build an object file
-FaultManager.o:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/FaultManager.o
+# target to generate assembly for a file
+EVTOL.cpp.s:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/EVTOL.cpp.s
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/EVTOL.cpp.s
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/EVTOL.cpp.s
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/EVTOL.cpp.s
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/EVTOL.cpp.s
+.PHONY : EVTOL.cpp.s
+
+FaultManager.o: FaultManager.cpp.o
+
 .PHONY : FaultManager.o
 
-# target to preprocess a source file
-FaultManager.i:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/FaultManager.i
+# target to build an object file
+FaultManager.cpp.o:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/FaultManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/FaultManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/FaultManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/FaultManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/FaultManager.cpp.o
+.PHONY : FaultManager.cpp.o
+
+FaultManager.i: FaultManager.cpp.i
+
 .PHONY : FaultManager.i
 
-# target to generate assembly for a file
-FaultManager.s:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/FaultManager.s
+# target to preprocess a source file
+FaultManager.cpp.i:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/FaultManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/FaultManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/FaultManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/FaultManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/FaultManager.cpp.i
+.PHONY : FaultManager.cpp.i
+
+FaultManager.s: FaultManager.cpp.s
+
 .PHONY : FaultManager.s
 
+# target to generate assembly for a file
+FaultManager.cpp.s:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/FaultManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/FaultManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/FaultManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/FaultManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/FaultManager.cpp.s
+.PHONY : FaultManager.cpp.s
+
+FleetManager.o: FleetManager.cpp.o
+
+.PHONY : FleetManager.o
+
 # target to build an object file
-StatisticsTracker.o:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/StatisticsTracker.o
+FleetManager.cpp.o:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/FleetManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/FleetManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/FleetManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/FleetManager.cpp.o
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/FleetManager.cpp.o
+.PHONY : FleetManager.cpp.o
+
+FleetManager.i: FleetManager.cpp.i
+
+.PHONY : FleetManager.i
+
+# target to preprocess a source file
+FleetManager.cpp.i:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/FleetManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/FleetManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/FleetManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/FleetManager.cpp.i
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/FleetManager.cpp.i
+.PHONY : FleetManager.cpp.i
+
+FleetManager.s: FleetManager.cpp.s
+
+.PHONY : FleetManager.s
+
+# target to generate assembly for a file
+FleetManager.cpp.s:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/FleetManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/FleetManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/FleetManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/FleetManager.cpp.s
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/FleetManager.cpp.s
+.PHONY : FleetManager.cpp.s
+
+StatisticsTracker.o: StatisticsTracker.cpp.o
+
 .PHONY : StatisticsTracker.o
 
-# target to preprocess a source file
-StatisticsTracker.i:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/StatisticsTracker.i
+# target to build an object file
+StatisticsTracker.cpp.o:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/StatisticsTracker.cpp.o
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/StatisticsTracker.cpp.o
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/StatisticsTracker.cpp.o
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/StatisticsTracker.cpp.o
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o
+.PHONY : StatisticsTracker.cpp.o
+
+StatisticsTracker.i: StatisticsTracker.cpp.i
+
 .PHONY : StatisticsTracker.i
 
-# target to generate assembly for a file
-StatisticsTracker.s:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/StatisticsTracker.s
+# target to preprocess a source file
+StatisticsTracker.cpp.i:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/StatisticsTracker.cpp.i
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/StatisticsTracker.cpp.i
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/StatisticsTracker.cpp.i
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/StatisticsTracker.cpp.i
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.i
+.PHONY : StatisticsTracker.cpp.i
+
+StatisticsTracker.s: StatisticsTracker.cpp.s
+
 .PHONY : StatisticsTracker.s
 
+# target to generate assembly for a file
+StatisticsTracker.cpp.s:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/StatisticsTracker.cpp.s
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/StatisticsTracker.cpp.s
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/StatisticsTracker.cpp.s
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/StatisticsTracker.cpp.s
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.s
+.PHONY : StatisticsTracker.cpp.s
+
+tests/test_chargermanager.o: tests/test_chargermanager.cpp.o
+
+.PHONY : tests/test_chargermanager.o
+
 # target to build an object file
-main.o:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/main.o
-.PHONY : main.o
+tests/test_chargermanager.cpp.o:
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/tests/test_chargermanager.cpp.o
+.PHONY : tests/test_chargermanager.cpp.o
+
+tests/test_chargermanager.i: tests/test_chargermanager.cpp.i
+
+.PHONY : tests/test_chargermanager.i
 
 # target to preprocess a source file
-main.i:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/main.i
-.PHONY : main.i
+tests/test_chargermanager.cpp.i:
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/tests/test_chargermanager.cpp.i
+.PHONY : tests/test_chargermanager.cpp.i
+
+tests/test_chargermanager.s: tests/test_chargermanager.cpp.s
+
+.PHONY : tests/test_chargermanager.s
 
 # target to generate assembly for a file
-main.s:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/main.s
-.PHONY : main.s
+tests/test_chargermanager.cpp.s:
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/tests/test_chargermanager.cpp.s
+.PHONY : tests/test_chargermanager.cpp.s
+
+tests/test_evtol.o: tests/test_evtol.cpp.o
+
+.PHONY : tests/test_evtol.o
+
+# target to build an object file
+tests/test_evtol.cpp.o:
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o
+.PHONY : tests/test_evtol.cpp.o
+
+tests/test_evtol.i: tests/test_evtol.cpp.i
+
+.PHONY : tests/test_evtol.i
+
+# target to preprocess a source file
+tests/test_evtol.cpp.i:
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.i
+.PHONY : tests/test_evtol.cpp.i
+
+tests/test_evtol.s: tests/test_evtol.cpp.s
+
+.PHONY : tests/test_evtol.s
+
+# target to generate assembly for a file
+tests/test_evtol.cpp.s:
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.s
+.PHONY : tests/test_evtol.cpp.s
+
+tests/test_faultmanager.o: tests/test_faultmanager.cpp.o
+
+.PHONY : tests/test_faultmanager.o
+
+# target to build an object file
+tests/test_faultmanager.cpp.o:
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.o
+.PHONY : tests/test_faultmanager.cpp.o
+
+tests/test_faultmanager.i: tests/test_faultmanager.cpp.i
+
+.PHONY : tests/test_faultmanager.i
+
+# target to preprocess a source file
+tests/test_faultmanager.cpp.i:
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.i
+.PHONY : tests/test_faultmanager.cpp.i
+
+tests/test_faultmanager.s: tests/test_faultmanager.cpp.s
+
+.PHONY : tests/test_faultmanager.s
+
+# target to generate assembly for a file
+tests/test_faultmanager.cpp.s:
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.s
+.PHONY : tests/test_faultmanager.cpp.s
+
+tests/test_fleetmanager.o: tests/test_fleetmanager.cpp.o
+
+.PHONY : tests/test_fleetmanager.o
+
+# target to build an object file
+tests/test_fleetmanager.cpp.o:
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/tests/test_fleetmanager.cpp.o
+.PHONY : tests/test_fleetmanager.cpp.o
+
+tests/test_fleetmanager.i: tests/test_fleetmanager.cpp.i
+
+.PHONY : tests/test_fleetmanager.i
+
+# target to preprocess a source file
+tests/test_fleetmanager.cpp.i:
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/tests/test_fleetmanager.cpp.i
+.PHONY : tests/test_fleetmanager.cpp.i
+
+tests/test_fleetmanager.s: tests/test_fleetmanager.cpp.s
+
+.PHONY : tests/test_fleetmanager.s
+
+# target to generate assembly for a file
+tests/test_fleetmanager.cpp.s:
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/tests/test_fleetmanager.cpp.s
+.PHONY : tests/test_fleetmanager.cpp.s
+
+tests/test_statisticstracker.o: tests/test_statisticstracker.cpp.o
+
+.PHONY : tests/test_statisticstracker.o
+
+# target to build an object file
+tests/test_statisticstracker.cpp.o:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/tests/test_statisticstracker.cpp.o
+.PHONY : tests/test_statisticstracker.cpp.o
+
+tests/test_statisticstracker.i: tests/test_statisticstracker.cpp.i
+
+.PHONY : tests/test_statisticstracker.i
+
+# target to preprocess a source file
+tests/test_statisticstracker.cpp.i:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/tests/test_statisticstracker.cpp.i
+.PHONY : tests/test_statisticstracker.cpp.i
+
+tests/test_statisticstracker.s: tests/test_statisticstracker.cpp.s
+
+.PHONY : tests/test_statisticstracker.s
+
+# target to generate assembly for a file
+tests/test_statisticstracker.cpp.s:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/tests/test_statisticstracker.cpp.s
+.PHONY : tests/test_statisticstracker.cpp.s
 
 # Help Target
 help:
@@ -270,10 +525,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... evtol_simulation"
-	@echo "... test_charger_manager"
-	@echo "... test_statistics_tracker"
+	@echo "... test_statisticstracker"
 	@echo "... test_fault_manager"
+	@echo "... test_fleetmanager"
+	@echo "... test_chargermanager"
 	@echo "... test_evtol"
 	@echo "... ChargerManager.o"
 	@echo "... ChargerManager.i"
@@ -284,12 +539,27 @@ help:
 	@echo "... FaultManager.o"
 	@echo "... FaultManager.i"
 	@echo "... FaultManager.s"
+	@echo "... FleetManager.o"
+	@echo "... FleetManager.i"
+	@echo "... FleetManager.s"
 	@echo "... StatisticsTracker.o"
 	@echo "... StatisticsTracker.i"
 	@echo "... StatisticsTracker.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... tests/test_chargermanager.o"
+	@echo "... tests/test_chargermanager.i"
+	@echo "... tests/test_chargermanager.s"
+	@echo "... tests/test_evtol.o"
+	@echo "... tests/test_evtol.i"
+	@echo "... tests/test_evtol.s"
+	@echo "... tests/test_faultmanager.o"
+	@echo "... tests/test_faultmanager.i"
+	@echo "... tests/test_faultmanager.s"
+	@echo "... tests/test_fleetmanager.o"
+	@echo "... tests/test_fleetmanager.i"
+	@echo "... tests/test_fleetmanager.s"
+	@echo "... tests/test_statisticstracker.o"
+	@echo "... tests/test_statisticstracker.i"
+	@echo "... tests/test_statisticstracker.s"
 .PHONY : help
 
 

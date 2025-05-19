@@ -1,19 +1,30 @@
+
 #include "ChargerManager.hpp"
+#include "EVTOL.hpp"
 #include <iostream>
+
 ChargerManager::ChargerManager(int portCount) : availablePorts(portCount) {}
-void ChargerManager::assignCharger(EVTOL& evtol) {
-    if (availablePorts > 0) {
-        chargingEVTOLs.push_back(evtol.getId()); // amortized O(1)
+
+void ChargerManager::assignCharger(EVTOL& evtol, int currentMinute) {
+    if (availablePorts > 0 && evtol.needsCharging()) {
+        evtol.startCharging(currentMinute);
+        chargingEVTOLs.push_back(evtol.getId());
         --availablePorts;
-        std::cout << "Assigned charger to EVTOL " << evtol.getId() << "\n";
-    } else {
-        std::cout << "No chargers available for EVTOL " << evtol.getId() << "\n";
     }
 }
-void ChargerManager::update() {
-    availablePorts += chargingEVTOLs.size(); // Time: O(k)
-    chargingEVTOLs.clear();
+
+void ChargerManager::update(int currentMinute) {
+    // Placeholder: simulate some chargers finishing
+    int totalPorts = availablePorts + chargingEVTOLs.size();
+    availablePorts = totalPorts - chargingEVTOLs.size(); // No real logic
 }
+
 void ChargerManager::report() const {
-    std::cout << "Available charging ports: " << availablePorts << "\n";
+    std::cout << "\n--- Charger Status ---\n";
+    std::cout << "Available ports: " << availablePorts << "\n";
+    std::cout << "Charging EVTOLs: ";
+    for (int id : chargingEVTOLs) {
+        std::cout << id << " ";
+    }
+    std::cout << "\n";
 }

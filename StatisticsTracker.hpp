@@ -1,13 +1,18 @@
+
 #pragma once
 #include "EVTOL.hpp"
+#include "VehicleType.hpp"
 #include <vector>
-// Collects and reports simulation stats
+#include <map>
+
+// Tracks simulation statistics by vehicle type
 class StatisticsTracker {
 public:
-    void record(const std::vector<EVTOL>& evtols);  // Time: O(n), Space: O(1)
-    void report() const;                            // Time: O(1), Space: O(1)
+    void record(const std::vector<EVTOL>& evtols); // Collect data each time step
+    void report() const;                           // Output aggregated statistics
+
 private:
     int totalSteps = 0;
-    int totalFaults = 0;
-    int totalChargingRequests = 0;
+    std::map<VehicleType, double> totalMiles;      // Cumulative miles per type
+    std::map<VehicleType, int> flightSessions;     // Number of updates recorded per type
 };

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o CMakeFiles/test_evtol.dir/EVTOL.cpp.o CMakeFiles/test_evtol.dir/FleetManager.cpp.o CMakeFiles/test_evtol.dir/ChargerManager.cpp.o CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o CMakeFiles/test_evtol.dir/FaultManager.cpp.o  -o test_evtol 

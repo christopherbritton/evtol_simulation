@@ -53,180 +53,162 @@ CMAKE_BINARY_DIR = /workspaces/evtol_simulation/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/evtol_simulation.dir/all
-all: tests/all
+all: CMakeFiles/test_statisticstracker.dir/all
+all: CMakeFiles/test_fault_manager.dir/all
+all: CMakeFiles/test_fleetmanager.dir/all
+all: CMakeFiles/test_chargermanager.dir/all
+all: CMakeFiles/test_evtol.dir/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: tests/preinstall
+preinstall:
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/evtol_simulation.dir/clean
-clean: tests/clean
+clean: CMakeFiles/test_statisticstracker.dir/clean
+clean: CMakeFiles/test_fault_manager.dir/clean
+clean: CMakeFiles/test_fleetmanager.dir/clean
+clean: CMakeFiles/test_chargermanager.dir/clean
+clean: CMakeFiles/test_evtol.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory tests
-
-# Recursive "all" directory target.
-tests/all: tests/CMakeFiles/test_charger_manager.dir/all
-tests/all: tests/CMakeFiles/test_statistics_tracker.dir/all
-tests/all: tests/CMakeFiles/test_fault_manager.dir/all
-tests/all: tests/CMakeFiles/test_evtol.dir/all
-
-.PHONY : tests/all
-
-# Recursive "preinstall" directory target.
-tests/preinstall:
-
-.PHONY : tests/preinstall
-
-# Recursive "clean" directory target.
-tests/clean: tests/CMakeFiles/test_charger_manager.dir/clean
-tests/clean: tests/CMakeFiles/test_statistics_tracker.dir/clean
-tests/clean: tests/CMakeFiles/test_fault_manager.dir/clean
-tests/clean: tests/CMakeFiles/test_evtol.dir/clean
-
-.PHONY : tests/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/evtol_simulation.dir
+# Target rules for target CMakeFiles/test_statisticstracker.dir
 
 # All Build rule for target.
-CMakeFiles/evtol_simulation.dir/all:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/depend
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target evtol_simulation"
-.PHONY : CMakeFiles/evtol_simulation.dir/all
+CMakeFiles/test_statisticstracker.dir/all:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/depend
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=29,30,31,32,33,34,35 "Built target test_statisticstracker"
+.PHONY : CMakeFiles/test_statisticstracker.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/evtol_simulation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/evtol_simulation.dir/all
+CMakeFiles/test_statisticstracker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_statisticstracker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 0
-.PHONY : CMakeFiles/evtol_simulation.dir/rule
+.PHONY : CMakeFiles/test_statisticstracker.dir/rule
 
 # Convenience name for target.
-evtol_simulation: CMakeFiles/evtol_simulation.dir/rule
+test_statisticstracker: CMakeFiles/test_statisticstracker.dir/rule
 
-.PHONY : evtol_simulation
+.PHONY : test_statisticstracker
 
 # clean rule for target.
-CMakeFiles/evtol_simulation.dir/clean:
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/clean
-.PHONY : CMakeFiles/evtol_simulation.dir/clean
+CMakeFiles/test_statisticstracker.dir/clean:
+	$(MAKE) -f CMakeFiles/test_statisticstracker.dir/build.make CMakeFiles/test_statisticstracker.dir/clean
+.PHONY : CMakeFiles/test_statisticstracker.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/test_charger_manager.dir
+# Target rules for target CMakeFiles/test_fault_manager.dir
 
 # All Build rule for target.
-tests/CMakeFiles/test_charger_manager.dir/all:
-	$(MAKE) -f tests/CMakeFiles/test_charger_manager.dir/build.make tests/CMakeFiles/test_charger_manager.dir/depend
-	$(MAKE) -f tests/CMakeFiles/test_charger_manager.dir/build.make tests/CMakeFiles/test_charger_manager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=7,8,9,10 "Built target test_charger_manager"
-.PHONY : tests/CMakeFiles/test_charger_manager.dir/all
+CMakeFiles/test_fault_manager.dir/all:
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/depend
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=15,16,17,18,19,20,21 "Built target test_fault_manager"
+.PHONY : CMakeFiles/test_fault_manager.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/test_charger_manager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_charger_manager.dir/all
+CMakeFiles/test_fault_manager.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_fault_manager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_charger_manager.dir/rule
+.PHONY : CMakeFiles/test_fault_manager.dir/rule
 
 # Convenience name for target.
-test_charger_manager: tests/CMakeFiles/test_charger_manager.dir/rule
-
-.PHONY : test_charger_manager
-
-# clean rule for target.
-tests/CMakeFiles/test_charger_manager.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/test_charger_manager.dir/build.make tests/CMakeFiles/test_charger_manager.dir/clean
-.PHONY : tests/CMakeFiles/test_charger_manager.dir/clean
-
-#=============================================================================
-# Target rules for target tests/CMakeFiles/test_statistics_tracker.dir
-
-# All Build rule for target.
-tests/CMakeFiles/test_statistics_tracker.dir/all:
-	$(MAKE) -f tests/CMakeFiles/test_statistics_tracker.dir/build.make tests/CMakeFiles/test_statistics_tracker.dir/depend
-	$(MAKE) -f tests/CMakeFiles/test_statistics_tracker.dir/build.make tests/CMakeFiles/test_statistics_tracker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=17,18,19,20 "Built target test_statistics_tracker"
-.PHONY : tests/CMakeFiles/test_statistics_tracker.dir/all
-
-# Build rule for subdir invocation for target.
-tests/CMakeFiles/test_statistics_tracker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_statistics_tracker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_statistics_tracker.dir/rule
-
-# Convenience name for target.
-test_statistics_tracker: tests/CMakeFiles/test_statistics_tracker.dir/rule
-
-.PHONY : test_statistics_tracker
-
-# clean rule for target.
-tests/CMakeFiles/test_statistics_tracker.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/test_statistics_tracker.dir/build.make tests/CMakeFiles/test_statistics_tracker.dir/clean
-.PHONY : tests/CMakeFiles/test_statistics_tracker.dir/clean
-
-#=============================================================================
-# Target rules for target tests/CMakeFiles/test_fault_manager.dir
-
-# All Build rule for target.
-tests/CMakeFiles/test_fault_manager.dir/all:
-	$(MAKE) -f tests/CMakeFiles/test_fault_manager.dir/build.make tests/CMakeFiles/test_fault_manager.dir/depend
-	$(MAKE) -f tests/CMakeFiles/test_fault_manager.dir/build.make tests/CMakeFiles/test_fault_manager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=14,15,16 "Built target test_fault_manager"
-.PHONY : tests/CMakeFiles/test_fault_manager.dir/all
-
-# Build rule for subdir invocation for target.
-tests/CMakeFiles/test_fault_manager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_fault_manager.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_fault_manager.dir/rule
-
-# Convenience name for target.
-test_fault_manager: tests/CMakeFiles/test_fault_manager.dir/rule
+test_fault_manager: CMakeFiles/test_fault_manager.dir/rule
 
 .PHONY : test_fault_manager
 
 # clean rule for target.
-tests/CMakeFiles/test_fault_manager.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/test_fault_manager.dir/build.make tests/CMakeFiles/test_fault_manager.dir/clean
-.PHONY : tests/CMakeFiles/test_fault_manager.dir/clean
+CMakeFiles/test_fault_manager.dir/clean:
+	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/clean
+.PHONY : CMakeFiles/test_fault_manager.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/test_evtol.dir
+# Target rules for target CMakeFiles/test_fleetmanager.dir
 
 # All Build rule for target.
-tests/CMakeFiles/test_evtol.dir/all:
-	$(MAKE) -f tests/CMakeFiles/test_evtol.dir/build.make tests/CMakeFiles/test_evtol.dir/depend
-	$(MAKE) -f tests/CMakeFiles/test_evtol.dir/build.make tests/CMakeFiles/test_evtol.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=11,12,13 "Built target test_evtol"
-.PHONY : tests/CMakeFiles/test_evtol.dir/all
+CMakeFiles/test_fleetmanager.dir/all:
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/depend
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=22,23,24,25,26,27,28 "Built target test_fleetmanager"
+.PHONY : CMakeFiles/test_fleetmanager.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/test_evtol.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_evtol.dir/all
+CMakeFiles/test_fleetmanager.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_fleetmanager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_evtol.dir/rule
+.PHONY : CMakeFiles/test_fleetmanager.dir/rule
 
 # Convenience name for target.
-test_evtol: tests/CMakeFiles/test_evtol.dir/rule
+test_fleetmanager: CMakeFiles/test_fleetmanager.dir/rule
+
+.PHONY : test_fleetmanager
+
+# clean rule for target.
+CMakeFiles/test_fleetmanager.dir/clean:
+	$(MAKE) -f CMakeFiles/test_fleetmanager.dir/build.make CMakeFiles/test_fleetmanager.dir/clean
+.PHONY : CMakeFiles/test_fleetmanager.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_chargermanager.dir
+
+# All Build rule for target.
+CMakeFiles/test_chargermanager.dir/all:
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/depend
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target test_chargermanager"
+.PHONY : CMakeFiles/test_chargermanager.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_chargermanager.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_chargermanager.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_chargermanager.dir/rule
+
+# Convenience name for target.
+test_chargermanager: CMakeFiles/test_chargermanager.dir/rule
+
+.PHONY : test_chargermanager
+
+# clean rule for target.
+CMakeFiles/test_chargermanager.dir/clean:
+	$(MAKE) -f CMakeFiles/test_chargermanager.dir/build.make CMakeFiles/test_chargermanager.dir/clean
+.PHONY : CMakeFiles/test_chargermanager.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_evtol.dir
+
+# All Build rule for target.
+CMakeFiles/test_evtol.dir/all:
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/depend
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target test_evtol"
+.PHONY : CMakeFiles/test_evtol.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_evtol.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_evtol.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/evtol_simulation/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_evtol.dir/rule
+
+# Convenience name for target.
+test_evtol: CMakeFiles/test_evtol.dir/rule
 
 .PHONY : test_evtol
 
 # clean rule for target.
-tests/CMakeFiles/test_evtol.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/test_evtol.dir/build.make tests/CMakeFiles/test_evtol.dir/clean
-.PHONY : tests/CMakeFiles/test_evtol.dir/clean
+CMakeFiles/test_evtol.dir/clean:
+	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/clean
+.PHONY : CMakeFiles/test_evtol.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

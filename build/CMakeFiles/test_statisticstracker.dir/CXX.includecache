@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/evtol_simulation/EVTOL.hpp
+VehicleType.hpp
+/workspaces/evtol_simulation/VehicleType.hpp
+VehicleProfile.hpp
+/workspaces/evtol_simulation/VehicleProfile.hpp
+
+/workspaces/evtol_simulation/StatisticsTracker.cpp
+StatisticsTracker.hpp
+/workspaces/evtol_simulation/StatisticsTracker.hpp
+iostream
+-
+
+/workspaces/evtol_simulation/StatisticsTracker.hpp
+EVTOL.hpp
+/workspaces/evtol_simulation/EVTOL.hpp
+VehicleType.hpp
+/workspaces/evtol_simulation/VehicleType.hpp
+vector
+-
+map
+-
+
+/workspaces/evtol_simulation/VehicleProfile.hpp
+
+/workspaces/evtol_simulation/VehicleType.hpp
+

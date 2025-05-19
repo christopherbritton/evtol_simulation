@@ -30,7 +30,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
-  "../tests/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -42,14 +41,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/evtol_simulation.dir/DependInfo.cmake"
-  "tests/CMakeFiles/test_charger_manager.dir/DependInfo.cmake"
-  "tests/CMakeFiles/test_statistics_tracker.dir/DependInfo.cmake"
-  "tests/CMakeFiles/test_fault_manager.dir/DependInfo.cmake"
-  "tests/CMakeFiles/test_evtol.dir/DependInfo.cmake"
+  "CMakeFiles/test_statisticstracker.dir/DependInfo.cmake"
+  "CMakeFiles/test_fault_manager.dir/DependInfo.cmake"
+  "CMakeFiles/test_fleetmanager.dir/DependInfo.cmake"
+  "CMakeFiles/test_chargermanager.dir/DependInfo.cmake"
+  "CMakeFiles/test_evtol.dir/DependInfo.cmake"
   )

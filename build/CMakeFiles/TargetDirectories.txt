@@ -1,11 +1,8 @@
 /workspaces/evtol_simulation/build/CMakeFiles/rebuild_cache.dir
 /workspaces/evtol_simulation/build/CMakeFiles/edit_cache.dir
 /workspaces/evtol_simulation/build/CMakeFiles/test.dir
-/workspaces/evtol_simulation/build/CMakeFiles/evtol_simulation.dir
-/workspaces/evtol_simulation/build/tests/CMakeFiles/rebuild_cache.dir
-/workspaces/evtol_simulation/build/tests/CMakeFiles/test_charger_manager.dir
-/workspaces/evtol_simulation/build/tests/CMakeFiles/edit_cache.dir
-/workspaces/evtol_simulation/build/tests/CMakeFiles/test.dir
-/workspaces/evtol_simulation/build/tests/CMakeFiles/test_statistics_tracker.dir
-/workspaces/evtol_simulation/build/tests/CMakeFiles/test_fault_manager.dir
-/workspaces/evtol_simulation/build/tests/CMakeFiles/test_evtol.dir
+/workspaces/evtol_simulation/build/CMakeFiles/test_statisticstracker.dir
+/workspaces/evtol_simulation/build/CMakeFiles/test_fault_manager.dir
+/workspaces/evtol_simulation/build/CMakeFiles/test_fleetmanager.dir
+/workspaces/evtol_simulation/build/CMakeFiles/test_chargermanager.dir
+/workspaces/evtol_simulation/build/CMakeFiles/test_evtol.dir

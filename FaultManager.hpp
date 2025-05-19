@@ -1,11 +1,14 @@
+
 #pragma once
 #include <vector>
 #include <utility>
-// Records and reports EVTOL fault data
+
+// Records fault codes for EVTOLs during simulation
 class FaultManager {
 public:
-    void recordFault(int evtolId, int faultCode);  // Time: O(1) amortized, Space: O(f)
-    void report() const;                           // Time: O(f), Space: O(f)
+    void recordFault(int evtolId, int faultCode); // Log a fault code
+    void report() const;                          // Display all recorded faults
+
 private:
-    std::vector<std::pair<int, int>> faults;
+    std::vector<std::pair<int, int>> faults;      // Pair of EVTOL ID and fault code
 };
