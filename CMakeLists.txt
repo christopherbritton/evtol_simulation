@@ -1,32 +1,66 @@
 cmake_minimum_required(VERSION 3.10)
-project(JobyAviationSimulation)
-
+project(EVTOLSimulation)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Include directories
-include_directories(.)
+# Define common include path
+include_directories(common)
 
-# Source files
+# Define main source files
 set(SOURCES
-    EVTOL.cpp
-    FleetManager.cpp
-    ChargerManager.cpp
-    StatisticsTracker.cpp
-    FaultManager.cpp
+    src/EVTOL.cpp
+    src/FleetManager.cpp
+    src/ChargerManager.cpp
+    src/FaultManager.cpp
+    src/StatisticsTracker.cpp
+    src/main.cpp
 )
 
-# Test executables
-add_executable(test_evtol tests/test_evtol.cpp ${SOURCES})
-add_executable(test_fleetmanager tests/test_fleetmanager.cpp ${SOURCES})
-add_executable(test_chargermanager tests/test_chargermanager.cpp ${SOURCES})
-add_executable(test_fault_manager tests/test_faultmanager.cpp ${SOURCES})
-add_executable(test_statisticstracker tests/test_statisticstracker.cpp ${SOURCES})
+# Main simulation executable
+add_executable(evtol_simulation ${SOURCES})
 
-# Enable testing
+# Enable unit testing
 enable_testing()
-add_test(NAME TestEVTOL COMMAND test_evtol)
-add_test(NAME TestFleetManager COMMAND test_fleetmanager)
-add_test(NAME TestChargerManager COMMAND test_chargermanager)
-add_test(NAME TestFaultManager COMMAND test_fault_manager)
-add_test(NAME TestStatisticsTracker COMMAND test_statisticstracker)
+
+# -------------------- Test: EVTOL --------------------
+add_executable(test_evtol 
+    tests/test_evtol.cpp 
+    src/EVTOL.cpp
+)
+target_include_directories(test_evtol PRIVATE common)
+add_test(NAME test_evtol COMMAND test_evtol)
+
+# -------------------- Test: FleetManager --------------------
+add_executable(test_fleetmanager 
+    tests/test_fleetmanager.cpp 
+    src/FleetManager.cpp 
+    src/EVTOL.cpp
+)
+target_include_directories(test_fleetmanager PRIVATE common)
+add_test(NAME test_fleetmanager COMMAND test_fleetmanager)
+
+# -------------------- Test: ChargerManager --------------------
+add_executable(test_chargermanager 
+    tests/test_chargermanager.cpp 
+    src/ChargerManager.cpp 
+    src/EVTOL.cpp
+)
+target_include_directories(test_chargermanager PRIVATE common)
+add_test(NAME test_chargermanager COMMAND test_chargermanager)
+
+# -------------------- Test: FaultManager --------------------
+add_executable(test_fault_manager 
+    tests/test_faultmanager.cpp 
+    src/FaultManager.cpp 
+    src/EVTOL.cpp
+)
+target_include_directories(test_fault_manager PRIVATE common)
+add_test(NAME test_fault_manager COMMAND test_fault_manager)
+
+# -------------------- Test: StatisticsTracker --------------------
+add_executable(test_statisticstracker 
+    tests/test_statisticstracker.cpp 
+    src/StatisticsTracker.cpp 
+    src/EVTOL.cpp
+)
+target_include_directories(test_statisticstracker PRIVATE common)
+add_test(NAME test_statisticstracker COMMAND test_statisticstracker)

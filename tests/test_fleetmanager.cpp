@@ -1,5 +1,6 @@
 
 #include "FleetManager.hpp"
+#include "EVTOL.hpp"
 #include <random>
 #include <iostream>
 

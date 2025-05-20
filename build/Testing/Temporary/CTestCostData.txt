@@ -1,5 +1,0 @@
-TestEVTOL 1 0.00271319
-TestFaultManager 1 0.00379127
-TestStatisticsTracker 1 0.00279569
-TestChargerManager 1 0.00224869
----

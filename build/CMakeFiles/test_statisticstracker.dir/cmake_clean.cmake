@@ -1,9 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_statisticstracker.dir/ChargerManager.cpp.o"
-  "CMakeFiles/test_statisticstracker.dir/EVTOL.cpp.o"
-  "CMakeFiles/test_statisticstracker.dir/FaultManager.cpp.o"
-  "CMakeFiles/test_statisticstracker.dir/FleetManager.cpp.o"
-  "CMakeFiles/test_statisticstracker.dir/StatisticsTracker.cpp.o"
+  "CMakeFiles/test_statisticstracker.dir/src/EVTOL.cpp.o"
+  "CMakeFiles/test_statisticstracker.dir/src/StatisticsTracker.cpp.o"
   "CMakeFiles/test_statisticstracker.dir/tests/test_statisticstracker.cpp.o"
   "test_statisticstracker"
   "test_statisticstracker.pdb"

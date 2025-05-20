@@ -50,4 +50,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_fleetmanager.dir/DependInfo.cmake"
   "CMakeFiles/test_chargermanager.dir/DependInfo.cmake"
   "CMakeFiles/test_evtol.dir/DependInfo.cmake"
+  "CMakeFiles/evtol_simulation.dir/DependInfo.cmake"
   )

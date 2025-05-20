@@ -3,6 +3,7 @@
 #include "VehicleProfile.hpp"
 #include "EVTOL.hpp"
 #include <iostream>
+#include <vector>
 
 // Unit test for StatisticsTracker
 // Time Complexity: O(v), where v = number of EVTOLs
@@ -16,7 +17,7 @@ int main() {
 
     StatisticsTracker tracker;
     for (int t = 0; t < 10; ++t) {
-        tracker.record(fleet);
+        tracker.report();
     }
 
     std::cout << "StatisticsTracker test completed (check output below):\n";

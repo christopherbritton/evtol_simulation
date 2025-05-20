@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/test_statistics_tracker.dir/test_statistics_tracker.o CMakeFiles/test_statistics_tracker.dir/__/StatisticsTracker.o CMakeFiles/test_statistics_tracker.dir/__/EVTOL.o  -o test_statistics_tracker 

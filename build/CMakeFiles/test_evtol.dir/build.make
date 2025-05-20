@@ -70,92 +70,32 @@ CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/tests/test_evtol.cpp -o CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.s
 
-CMakeFiles/test_evtol.dir/EVTOL.cpp.o: CMakeFiles/test_evtol.dir/flags.make
-CMakeFiles/test_evtol.dir/EVTOL.cpp.o: ../EVTOL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_evtol.dir/EVTOL.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_evtol.dir/EVTOL.cpp.o -c /workspaces/evtol_simulation/EVTOL.cpp
+CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o: CMakeFiles/test_evtol.dir/flags.make
+CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o: ../src/EVTOL.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o -c /workspaces/evtol_simulation/src/EVTOL.cpp
 
-CMakeFiles/test_evtol.dir/EVTOL.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_evtol.dir/EVTOL.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/EVTOL.cpp > CMakeFiles/test_evtol.dir/EVTOL.cpp.i
+CMakeFiles/test_evtol.dir/src/EVTOL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_evtol.dir/src/EVTOL.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/src/EVTOL.cpp > CMakeFiles/test_evtol.dir/src/EVTOL.cpp.i
 
-CMakeFiles/test_evtol.dir/EVTOL.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_evtol.dir/EVTOL.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/EVTOL.cpp -o CMakeFiles/test_evtol.dir/EVTOL.cpp.s
-
-CMakeFiles/test_evtol.dir/FleetManager.cpp.o: CMakeFiles/test_evtol.dir/flags.make
-CMakeFiles/test_evtol.dir/FleetManager.cpp.o: ../FleetManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test_evtol.dir/FleetManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_evtol.dir/FleetManager.cpp.o -c /workspaces/evtol_simulation/FleetManager.cpp
-
-CMakeFiles/test_evtol.dir/FleetManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_evtol.dir/FleetManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/FleetManager.cpp > CMakeFiles/test_evtol.dir/FleetManager.cpp.i
-
-CMakeFiles/test_evtol.dir/FleetManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_evtol.dir/FleetManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/FleetManager.cpp -o CMakeFiles/test_evtol.dir/FleetManager.cpp.s
-
-CMakeFiles/test_evtol.dir/ChargerManager.cpp.o: CMakeFiles/test_evtol.dir/flags.make
-CMakeFiles/test_evtol.dir/ChargerManager.cpp.o: ../ChargerManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test_evtol.dir/ChargerManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_evtol.dir/ChargerManager.cpp.o -c /workspaces/evtol_simulation/ChargerManager.cpp
-
-CMakeFiles/test_evtol.dir/ChargerManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_evtol.dir/ChargerManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/ChargerManager.cpp > CMakeFiles/test_evtol.dir/ChargerManager.cpp.i
-
-CMakeFiles/test_evtol.dir/ChargerManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_evtol.dir/ChargerManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/ChargerManager.cpp -o CMakeFiles/test_evtol.dir/ChargerManager.cpp.s
-
-CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o: CMakeFiles/test_evtol.dir/flags.make
-CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o: ../StatisticsTracker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o -c /workspaces/evtol_simulation/StatisticsTracker.cpp
-
-CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/StatisticsTracker.cpp > CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.i
-
-CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/StatisticsTracker.cpp -o CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.s
-
-CMakeFiles/test_evtol.dir/FaultManager.cpp.o: CMakeFiles/test_evtol.dir/flags.make
-CMakeFiles/test_evtol.dir/FaultManager.cpp.o: ../FaultManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test_evtol.dir/FaultManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_evtol.dir/FaultManager.cpp.o -c /workspaces/evtol_simulation/FaultManager.cpp
-
-CMakeFiles/test_evtol.dir/FaultManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_evtol.dir/FaultManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/FaultManager.cpp > CMakeFiles/test_evtol.dir/FaultManager.cpp.i
-
-CMakeFiles/test_evtol.dir/FaultManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_evtol.dir/FaultManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/FaultManager.cpp -o CMakeFiles/test_evtol.dir/FaultManager.cpp.s
+CMakeFiles/test_evtol.dir/src/EVTOL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_evtol.dir/src/EVTOL.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/src/EVTOL.cpp -o CMakeFiles/test_evtol.dir/src/EVTOL.cpp.s
 
 # Object files for target test_evtol
 test_evtol_OBJECTS = \
 "CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o" \
-"CMakeFiles/test_evtol.dir/EVTOL.cpp.o" \
-"CMakeFiles/test_evtol.dir/FleetManager.cpp.o" \
-"CMakeFiles/test_evtol.dir/ChargerManager.cpp.o" \
-"CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o" \
-"CMakeFiles/test_evtol.dir/FaultManager.cpp.o"
+"CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o"
 
 # External object files for target test_evtol
 test_evtol_EXTERNAL_OBJECTS =
 
 test_evtol: CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o
-test_evtol: CMakeFiles/test_evtol.dir/EVTOL.cpp.o
-test_evtol: CMakeFiles/test_evtol.dir/FleetManager.cpp.o
-test_evtol: CMakeFiles/test_evtol.dir/ChargerManager.cpp.o
-test_evtol: CMakeFiles/test_evtol.dir/StatisticsTracker.cpp.o
-test_evtol: CMakeFiles/test_evtol.dir/FaultManager.cpp.o
+test_evtol: CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o
 test_evtol: CMakeFiles/test_evtol.dir/build.make
 test_evtol: CMakeFiles/test_evtol.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable test_evtol"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_evtol"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_evtol.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
