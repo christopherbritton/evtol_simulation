@@ -30,14 +30,6 @@ EVTOL.hpp
 iostream
 -
 
-/workspaces/evtol_simulation/src/EVTOL.cpp
-EVTOL.hpp
-/workspaces/evtol_simulation/src/EVTOL.hpp
-cstdlib
--
-ctime
--
-
 /workspaces/evtol_simulation/tests/test_charger_manager.cpp
 ChargerManager.hpp
 /workspaces/evtol_simulation/tests/ChargerManager.hpp

@@ -6,7 +6,7 @@ statistics. It also includes individual unit tests for each core component.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 - `src/` - Main source files
 - `common/` - Shared headers
@@ -19,8 +19,8 @@ statistics. It also includes individual unit tests for each core component.
 
 ---
 
-## 🔧 Build & Run Instructions
+## Build & Run Instructions
 
-### 1. Build & run all tests and simulation:
+ 1. Build & run all tests and simulation:
 ```bash
 ./run_all.sh

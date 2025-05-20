@@ -1,4 +1,3 @@
-
 #include "FaultManager.hpp"
 #include <iostream>
 

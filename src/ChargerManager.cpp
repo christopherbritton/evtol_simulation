@@ -1,4 +1,3 @@
-
 #include "ChargerManager.hpp"
 #include "EVTOL.hpp"
 #include <iostream>

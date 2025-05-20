@@ -4,6 +4,7 @@
 
 void testStatisticsTracker() {
     StatisticsTracker stats;
+    stats.setSuppressOutput(true);  // Prevents cluttered test output
     stats.recordFlight(VehicleType::Alpha, 60, 120, 4);
     stats.recordCharge(VehicleType::Alpha, 1.5);
     stats.recordFault(VehicleType::Alpha);

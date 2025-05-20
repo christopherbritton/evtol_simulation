@@ -1,4 +1,3 @@
-
 #include "FleetManager.hpp"
 #include "EVTOL.hpp"
 
