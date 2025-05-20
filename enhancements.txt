@@ -1,0 +1,22 @@
+EVTOL Simulation: Future Enhancements
+
+18. Charging Time Simulation
+- Track charge duration and release chargers when full
+
+19. Dynamic Time Step Configuration
+- Allow configurable time resolution (30s, 5m, etc.)
+
+20. Battery and Range Modeling
+- Simulate energy usage and dynamic flight range
+
+21. Fault Impact and Grounding
+- Disable faulty EVTOLs and simulate downtime
+
+22. Route Assignment and Scheduling
+- Assign missions and estimate time of arrival
+
+23. Visualization Support
+- CSV logging, plotting, and live simulation output
+
+24. Configurable Fleet and Profiles
+- Load simulation settings from external config files

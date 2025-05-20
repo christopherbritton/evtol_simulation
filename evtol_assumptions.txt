@@ -1,0 +1,115 @@
+
+EVTOL Simulation Assumptions
+
+This document outlines the key assumptions made in the current implementation of the EVTOL fleet simulation system.
+
+System-Level Assumptions
+
+1. Fleet Composition
+- The fleet consists of exactly 20 EVTOLs.
+- EVTOL types (Alpha, Bravo, Charlie, Delta, Echo) are randomly assigned from a predefined set.
+
+2. Vehicle Profiles
+- Each vehicle type has a static VehicleProfile.
+- These profiles define battery capacity, cruise speed, charging time, energy use, etc.
+- Profiles are assumed accurate representations of vehicle performance.
+
+3. Random Behavior
+- Faults occur with a fixed probability (e.g. 10% chance per step).
+- Charging needs are triggered randomly (e.g. 1 in 3 chance per step).
+- A default random engine with uniform distribution governs selection.
+
+4. Simulation Time Step
+- Simulation proceeds in 1-minute time steps.
+- Time granularity is fixed and not currently configurable.
+
+5. Charging Logic
+- EVTOLs request charging when flagged as needsCharging().
+- If a charger is available, the EVTOL is assigned immediately.
+- startCharging() currently just sets a flag — no progressive charge tracking.
+- Charger ports are never released; no charging timeout or release logic is implemented.
+
+6. Fault Handling
+- Faults are recorded but do not affect flight capability.
+- No impact logic, grounding, or recovery behavior is implemented.
+
+Testing and Build Assumptions
+
+7. Unit Testing
+- Each manager or tracker module has an isolated unit test.
+- Tests focus on creation, state transitions, and reporting.
+- Faults and charging states are manually stimulated in test routines.
+
+8. Platform Support
+- Scripts provided for:
+  - Linux: build_and_run.sh, setup.sh
+  - Windows (MinGW): build_and_run.bat
+- All use CMake and default compilers; no dependency on external packages.
+
+9. Build Structure
+- All source and header files are kept in a flat directory.
+- Tests reside in a tests/ subfolder.
+- CMake is used for building all components and tests.
+
+Statistics and Metrics Assumptions
+
+10. Mileage Simulation
+- If an EVTOL is not charging, it accrues 1 mile per step (simulated).
+- This placeholder value is added to cumulative mileage per vehicle type.
+- No actual physics, speed, or energy consumption model is used.
+
+11. No Physical Constraints
+- No altitude, range depletion, rerouting, or positioning logic is implemented.
+- EVTOLs are either active, faulted, or charging — nothing more.
+
+12. Type Safety
+- VehicleType enum is used in STL containers (e.g. std::map), assuming support for comparison.
+- static_cast<int> is used for enum printing where needed.
+
+Design Decisions
+
+13. Modular Class Structure
+- Simulation components are separated into logical classes (EVTOL, FleetManager, ChargerManager, etc.).
+- Each class encapsulates its behavior and exposes minimal public interfaces.
+
+14. Constructor-Based Initialization
+- All critical data (e.g., VehicleProfile) is passed into classes via constructors to ensure immutability.
+
+15. Minimal Dependencies
+- No third-party libraries are used.
+- STL containers and utilities are the foundation of data structures and logic.
+
+16. Explicit Loop Bounds
+- All for loops use explicit size_t indexing for clarity and uniformity.
+
+17. Enum-Based Typing
+- VehicleType is used to distinguish between EVTOL types cleanly and type-safely.
+
+Future Enhancements
+
+18. Charging Time Simulation
+- Implement real-time charging duration tracking.
+- Automatically release chargers once the vehicle is fully charged.
+
+19. Dynamic Time Step Configuration
+- Allow configuration of simulation granularity (e.g. 30s, 5m intervals).
+
+20. Battery and Range Modeling
+- Integrate energy consumption over distance and dynamic range estimation.
+- Deplete and recharge battery levels based on mission profiles.
+
+21. Fault Impact and Grounding
+- Model faults that disable vehicles.
+- Introduce maintenance delays or cooldowns after critical faults.
+
+22. Route Assignment and Scheduling
+- Add logic for assigning mission routes and estimating arrival/completion times.
+
+23. Visualization Support
+- Provide optional logging or CSV output.
+- Integrate with plotting tools to view fleet activity over time.
+
+24. Configurable Fleet and Profiles
+- Support loading fleet size, charger availability, and vehicle profiles from config files.
+
+Feel free to update this document as the system evolves to reflect any enhancements in simulation realism, accuracy, or complexity.
