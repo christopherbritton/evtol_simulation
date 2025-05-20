@@ -25,12 +25,5 @@ CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.o: ../common/Statistic
 CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.o: ../common/VehicleType.hpp
 CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.o: ../src/StatisticsTracker.cpp
 
-CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../common/ChargerManager.hpp
-CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../common/EVTOL.hpp
-CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../common/FaultManager.hpp
-CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../common/FleetManager.hpp
-CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../common/StatisticsTracker.hpp
-CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../common/VehicleProfile.hpp
-CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../common/VehicleType.hpp
 CMakeFiles/evtol_simulation.dir/src/main.cpp.o: ../src/main.cpp
 

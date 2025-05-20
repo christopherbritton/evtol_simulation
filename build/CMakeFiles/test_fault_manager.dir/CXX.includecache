@@ -6,21 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../common/EVTOL.hpp
-VehicleType.hpp
-../common/VehicleType.hpp
-VehicleProfile.hpp
-../common/VehicleProfile.hpp
-
-../common/VehicleProfile.hpp
-
-../common/VehicleType.hpp
-
-/workspaces/evtol_simulation/src/EVTOL.cpp
-EVTOL.hpp
-/workspaces/evtol_simulation/src/EVTOL.hpp
-cstdlib
+../common/FaultManager.hpp
+vector
 -
-ctime
+utility
+-
+
+/workspaces/evtol_simulation/tests/test_fault_manager.cpp
+FaultManager.hpp
+/workspaces/evtol_simulation/tests/FaultManager.hpp
+iostream
 -
 

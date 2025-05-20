@@ -26,11 +26,4 @@ CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.o
  ../common/VehicleType.hpp
  /workspaces/evtol_simulation/src/StatisticsTracker.cpp
 CMakeFiles/evtol_simulation.dir/src/main.cpp.o
- ../common/ChargerManager.hpp
- ../common/EVTOL.hpp
- ../common/FaultManager.hpp
- ../common/FleetManager.hpp
- ../common/StatisticsTracker.hpp
- ../common/VehicleProfile.hpp
- ../common/VehicleType.hpp
  /workspaces/evtol_simulation/src/main.cpp

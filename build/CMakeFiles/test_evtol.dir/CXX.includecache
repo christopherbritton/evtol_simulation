@@ -16,19 +16,9 @@ VehicleProfile.hpp
 
 ../common/VehicleType.hpp
 
-/workspaces/evtol_simulation/src/EVTOL.cpp
-EVTOL.hpp
-/workspaces/evtol_simulation/src/EVTOL.hpp
-cstdlib
--
-ctime
--
-
 /workspaces/evtol_simulation/tests/test_evtol.cpp
 EVTOL.hpp
 /workspaces/evtol_simulation/tests/EVTOL.hpp
-cassert
--
 iostream
 -
 

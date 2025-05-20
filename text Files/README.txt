@@ -1,26 +1,26 @@
-EVTOL Simulation
+# EVTOL Simulation Project
 
-This project simulates a fleet of electric vertical takeoff and landing (EVTOL) aircraft. It models randomized vehicle behavior, charging needs, fault occurrence, and collects usage statistics.
+This project simulates a fleet of electric vertical takeoff and landing (EVTOL) aircraft, 
+including functionality for flight simulation, fault tracking, charging management, and performance 
+statistics. It also includes individual unit tests for each core component.
 
-Features:
-- Multiple EVTOL types with customizable profiles
-- Randomized charging and fault logic
-- Charger manager with port constraints
-- Fleet statistics and fault tracking
-- Cross-platform build and test system (CMake, bash, batch)
-- Unit tests for all major components
+---
 
-Getting Started:
+## 📁 Project Structure
 
-Linux/macOS:
-$ chmod +x setup.sh
-$ ./setup.sh
+- `src/` - Main source files
+- `common/` - Shared headers
+- `tests/` - Individual unit test files
+- `build/` - CMake-generated build output
+- `CMakeLists.txt` - Build configuration
+- `run_all.sh` - Builds and runs all unit tests and the main simulation
+- `run_simulation.sh` - Builds and runs only the main simulation
+- `run_all_tests.sh` - Builds and runs all unit tests
 
-Windows (MinGW):
-> build_and_run.bat
+---
 
-Structure:
-- EVTOL, FleetManager, ChargerManager: Core logic
-- StatisticsTracker, FaultManager: Data analysis
-- tests/: Unit tests
-- VehicleProfile.hpp, VehicleType.hpp: Shared type definitions
+## 🔧 Build & Run Instructions
+
+### 1. Build & run all tests and simulation:
+```bash
+./run_all.sh

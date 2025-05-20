@@ -57,18 +57,18 @@ include CMakeFiles/test_fault_manager.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test_fault_manager.dir/flags.make
 
-CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.o: CMakeFiles/test_fault_manager.dir/flags.make
-CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.o: ../tests/test_faultmanager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.o -c /workspaces/evtol_simulation/tests/test_faultmanager.cpp
+CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o: CMakeFiles/test_fault_manager.dir/flags.make
+CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o: ../tests/test_fault_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o -c /workspaces/evtol_simulation/tests/test_fault_manager.cpp
 
-CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/tests/test_faultmanager.cpp > CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.i
+CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/tests/test_fault_manager.cpp > CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.i
 
-CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/tests/test_faultmanager.cpp -o CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.s
+CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/tests/test_fault_manager.cpp -o CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.s
 
 CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.o: CMakeFiles/test_fault_manager.dir/flags.make
 CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.o: ../src/FaultManager.cpp
@@ -83,34 +83,19 @@ CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/src/FaultManager.cpp -o CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.s
 
-CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.o: CMakeFiles/test_fault_manager.dir/flags.make
-CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.o: ../src/EVTOL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.o -c /workspaces/evtol_simulation/src/EVTOL.cpp
-
-CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/evtol_simulation/src/EVTOL.cpp > CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.i
-
-CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/evtol_simulation/src/EVTOL.cpp -o CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.s
-
 # Object files for target test_fault_manager
 test_fault_manager_OBJECTS = \
-"CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.o" \
-"CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.o" \
-"CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.o"
+"CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o" \
+"CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.o"
 
 # External object files for target test_fault_manager
 test_fault_manager_EXTERNAL_OBJECTS =
 
-test_fault_manager: CMakeFiles/test_fault_manager.dir/tests/test_faultmanager.cpp.o
+test_fault_manager: CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o
 test_fault_manager: CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.o
-test_fault_manager: CMakeFiles/test_fault_manager.dir/src/EVTOL.cpp.o
 test_fault_manager: CMakeFiles/test_fault_manager.dir/build.make
 test_fault_manager: CMakeFiles/test_fault_manager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable test_fault_manager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_fault_manager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_fault_manager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

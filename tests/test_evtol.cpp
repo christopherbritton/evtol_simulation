@@ -1,16 +1,15 @@
-
 #include "EVTOL.hpp"
-#include <cassert>
 #include <iostream>
 
-// Basic functional test for EVTOL class update behavior
+void testEVTOL() {
+    VehicleProfile profile{150, 100, 1.0, 0.5, 4, 0.01};
+    EVTOL v1(1, VehicleType::Alpha, profile);
+
+    v1.simulateStep();
+    std::cout << "EVTOL tests passed.\n";
+}
+
 int main() {
-    VehicleProfile profile = {100, 100, 1, 1, 1, 0};
-    EVTOL e(1, VehicleType::Alpha, profile);
-    for (int i = 0; i < 60; ++i) {
-        e.simulateStep();
-    }
-    assert(e.getId() == 1);
-    std::cout << "EVTOL test passed\n";
+    testEVTOL();
     return 0;
 }

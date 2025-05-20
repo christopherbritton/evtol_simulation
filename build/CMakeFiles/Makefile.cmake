@@ -45,10 +45,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test_statisticstracker.dir/DependInfo.cmake"
+  "CMakeFiles/test_statistics_tracker.dir/DependInfo.cmake"
+  "CMakeFiles/run_all.dir/DependInfo.cmake"
   "CMakeFiles/test_fault_manager.dir/DependInfo.cmake"
-  "CMakeFiles/test_fleetmanager.dir/DependInfo.cmake"
-  "CMakeFiles/test_chargermanager.dir/DependInfo.cmake"
+  "CMakeFiles/test_charger_manager.dir/DependInfo.cmake"
+  "CMakeFiles/test_fleet_manager.dir/DependInfo.cmake"
   "CMakeFiles/test_evtol.dir/DependInfo.cmake"
   "CMakeFiles/evtol_simulation.dir/DependInfo.cmake"
   )

@@ -1,10 +1,10 @@
-#include "EVTOL.hpp"
 #include "VehicleType.hpp"
 #include "VehicleProfile.hpp"
 #include "ChargerManager.hpp"
 #include "FaultManager.hpp"
 #include "FleetManager.hpp"
 #include "StatisticsTracker.hpp"
+#include "EVTOL.hpp"
 
 #include <iostream>
 #include <vector>
