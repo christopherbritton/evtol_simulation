@@ -105,6 +105,7 @@ int main() {
         chargerManager.update(minute);
     }
 
+    statsTracker.setSuppressOutput(false);
     statsTracker.report();
     return 0;
 }

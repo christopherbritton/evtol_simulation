@@ -24,10 +24,7 @@ void StatisticsTracker::setSuppressOutput(bool suppress) {
 
 void StatisticsTracker::report() {
     // Suppress output if flagged, or if running in non-interactive (test) mode
-    const char* simEnv = getenv("EVTOL_MODE");
-    bool isSimulationMode = simEnv && std::string(simEnv) == "SIMULATION";
-
-    if (suppressOutput || (!isatty(STDOUT_FILENO) && !isSimulationMode)) return;
+    if (suppressOutput || !isatty(STDOUT_FILENO)) return;
 
     std::cout << "\n-- Per-Vehicle-Type Statistics --\n";
     for (const auto& pair : flightTime) {
