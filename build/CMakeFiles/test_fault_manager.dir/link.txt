@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.o  -o test_fault_manager 
+/usr/bin/c++     CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o  -o test_fault_manager  libcore_sources.a 

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o"
   "CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o"
   "test_evtol"
   "test_evtol.pdb"

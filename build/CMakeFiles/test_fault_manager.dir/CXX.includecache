@@ -12,15 +12,11 @@ vector
 utility
 -
 
-/workspaces/evtol_simulation/src/FaultManager.cpp
-FaultManager.hpp
-/workspaces/evtol_simulation/src/FaultManager.hpp
-iostream
--
-
 /workspaces/evtol_simulation/tests/test_fault_manager.cpp
 FaultManager.hpp
 /workspaces/evtol_simulation/tests/FaultManager.hpp
 iostream
+-
+cassert
 -
 

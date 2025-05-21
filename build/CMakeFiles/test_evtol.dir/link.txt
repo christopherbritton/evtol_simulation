@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o  -o test_evtol 
+/usr/bin/c++     CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o  -o test_evtol  libcore_sources.a 

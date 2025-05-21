@@ -14,11 +14,11 @@ map
 
 ../common/VehicleType.hpp
 
-/workspaces/evtol_simulation/src/StatisticsTracker.cpp
+/workspaces/evtol_simulation/tests/test_statistics_tracker.cpp
 StatisticsTracker.hpp
-/workspaces/evtol_simulation/src/StatisticsTracker.hpp
+/workspaces/evtol_simulation/tests/StatisticsTracker.hpp
 iostream
 -
-unistd.h
+cassert
 -
 

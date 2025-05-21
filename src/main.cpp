@@ -15,9 +15,16 @@ int main() {
     // Time: O(v * t), Space: O(v) where v = number of EVTOLs, t = time steps
 
     // Initialize managers
+    
     ChargerManager chargerManager(3);
     FaultManager faultManager;
     StatisticsTracker statsTracker;
+    statsTracker.setSuppressOutput(false);
+    const char* mode = std::getenv("EVTOL_MODE");
+    std::cout << "[Debug] EVTOL_MODE in main = " << (mode ? mode : "null") << "\n";
+
+    std::cout << "[Debug] Entered main()\n";
+
 
     // Define vehicle types
     std::vector<VehicleType> types = {
@@ -107,5 +114,8 @@ int main() {
 
     statsTracker.setSuppressOutput(false);
     statsTracker.report();
+    std::cerr << "[Debug] EVTOL_MODE in main = " << (mode ? mode : "NULL") << "\n";
+
+
     return 0;
 }

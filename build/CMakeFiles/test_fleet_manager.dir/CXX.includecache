@@ -30,9 +30,11 @@ random
 
 ../common/VehicleType.hpp
 
-/workspaces/evtol_simulation/src/FleetManager.cpp
+/workspaces/evtol_simulation/tests/test_fleet_manager.cpp
 FleetManager.hpp
-/workspaces/evtol_simulation/src/FleetManager.hpp
-EVTOL.hpp
-/workspaces/evtol_simulation/src/EVTOL.hpp
+/workspaces/evtol_simulation/tests/FleetManager.hpp
+iostream
+-
+cassert
+-
 

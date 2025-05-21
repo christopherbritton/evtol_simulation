@@ -22,6 +22,9 @@ public:
     double getCruiseSpeed() const;
     int getPassengerCapacity() const;
 
+    bool testCoinFlipWrapper(int odds) { return coinFlip(odds); }
+
+
 private:
     int id;
     VehicleType type;

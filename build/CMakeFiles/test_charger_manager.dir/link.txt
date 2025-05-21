@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/test_charger_manager.dir/tests/test_charger_manager.cpp.o CMakeFiles/test_charger_manager.dir/src/ChargerManager.cpp.o CMakeFiles/test_charger_manager.dir/src/EVTOL.cpp.o  -o test_charger_manager 
+/usr/bin/c++     CMakeFiles/test_charger_manager.dir/tests/test_charger_manager.cpp.o  -o test_charger_manager  libcore_sources.a 

@@ -7,3 +7,4 @@
 /workspaces/evtol_simulation/build/CMakeFiles/test_fleet_manager.dir
 /workspaces/evtol_simulation/build/CMakeFiles/test_evtol.dir
 /workspaces/evtol_simulation/build/CMakeFiles/evtol_simulation.dir
+/workspaces/evtol_simulation/build/CMakeFiles/core_sources.dir

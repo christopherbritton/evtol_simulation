@@ -201,14 +201,26 @@ evtol_simulation/fast:
 	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/build
 .PHONY : evtol_simulation/fast
 
+#=============================================================================
+# Target rules for targets named core_sources
+
+# Build rule for target.
+core_sources: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 core_sources
+.PHONY : core_sources
+
+# fast build rule for target.
+core_sources/fast:
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/build
+.PHONY : core_sources/fast
+
 src/ChargerManager.o: src/ChargerManager.cpp.o
 
 .PHONY : src/ChargerManager.o
 
 # target to build an object file
 src/ChargerManager.cpp.o:
-	$(MAKE) -f CMakeFiles/test_charger_manager.dir/build.make CMakeFiles/test_charger_manager.dir/src/ChargerManager.cpp.o
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/ChargerManager.cpp.o
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/ChargerManager.cpp.o
 .PHONY : src/ChargerManager.cpp.o
 
 src/ChargerManager.i: src/ChargerManager.cpp.i
@@ -217,8 +229,7 @@ src/ChargerManager.i: src/ChargerManager.cpp.i
 
 # target to preprocess a source file
 src/ChargerManager.cpp.i:
-	$(MAKE) -f CMakeFiles/test_charger_manager.dir/build.make CMakeFiles/test_charger_manager.dir/src/ChargerManager.cpp.i
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/ChargerManager.cpp.i
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/ChargerManager.cpp.i
 .PHONY : src/ChargerManager.cpp.i
 
 src/ChargerManager.s: src/ChargerManager.cpp.s
@@ -227,8 +238,7 @@ src/ChargerManager.s: src/ChargerManager.cpp.s
 
 # target to generate assembly for a file
 src/ChargerManager.cpp.s:
-	$(MAKE) -f CMakeFiles/test_charger_manager.dir/build.make CMakeFiles/test_charger_manager.dir/src/ChargerManager.cpp.s
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/ChargerManager.cpp.s
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/ChargerManager.cpp.s
 .PHONY : src/ChargerManager.cpp.s
 
 src/EVTOL.o: src/EVTOL.cpp.o
@@ -237,10 +247,7 @@ src/EVTOL.o: src/EVTOL.cpp.o
 
 # target to build an object file
 src/EVTOL.cpp.o:
-	$(MAKE) -f CMakeFiles/test_charger_manager.dir/build.make CMakeFiles/test_charger_manager.dir/src/EVTOL.cpp.o
-	$(MAKE) -f CMakeFiles/test_fleet_manager.dir/build.make CMakeFiles/test_fleet_manager.dir/src/EVTOL.cpp.o
-	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/src/EVTOL.cpp.o
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/EVTOL.cpp.o
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/EVTOL.cpp.o
 .PHONY : src/EVTOL.cpp.o
 
 src/EVTOL.i: src/EVTOL.cpp.i
@@ -249,10 +256,7 @@ src/EVTOL.i: src/EVTOL.cpp.i
 
 # target to preprocess a source file
 src/EVTOL.cpp.i:
-	$(MAKE) -f CMakeFiles/test_charger_manager.dir/build.make CMakeFiles/test_charger_manager.dir/src/EVTOL.cpp.i
-	$(MAKE) -f CMakeFiles/test_fleet_manager.dir/build.make CMakeFiles/test_fleet_manager.dir/src/EVTOL.cpp.i
-	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/src/EVTOL.cpp.i
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/EVTOL.cpp.i
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/EVTOL.cpp.i
 .PHONY : src/EVTOL.cpp.i
 
 src/EVTOL.s: src/EVTOL.cpp.s
@@ -261,10 +265,7 @@ src/EVTOL.s: src/EVTOL.cpp.s
 
 # target to generate assembly for a file
 src/EVTOL.cpp.s:
-	$(MAKE) -f CMakeFiles/test_charger_manager.dir/build.make CMakeFiles/test_charger_manager.dir/src/EVTOL.cpp.s
-	$(MAKE) -f CMakeFiles/test_fleet_manager.dir/build.make CMakeFiles/test_fleet_manager.dir/src/EVTOL.cpp.s
-	$(MAKE) -f CMakeFiles/test_evtol.dir/build.make CMakeFiles/test_evtol.dir/src/EVTOL.cpp.s
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/EVTOL.cpp.s
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/EVTOL.cpp.s
 .PHONY : src/EVTOL.cpp.s
 
 src/FaultManager.o: src/FaultManager.cpp.o
@@ -273,8 +274,7 @@ src/FaultManager.o: src/FaultManager.cpp.o
 
 # target to build an object file
 src/FaultManager.cpp.o:
-	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.o
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/FaultManager.cpp.o
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/FaultManager.cpp.o
 .PHONY : src/FaultManager.cpp.o
 
 src/FaultManager.i: src/FaultManager.cpp.i
@@ -283,8 +283,7 @@ src/FaultManager.i: src/FaultManager.cpp.i
 
 # target to preprocess a source file
 src/FaultManager.cpp.i:
-	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.i
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/FaultManager.cpp.i
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/FaultManager.cpp.i
 .PHONY : src/FaultManager.cpp.i
 
 src/FaultManager.s: src/FaultManager.cpp.s
@@ -293,8 +292,7 @@ src/FaultManager.s: src/FaultManager.cpp.s
 
 # target to generate assembly for a file
 src/FaultManager.cpp.s:
-	$(MAKE) -f CMakeFiles/test_fault_manager.dir/build.make CMakeFiles/test_fault_manager.dir/src/FaultManager.cpp.s
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/FaultManager.cpp.s
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/FaultManager.cpp.s
 .PHONY : src/FaultManager.cpp.s
 
 src/FleetManager.o: src/FleetManager.cpp.o
@@ -303,8 +301,7 @@ src/FleetManager.o: src/FleetManager.cpp.o
 
 # target to build an object file
 src/FleetManager.cpp.o:
-	$(MAKE) -f CMakeFiles/test_fleet_manager.dir/build.make CMakeFiles/test_fleet_manager.dir/src/FleetManager.cpp.o
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/FleetManager.cpp.o
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/FleetManager.cpp.o
 .PHONY : src/FleetManager.cpp.o
 
 src/FleetManager.i: src/FleetManager.cpp.i
@@ -313,8 +310,7 @@ src/FleetManager.i: src/FleetManager.cpp.i
 
 # target to preprocess a source file
 src/FleetManager.cpp.i:
-	$(MAKE) -f CMakeFiles/test_fleet_manager.dir/build.make CMakeFiles/test_fleet_manager.dir/src/FleetManager.cpp.i
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/FleetManager.cpp.i
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/FleetManager.cpp.i
 .PHONY : src/FleetManager.cpp.i
 
 src/FleetManager.s: src/FleetManager.cpp.s
@@ -323,8 +319,7 @@ src/FleetManager.s: src/FleetManager.cpp.s
 
 # target to generate assembly for a file
 src/FleetManager.cpp.s:
-	$(MAKE) -f CMakeFiles/test_fleet_manager.dir/build.make CMakeFiles/test_fleet_manager.dir/src/FleetManager.cpp.s
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/FleetManager.cpp.s
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/FleetManager.cpp.s
 .PHONY : src/FleetManager.cpp.s
 
 src/StatisticsTracker.o: src/StatisticsTracker.cpp.o
@@ -333,8 +328,7 @@ src/StatisticsTracker.o: src/StatisticsTracker.cpp.o
 
 # target to build an object file
 src/StatisticsTracker.cpp.o:
-	$(MAKE) -f CMakeFiles/test_statistics_tracker.dir/build.make CMakeFiles/test_statistics_tracker.dir/src/StatisticsTracker.cpp.o
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.o
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/StatisticsTracker.cpp.o
 .PHONY : src/StatisticsTracker.cpp.o
 
 src/StatisticsTracker.i: src/StatisticsTracker.cpp.i
@@ -343,8 +337,7 @@ src/StatisticsTracker.i: src/StatisticsTracker.cpp.i
 
 # target to preprocess a source file
 src/StatisticsTracker.cpp.i:
-	$(MAKE) -f CMakeFiles/test_statistics_tracker.dir/build.make CMakeFiles/test_statistics_tracker.dir/src/StatisticsTracker.cpp.i
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.i
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/StatisticsTracker.cpp.i
 .PHONY : src/StatisticsTracker.cpp.i
 
 src/StatisticsTracker.s: src/StatisticsTracker.cpp.s
@@ -353,8 +346,7 @@ src/StatisticsTracker.s: src/StatisticsTracker.cpp.s
 
 # target to generate assembly for a file
 src/StatisticsTracker.cpp.s:
-	$(MAKE) -f CMakeFiles/test_statistics_tracker.dir/build.make CMakeFiles/test_statistics_tracker.dir/src/StatisticsTracker.cpp.s
-	$(MAKE) -f CMakeFiles/evtol_simulation.dir/build.make CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.s
+	$(MAKE) -f CMakeFiles/core_sources.dir/build.make CMakeFiles/core_sources.dir/src/StatisticsTracker.cpp.s
 .PHONY : src/StatisticsTracker.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -534,6 +526,7 @@ help:
 	@echo "... test_fleet_manager"
 	@echo "... test_evtol"
 	@echo "... evtol_simulation"
+	@echo "... core_sources"
 	@echo "... src/ChargerManager.o"
 	@echo "... src/ChargerManager.i"
 	@echo "... src/ChargerManager.s"

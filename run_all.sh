@@ -1,15 +1,16 @@
 #!/bin/bash
-# run_all.sh — Build and run all unit tests and simulation
-
-# Exit on any failure
 set -e
 
-echo "🛠️ Building all targets..."
-cmake -S . -B build
+# Rebuild everything
+echo -e "\n🔄 Rebuilding everything..."
+rm -rf build
+cmake -Bbuild .
 cmake --build build --target all
 
-# Define and run unit tests
-TESTS=(
+# Run all test executables explicitly
+echo -e "\n✅ Running unit tests..."
+
+declare -a TESTS=(
   "test_evtol"
   "test_charger_manager"
   "test_fault_manager"
@@ -17,18 +18,33 @@ TESTS=(
   "test_statistics_tracker"
 )
 
-echo -e "\n Running unit tests..."
+FAILED=0
+
 for test in "${TESTS[@]}"; do
+  exe="./build/${test}"
   echo -e "\n Running: $test"
-  ./build/$test || {
-    echo -e "❌ [ FAILED  ] $test"
-    exit 1
-  }
-  echo -e "✅ [ PASSED  ] $test"
+  if [[ -x "$exe" ]]; then
+    $exe
+    if [[ $? -ne 0 ]]; then
+      echo -e "❌ $test FAILED"
+      FAILED=1
+    else
+      echo -e "✅ [ PASSED ] $test"
+    fi
+  else
+    echo -e "❌ [ MISSING ] $test executable not found at $exe"
+    FAILED=1
+  fi
 done
 
-# Run the simulation with statistics output enabled
-echo -e "\n🚀 Running: evtol_simulation with stats (EVTOL_MODE=SIMULATION)"
-env EVTOL_MODE=SIMULATION ./build/evtol_simulation
+# Run main simulation
+echo -e "\n📊 Running main simulation with stats output..."
+export EVTOL_MODE=SIMULATION
+./build/evtol_simulation
 
-echo -e "\n✅ All unit tests and main simulation completed successfully."
+if [[ $FAILED -eq 0 ]]; then
+  echo -e "\n🎉 All tests and main simulation completed successfully."
+else
+  echo -e "\n❌ One or more tests failed."
+  exit 1
+fi

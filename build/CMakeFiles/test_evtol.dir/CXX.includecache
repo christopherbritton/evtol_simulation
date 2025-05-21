@@ -21,4 +21,6 @@ EVTOL.hpp
 /workspaces/evtol_simulation/tests/EVTOL.hpp
 iostream
 -
+cassert
+-
 

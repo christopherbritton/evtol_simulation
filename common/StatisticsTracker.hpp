@@ -11,6 +11,14 @@ public:
     void report();
     void setSuppressOutput(bool suppress);
 
+    const std::map<VehicleType, int>& getFlightTime() const { return flightTime; }
+    const std::map<VehicleType, int>& getFlightCount() const { return flightCount; }
+    const std::map<VehicleType, double>& getDistance() const { return distance; }
+    const std::map<VehicleType, double>& getChargeTime() const { return chargeTime; }
+    const std::map<VehicleType, int>& getFaultCount() const { return faultCount; }
+    const std::map<VehicleType, double>& getPassengerMiles() const { return passengerMiles; }
+
+
 private:
     std::map<VehicleType, int> flightTime;
     std::map<VehicleType, int> flightCount;

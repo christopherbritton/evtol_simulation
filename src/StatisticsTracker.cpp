@@ -23,22 +23,38 @@ void StatisticsTracker::setSuppressOutput(bool suppress) {
 }
 
 void StatisticsTracker::report() {
-    // Suppress output if flagged, or if running in non-interactive (test) mode
-    if (suppressOutput || !isatty(STDOUT_FILENO)) return;
+    // Retrieve EVTOL_MODE environment variable
+    std::cout << "[Debug] Entered report()!\n";
 
+
+    const char* simEnv = std::getenv("EVTOL_MODE");
+    std::string mode = simEnv ? simEnv : "NULL";
+    bool isSimulationMode = (mode == "SIMULATION");
+    std::cout << "[Debug] EVTOL_MODE = " << mode << "\n";
+
+
+    // Debug output to verify environment and suppression status
+    std::cout << "[Debug] suppressOutput=" << suppressOutput
+              << ", isSimulationMode=" << isSimulationMode
+              << ", EVTOL_MODE=" << mode << "\n";
+
+    // Suppress output only if explicitly set or not in simulation mode
+    if (!isSimulationMode && suppressOutput) return;
+
+    // Normal statistics output
     std::cout << "\n-- Per-Vehicle-Type Statistics --\n";
-    for (const auto& pair : flightTime) {
-        VehicleType type = pair.first;
+    for (std::map<VehicleType, int>::const_iterator it = flightTime.begin(); it != flightTime.end(); ++it) {
+        VehicleType type = it->first;
         int flights = flightCount[type];
         double avgTime = (flights > 0) ? (double)flightTime[type] / flights : 0;
         double avgDistance = (flights > 0) ? distance[type] / flights : 0;
         double avgCharge = (chargeCount[type] > 0) ? chargeTime[type] / chargeCount[type] : 0;
 
-        std::cout << "VehicleType " << static_cast<int>(type) << ":\n";
-        std::cout << "  Avg Flight Time: " << avgTime << " mins\n";
-        std::cout << "  Avg Distance per Flight: " << avgDistance << " miles\n";
-        std::cout << "  Avg Charge Time: " << avgCharge << " hrs\n";
-        std::cout << "  Total Faults: " << faultCount[type] << "\n";
-        std::cout << "  Total Passenger Miles: " << passengerMiles[type] << "\n\n";
+        std::cout << "  VehicleType " << static_cast<int>(type) << ":\n";
+        std::cout << "    Avg Flight Time: " << avgTime << " mins\n";
+        std::cout << "    Avg Distance per Flight: " << avgDistance << " miles\n";
+        std::cout << "    Avg Charge Time: " << avgCharge << " hrs\n";
+        std::cout << "    Total Faults: " << faultCount[type] << "\n";
+        std::cout << "    Total Passenger Miles: " << passengerMiles[type] << "\n\n";
     }
 }

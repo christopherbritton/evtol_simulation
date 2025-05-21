@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/simulation.dir/src/main.cpp.o CMakeFiles/simulation.dir/src/EVTOL.cpp.o CMakeFiles/simulation.dir/src/FleetManager.cpp.o CMakeFiles/simulation.dir/src/ChargerManager.cpp.o CMakeFiles/simulation.dir/src/FaultManager.cpp.o CMakeFiles/simulation.dir/src/StatisticsTracker.cpp.o  -o simulation 
