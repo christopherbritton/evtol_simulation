@@ -50,7 +50,7 @@ void StatisticsTracker::report() {
         double avgCharge = (chargeCount[type] > 0) ? chargeTime[type] / chargeCount[type] : 0;
 
         std::cout << "  VehicleType " << static_cast<int>(type) << ":\n";
-        std::cout << "    Avg Flight Time: " << avgTime << " mins\n";
+        std::cout << "    Avg Flight Time: " << avgTime << " hours\n";
         std::cout << "    Avg Distance per Flight: " << avgDistance << " miles\n";
         std::cout << "    Avg Charge Time: " << avgCharge << " hrs\n";
         std::cout << "    Total Faults: " << faultCount[type] << "\n";

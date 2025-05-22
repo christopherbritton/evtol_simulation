@@ -12,48 +12,48 @@ Scanning dependencies of target core_sources
 
  Running evtol_simulation...
 Fleet composition:
-Alpha: 1 vehicles
-Bravo: 4 vehicles
-Charlie: 5 vehicles
-Delta: 2 vehicles
-Echo: 8 vehicles
+Alpha: 3 vehicles
+Bravo: 5 vehicles
+Charlie: 4 vehicles
+Delta: 4 vehicles
+Echo: 4 vehicles
 Fleet Count Total: 20 vehicles
 
 -- Per-Vehicle-Type Statistics --
   VehicleType 0:
-    Avg Flight Time: 1.89286 mins
-    Avg Distance per Flight: 3.15476 miles
+    Avg Flight Time: 1.95783 hours
+    Avg Distance per Flight: 3.26305 miles
     Avg Charge Time: 0.5 hrs
-    Total Faults: 17
-    Total Passenger Miles: 1060
+    Total Faults: 55
+    Total Passenger Miles: 3250
 
   VehicleType 1:
-    Avg Flight Time: 1.73554 mins
-    Avg Distance per Flight: 2.60331 miles
+    Avg Flight Time: 1.73841 hours
+    Avg Distance per Flight: 2.60762 miles
     Avg Charge Time: 0.75 hrs
-    Total Faults: 74
-    Total Passenger Miles: 2520
+    Total Faults: 92
+    Total Passenger Miles: 3150
 
   VehicleType 2:
-    Avg Flight Time: 1.76238 mins
-    Avg Distance per Flight: 3.23102 miles
+    Avg Flight Time: 1.64082 hours
+    Avg Distance per Flight: 3.00816 miles
     Avg Charge Time: 0.6 hrs
-    Total Faults: 88
-    Total Passenger Miles: 6853
+    Total Faults: 86
+    Total Passenger Miles: 5159
 
   VehicleType 3:
-    Avg Flight Time: 1.9386 mins
-    Avg Distance per Flight: 3.06944 miles
+    Avg Flight Time: 1.75417 hours
+    Avg Distance per Flight: 2.77743 miles
     Avg Charge Time: 0.8 hrs
-    Total Faults: 37
-    Total Passenger Miles: 2799.33
+    Total Faults: 80
+    Total Passenger Miles: 5332.67
 
   VehicleType 4:
-    Avg Flight Time: 1.68866 mins
-    Avg Distance per Flight: 2.95515 miles
+    Avg Flight Time: 1.72874 hours
+    Avg Distance per Flight: 3.0253 miles
     Avg Charge Time: 0.7 hrs
-    Total Faults: 158
-    Total Passenger Miles: 7166.25
+    Total Faults: 61
+    Total Passenger Miles: 3736.25
 
 
 ✅ Simulation completed successfully.
