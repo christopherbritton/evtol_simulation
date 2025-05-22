@@ -32,7 +32,7 @@ bool EVTOL::isCharging() const {
     return chargingNeeded;
 }
 
-// Begin charging — resets flag (you may enhance for time tracking)
+// Begin charging — resets flag (currentMinute enhancement for time tracking)
 void EVTOL::startCharging(int /*currentMinute*/) {
     chargingNeeded = false;
 }
