@@ -1,0 +1,59 @@
+@christopherbritton ➜ /workspaces/evtol_simulation (main) $ ./run_simulation.sh 
+ Configuring and building evtol_simulation...
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/evtol_simulation/build
+Scanning dependencies of target core_sources
+[ 12%] Building CXX object CMakeFiles/core_sources.dir/src/StatisticsTracker.cpp.o
+[ 25%] Linking CXX static library libcore_sources.a
+[ 75%] Built target core_sources
+[ 87%] Linking CXX executable evtol_simulation
+[100%] Built target evtol_simulation
+
+ Running evtol_simulation...
+Fleet composition:
+Alpha: 1 vehicles
+Bravo: 4 vehicles
+Charlie: 5 vehicles
+Delta: 2 vehicles
+Echo: 8 vehicles
+Fleet Count Total: 20 vehicles
+
+-- Per-Vehicle-Type Statistics --
+  VehicleType 0:
+    Avg Flight Time: 1.89286 mins
+    Avg Distance per Flight: 3.15476 miles
+    Avg Charge Time: 0.5 hrs
+    Total Faults: 17
+    Total Passenger Miles: 1060
+
+  VehicleType 1:
+    Avg Flight Time: 1.73554 mins
+    Avg Distance per Flight: 2.60331 miles
+    Avg Charge Time: 0.75 hrs
+    Total Faults: 74
+    Total Passenger Miles: 2520
+
+  VehicleType 2:
+    Avg Flight Time: 1.76238 mins
+    Avg Distance per Flight: 3.23102 miles
+    Avg Charge Time: 0.6 hrs
+    Total Faults: 88
+    Total Passenger Miles: 6853
+
+  VehicleType 3:
+    Avg Flight Time: 1.9386 mins
+    Avg Distance per Flight: 3.06944 miles
+    Avg Charge Time: 0.8 hrs
+    Total Faults: 37
+    Total Passenger Miles: 2799.33
+
+  VehicleType 4:
+    Avg Flight Time: 1.68866 mins
+    Avg Distance per Flight: 2.95515 miles
+    Avg Charge Time: 0.7 hrs
+    Total Faults: 158
+    Total Passenger Miles: 7166.25
+
+
+✅ Simulation completed successfully.

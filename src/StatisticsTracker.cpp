@@ -24,19 +24,19 @@ void StatisticsTracker::setSuppressOutput(bool suppress) {
 
 void StatisticsTracker::report() {
     // Retrieve EVTOL_MODE environment variable
-    std::cout << "[Debug] Entered report()!\n";
+    //std::cout << "[Debug] Entered report()!\n";
 
 
     const char* simEnv = std::getenv("EVTOL_MODE");
     std::string mode = simEnv ? simEnv : "NULL";
     bool isSimulationMode = (mode == "SIMULATION");
-    std::cout << "[Debug] EVTOL_MODE = " << mode << "\n";
+    //std::cout << "[Debug] EVTOL_MODE = " << mode << "\n";
 
 
     // Debug output to verify environment and suppression status
-    std::cout << "[Debug] suppressOutput=" << suppressOutput
-              << ", isSimulationMode=" << isSimulationMode
-              << ", EVTOL_MODE=" << mode << "\n";
+    //std::cout << "[Debug] suppressOutput=" << suppressOutput
+    //          << ", isSimulationMode=" << isSimulationMode
+    //          << ", EVTOL_MODE=" << mode << "\n";
 
     // Suppress output only if explicitly set or not in simulation mode
     if (!isSimulationMode && suppressOutput) return;

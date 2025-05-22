@@ -1,0 +1,38 @@
+Enhancement Opportunities for EVTOL Simulation
+=============================================
+
+1. Fleet Behavior Modeling
+   - Introduce inter-EVTOL dependencies or interactions to simulate traffic patterns or docking constraints.
+   - Simulate dynamic charging queues or charging station failures.
+
+2. Configurable Simulation Parameters
+   - Allow runtime configuration of fleet size, time steps, fault rates, and charging speeds via input files or CLI.
+
+3. Visualization and Logging
+   - Add visualization output (e.g., fleet charging status over time).
+   - Introduce CSV or JSON logging for each simulation step to facilitate analysis.
+
+4. Simulation Granularity
+   - Allow for sub-minute simulation steps or variable time-step logic based on EVTOL status.
+
+5. Simulation Duration Control
+   - Support dynamic end conditions: e.g., until all EVTOLs have charged at least once or a set number of flights.
+
+6. Vehicle Behavior Enhancements
+   - Add additional EVTOL statuses like 'maintenance', 'idle', or 'enroute to charging'.
+   - Simulate different fault types and severity levels.
+
+7. Reporting Improvements
+   - Expand reporting to include histograms of flight times, charger utilization rates, and idle times.
+   - Include per-time-step snapshots of system state.
+
+8. Performance Optimization
+   - Use multithreading to simulate large fleets.
+   - Use memory-efficient data structures for event queues and fault logs.
+
+9. Integration & Testing
+   - Add integration tests that validate multi-class coordination (FleetManager + ChargerManager + FaultManager).
+   - Add assertions for invariants (e.g., no EVTOL is in both charging and flying states).
+
+10. GUI / Frontend Interface (Future Scope)
+    - Provide a graphical interface for simulation parameter input and visual output.

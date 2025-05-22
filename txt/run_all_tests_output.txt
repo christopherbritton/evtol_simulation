@@ -1,0 +1,29 @@
+@christopherbritton ➜ /workspaces/evtol_simulation (main) $ ./run_all_tests.sh 
+Building all unit test targets...
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/evtol_simulation/build
+[ 33%] Built target core_sources
+[ 38%] Linking CXX executable test_statistics_tracker
+[ 44%] Built target test_statistics_tracker
+[ 50%] Linking CXX executable test_fault_manager
+[ 55%] Built target test_fault_manager
+[ 61%] Linking CXX executable test_charger_manager
+[ 66%] Built target test_charger_manager
+[ 72%] Linking CXX executable test_fleet_manager
+[ 77%] Built target test_fleet_manager
+[ 83%] Linking CXX executable test_evtol
+[ 88%] Built target test_evtol
+[100%] Built target evtol_simulation
+
+Running unit tests:
+
+[ RUNNING ] test_evtol
+✅ testSimulateStep executed
+
+❌ testAccessors failed
+FAILED: testAccessors
+✅ testCoinFlip passed
+
+❌ 1 EVTOL test(s) failed
+[ FAILED  ] test_evtol

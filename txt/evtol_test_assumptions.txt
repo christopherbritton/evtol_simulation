@@ -1,0 +1,35 @@
+EVTOL Unit Test Assumptions
+===========================
+
+1. Object Initialization
+   - An EVTOL object can be constructed with an ID, VehicleType, and VehicleProfile.
+   - The constructor should store these inputs correctly and make them accessible via getters.
+
+2. Simulation Step Behavior (simulateStep)
+   - The method simulateStep() can be called without crashing.
+   - It may change the EVTOL's internal state to indicate a fault or a need for charging.
+   - It simulates probabilistic behavior that may randomly induce a fault or require charging.
+
+3. Accessors
+   - getCruiseSpeed() should return the cruise speed specified in the VehicleProfile.
+   - getPassengerCapacity() should return the passenger capacity from the VehicleProfile.
+   - getId() must return the unique identifier given at construction.
+
+4. Randomness Behavior (coinFlip)
+   - coinFlip(int odds) should produce varied boolean results given repeated calls.
+   - A call to coinFlip with odds = 2 should not always return the same result (e.g., always true or always false).
+   - Proper randomness implies that the test should sometimes return true and sometimes false across 100 trials.
+   - testCoinFlip is expected to behave non-deterministically but within expected probabilistic bounds.
+
+5. Test Infrastructure
+   - Each unit test returns true on success and false on failure.
+   - Output is logged to std::cout or std::cerr to provide human-readable feedback.
+   
+
+6. Faults and Charging
+   - EVTOL objects may develop faults or need charging based on simulation and probability.
+   - These flags (hasFault, needsCharging) are accessed and asserted post-simulation.
+
+7. Test Execution
+   - All tests are called from main() and individually checked for failure.
+   - The number of failed tests is tracked and reported.

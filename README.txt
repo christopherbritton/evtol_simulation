@@ -21,6 +21,11 @@ statistics. It also includes individual unit tests for each core component.
 
 ## Build & Run Instructions
 
- 1. Build & run all tests and simulation:
-```bash
+1. Build & run all tests and simulation:
 ./run_all.sh
+
+2. Build & run simulation only:
+./run_simulation.sh
+
+3. Build & run unit tests only:
+./run_all_tests.sh

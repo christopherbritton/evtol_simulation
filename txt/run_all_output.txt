@@ -1,0 +1,63 @@
+@christopherbritton ➜ /workspaces/evtol_simulation (main) $ ./run_all.sh 
+
+🔄 Rebuilding everything...
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/evtol_simulation/build
+Scanning dependencies of target core_sources
+[  5%] Building CXX object CMakeFiles/core_sources.dir/src/EVTOL.cpp.o
+[ 11%] Building CXX object CMakeFiles/core_sources.dir/src/ChargerManager.cpp.o
+[ 16%] Building CXX object CMakeFiles/core_sources.dir/src/FaultManager.cpp.o
+[ 22%] Building CXX object CMakeFiles/core_sources.dir/src/FleetManager.cpp.o
+[ 27%] Building CXX object CMakeFiles/core_sources.dir/src/StatisticsTracker.cpp.o
+[ 33%] Linking CXX static library libcore_sources.a
+[ 33%] Built target core_sources
+Scanning dependencies of target test_statistics_tracker
+[ 38%] Building CXX object CMakeFiles/test_statistics_tracker.dir/tests/test_statistics_tracker.cpp.o
+[ 44%] Linking CXX executable test_statistics_tracker
+[ 44%] Built target test_statistics_tracker
+Scanning dependencies of target test_fault_manager
+[ 50%] Building CXX object CMakeFiles/test_fault_manager.dir/tests/test_fault_manager.cpp.o
+[ 55%] Linking CXX executable test_fault_manager
+[ 55%] Built target test_fault_manager
+Scanning dependencies of target test_charger_manager
+[ 61%] Building CXX object CMakeFiles/test_charger_manager.dir/tests/test_charger_manager.cpp.o
+[ 66%] Linking CXX executable test_charger_manager
+[ 66%] Built target test_charger_manager
+Scanning dependencies of target test_fleet_manager
+[ 72%] Building CXX object CMakeFiles/test_fleet_manager.dir/tests/test_fleet_manager.cpp.o
+[ 77%] Linking CXX executable test_fleet_manager
+[ 77%] Built target test_fleet_manager
+Scanning dependencies of target test_evtol
+[ 83%] Building CXX object CMakeFiles/test_evtol.dir/tests/test_evtol.cpp.o
+[ 88%] Linking CXX executable test_evtol
+[ 88%] Built target test_evtol
+Scanning dependencies of target evtol_simulation
+[ 94%] Building CXX object CMakeFiles/evtol_simulation.dir/src/main.cpp.o
+[100%] Linking CXX executable evtol_simulation
+[100%] Built target evtol_simulation
+
+✅ Running unit tests...
+
+ Running: test_evtol
+✅ testSimulateStep executed
+
+❌ testAccessors failed
+FAILED: testAccessors
+✅ testCoinFlip passed
+
+❌ 1 EVTOL test(s) failed
