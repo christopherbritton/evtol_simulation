@@ -34,5 +34,58 @@ Enhancement Opportunities for EVTOL Simulation
    - Add integration tests that validate multi-class coordination (FleetManager + ChargerManager + FaultManager).
    - Add assertions for invariants (e.g., no EVTOL is in both charging and flying states).
 
-10. GUI / Frontend Interface (Future Scope)
+10. GUI (Future Scope)
     - Provide a graphical interface for simulation parameter input and visual output.
+
+=============================================
+11. Multithreading as Simulation Scales
+=============================================
+
+1. Parallelizing Simulation Steps for Multiple Vehicles
+-------------------------------------------------------
+Currently, simulation steps (e.g., simulateStep()) are likely processed sequentially for each EVTOL.
+As the fleet grows (e.g., to 1000 vehicles), this becomes a bottleneck.
+
+Benefit:
+- Improved throughput and faster step execution across large fleets.
+
+2. Concurrent Charging and Fault Logging
+----------------------------------------
+Charging logic and fault logging can be offloaded to background threads.
+
+
+Benefit:
+- Parallel processing reduces simulation loop blocking.
+- Simulation logic proceeds while logging and analysis run asynchronously.
+
+3. Statistics Collection and Reporting
+--------------------------------------
+Tracking statistics like flight time, distance, and faults can be done concurrently.
+
+Benefit:
+- Enables real-time reporting or logs without slowing down the main simulation.
+- Improves responsiveness of dashboards or visualizations.
+
+4. Thread-Safe Components
+-------------------------
+To support multithreading safely, components must be thread-safe.
+
+Techniques:
+- Use mutexes or locks to prevent race conditions.
+- Design thread-safe APIs for:
+    - StatisticsTracker
+    - FaultManager
+    - FleetManager
+
+5. Scalability and Hardware Utilization
+---------------------------------------
+Modern CPUs have multiple cores. Without multithreading, only one is used.
+
+Benefit:
+- Fully utilizes hardware potential.
+- Enables large-scale or real-time simulations without sacrificing performance.
+
+Caution:
+--------
+- Multithreading introduces complexity (e.g., race conditions, deadlocks).
+- Requires careful testing and debugging discipline.
