@@ -2,17 +2,24 @@
 #include <iostream>
 #include <cassert>
 
+// Constants for testing
+const int expectedFleetSize = 20;
+const VehicleType testType1 = VehicleType::Alpha;
+const VehicleType testType2 = VehicleType::Bravo;
+const VehicleProfile testProfile1 = {100, 50, 1.0, 0.5, 3, 0.01};
+const VehicleProfile testProfile2 = {120, 60, 1.2, 0.6, 4, 0.02};
+
 // Test that fleet of 20 vehicles is created properly
 bool testAddVehicle() {
-    std::vector<VehicleType> types = {VehicleType::Alpha};
+    std::vector<VehicleType> types = {testType1};
     std::map<VehicleType, VehicleProfile> profiles = {
-        {VehicleType::Alpha, {100, 50, 1.0, 0.5, 3, 0.01}}
+        {testType1, testProfile1}
     };
     std::default_random_engine rng;
     FleetManager fm(types, rng, profiles);
 
-    if (fm.getFleet().size() != 20) {
-        std::cerr << "❌ testAddVehicle failed: Expected 20 EVTOLs, got " << fm.getFleet().size() << "\n";
+    if (fm.getFleet().size() != expectedFleetSize) {
+        std::cerr << "❌ testAddVehicle failed: Expected " << expectedFleetSize << " EVTOLs, got " << fm.getFleet().size() << "\n";
         return false;
     }
     std::cout << "✅ testAddVehicle passed\n";
@@ -21,9 +28,9 @@ bool testAddVehicle() {
 
 // Test that getFleet returns a valid non-empty fleet
 bool testGetFleet() {
-    std::vector<VehicleType> types = {VehicleType::Bravo};
+    std::vector<VehicleType> types = {testType2};
     std::map<VehicleType, VehicleProfile> profiles = {
-        {VehicleType::Bravo, {120, 60, 1.2, 0.6, 4, 0.02}}
+        {testType2, testProfile2}
     };
     std::default_random_engine rng;
     FleetManager fm(types, rng, profiles);
@@ -50,7 +57,7 @@ int main() {
     }
 
     if (failed == 0) {
-        std::cout << "\n All FleetManager tests passed\n";
+        std::cout << "\n✅ All FleetManager tests passed\n";
         return 0;
     } else {
         std::cerr << "\n❌ " << failed << " FleetManager test(s) failed\n";

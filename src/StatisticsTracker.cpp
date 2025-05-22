@@ -26,7 +26,6 @@ void StatisticsTracker::report() {
     // Retrieve EVTOL_MODE environment variable
     //std::cout << "[Debug] Entered report()!\n";
 
-
     const char* simEnv = std::getenv("EVTOL_MODE");
     std::string mode = simEnv ? simEnv : "NULL";
     bool isSimulationMode = (mode == "SIMULATION");

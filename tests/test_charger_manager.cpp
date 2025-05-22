@@ -3,12 +3,21 @@
 #include <iostream>
 #include <cassert>
 
+// Shared test constants
+const int testChargerCount1 = 2;
+const int testChargerCount2 = 1;
+const int testEVTOLId = 1;
+const VehicleType testVehicleType = VehicleType::Alpha;
+const VehicleProfile testProfile1 = {100, 100, 1.0, 0.5, 2, 0.01};
+const VehicleProfile testProfile2 = {100, 50, 1.0, 0.5, 2, 0.01};
+const int testChargerIndex = 0;
+const int updateCycles = 10;
+
 // Test assigning a charger to an EVTOL and verifying update is accepted
 bool testAssignCharger() {
-    ChargerManager cm(2);
-    VehicleProfile profile = {100, 100, 1.0, 0.5, 2, 0.01};
-    EVTOL e(1, VehicleType::Alpha, profile);
-    cm.assignCharger(e, 0);
+    ChargerManager cm(testChargerCount1);
+    EVTOL e(testEVTOLId, testVehicleType, testProfile1);
+    cm.assignCharger(e, testChargerIndex);
     cm.update(1);
     std::cout << "✅ testAssignCharger passed\n";
     return true;
@@ -16,11 +25,11 @@ bool testAssignCharger() {
 
 // Test that the update cycle maintains charging state for an EVTOL
 bool testUpdate() {
-    ChargerManager cm(1);
-    VehicleProfile profile = {100, 50, 1.0, 0.5, 2, 0.01};
-    EVTOL e(1, VehicleType::Alpha, profile);
-    cm.assignCharger(e, 0);
-    for (int i = 0; i < 10; ++i) cm.update(i);
+    ChargerManager cm(testChargerCount2);
+    EVTOL e(testEVTOLId, testVehicleType, testProfile2);
+    cm.assignCharger(e, testChargerIndex);
+    for (int i = 0; i < updateCycles; ++i)
+        cm.update(i);
 
     if (e.isCharging()) {
         std::cout << "✅ testUpdate passed\n";
