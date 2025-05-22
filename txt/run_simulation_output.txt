@@ -21,35 +21,35 @@ Fleet Count Total: 20 vehicles
 
 -- Per-Vehicle-Type Statistics --
   VehicleType 0:
-    Avg Flight Time: 1.95783 hours
+    Avg Flight Time: 1.95783 mins
     Avg Distance per Flight: 3.26305 miles
     Avg Charge Time: 0.5 hrs
     Total Faults: 55
     Total Passenger Miles: 3250
 
   VehicleType 1:
-    Avg Flight Time: 1.73841 hours
+    Avg Flight Time: 1.73841 mins
     Avg Distance per Flight: 2.60762 miles
     Avg Charge Time: 0.75 hrs
     Total Faults: 92
     Total Passenger Miles: 3150
 
   VehicleType 2:
-    Avg Flight Time: 1.64082 hours
+    Avg Flight Time: 1.64082 mins
     Avg Distance per Flight: 3.00816 miles
     Avg Charge Time: 0.6 hrs
     Total Faults: 86
     Total Passenger Miles: 5159
 
   VehicleType 3:
-    Avg Flight Time: 1.75417 hours
+    Avg Flight Time: 1.75417 mins
     Avg Distance per Flight: 2.77743 miles
     Avg Charge Time: 0.8 hrs
     Total Faults: 80
     Total Passenger Miles: 5332.67
 
   VehicleType 4:
-    Avg Flight Time: 1.72874 hours
+    Avg Flight Time: 1.72874 mins
     Avg Distance per Flight: 3.0253 miles
     Avg Charge Time: 0.7 hrs
     Total Faults: 61
