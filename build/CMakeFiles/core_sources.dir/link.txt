@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcore_sources.a  CMakeFiles/core_sources.dir/src/EVTOL.cpp.o CMakeFiles/core_sources.dir/src/ChargerManager.cpp.o CMakeFiles/core_sources.dir/src/FaultManager.cpp.o CMakeFiles/core_sources.dir/src/FleetManager.cpp.o CMakeFiles/core_sources.dir/src/StatisticsTracker.cpp.o
-/usr/bin/ranlib libcore_sources.a

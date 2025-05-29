@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/evtol_simulation/common 
+CXX_INCLUDES = -I/workspaces/evtol_simulation/include -I/workspaces/evtol_simulation/tests -I/workspaces/evtol_simulation/common 
 

@@ -15,22 +15,22 @@ bool testRecordFlight() {
     stats.recordFlight(testType, flightMinutes, distance, passengers);
 
     if (stats.getFlightTime().at(testType) != flightMinutes){
-        std::cerr << "❌ testRecordFlight: Flight time incorrect";
+        std::cerr << "❌ testRecordFlight: Flight time incorrect\n";
         return false;
     }
     if (stats.getFlightCount().at(testType) != 1) {
-        std::cerr << "❌ testRecordFlight: Flight count incorrect";
+        std::cerr << "❌ testRecordFlight: Flight count incorrect\n";
         return false;
     }
     if (stats.getDistance().at(testType) != distance) {
-        std::cerr << "❌ testRecordFlight: Distance incorrect";
+        std::cerr << "❌ testRecordFlight: Distance incorrect\n";
         return false;
     }
     if (stats.getPassengerMiles().at(testType) != distance * passengers) {
-        std::cerr << "❌ testRecordFlight: Passenger miles incorrect";
+        std::cerr << "❌ testRecordFlight: Passenger miles incorrect\n";
         return false;
     }
-    std::cout << "✅ testRecordFlight passed";
+    std::cout << "✅ testRecordFlight passed\n";
     return true;
 }
 
@@ -39,7 +39,7 @@ bool testRecordCharge() {
     StatisticsTracker stats;
     stats.recordCharge(testType, chargeTime);
     stats.setSuppressOutput(false);
-    std::cout << "✅ testRecordCharge passed (verified via report)";
+    std::cout << "✅ testRecordCharge passed (verified via report)\n";
     return true;
 }
 
@@ -48,7 +48,7 @@ bool testRecordFault() {
     StatisticsTracker stats;
     for (int i = 0; i < faultCount; ++i) stats.recordFault(testType);
     stats.setSuppressOutput(false);
-    std::cout << "✅ testRecordFault passed (verified via report)";
+    std::cout << "✅ testRecordFault passed (verified via report)\n";
     return true;
 }
 
@@ -58,7 +58,7 @@ bool testSetSuppressOutput() {
     stats.setSuppressOutput(true);
     stats.recordFlight(testType, 30, 60, 2);
     stats.report();
-    std::cout << "✅ testSetSuppressOutput passed (no output expected)";
+    std::cout << "✅ testSetSuppressOutput passed (no output expected)\n";
     return true;
 }
 
@@ -68,22 +68,22 @@ bool testAccessors() {
     stats.recordFlight(testType, 30, 60, 2);
 
     if (stats.getFlightTime().at(testType) != 30) {
-        std::cerr << "❌ testAccessors: getFlightTime failed";
+        std::cerr << "❌ testAccessors: getFlightTime failed\n";
         return false;
     }
     if (stats.getFlightCount().at(testType) != 1) {
-        std::cerr << "❌ testAccessors: getFlightCount failed";
+        std::cerr << "❌ testAccessors: getFlightCount failed\n";
         return false;
     }
     if (stats.getDistance().at(testType) != 60.0) {
-        std::cerr << "❌ testAccessors: getDistance failed";
+        std::cerr << "❌ testAccessors: getDistance failed\n";
         return false;
     }
     if (stats.getPassengerMiles().at(testType) != 120.0) {
-        std::cerr << "❌ testAccessors: getPassengerMiles failed";
+        std::cerr << "❌ testAccessors: getPassengerMiles failed\n";
         return false;
     }
-    std::cout << "✅ testAccessors passed";
+    std::cout << "✅ testAccessors passed\n";
     return true;
 }
 
@@ -97,10 +97,10 @@ int main() {
     if (!testAccessors()) ++failed;
 
     if (failed == 0) {
-        std::cout << "All StatisticsTracker tests passed";
+        std::cout << "All StatisticsTracker tests passed\n";
         return 0;
     } else {
-        std::cerr << "❌ " << failed << " test(s) failed";
+        std::cerr << "❌ " << failed << " test(s) failed\n";
         return 1;
     }
 }

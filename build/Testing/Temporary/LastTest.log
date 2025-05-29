@@ -1,0 +1,118 @@
+Start testing: May 29 05:05 UTC
+----------------------------------------------------------
+Unable to find executable: /workspaces/evtol_simulation/build/evtol_simulation
+1/6 Testing: evtol_simulation
+1/6 Test: evtol_simulation
+Command: ""
+Directory: /workspaces/evtol_simulation/build
+"evtol_simulation" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"evtol_simulation" end time: May 29 05:05 UTC
+"evtol_simulation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: test_evtol
+2/6 Test: test_evtol
+Command: "/workspaces/evtol_simulation/build/test_evtol"
+Directory: /workspaces/evtol_simulation/build
+"test_evtol" start time: May 29 05:05 UTC
+Output:
+----------------------------------------------------------
+✅ testSimulateStep executed
+❌ testAccessors failed
+FAILED: testAccessors
+✅ testCoinFlip passed
+
+❌ 1 EVTOL test(s) failed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"test_evtol" end time: May 29 05:05 UTC
+"test_evtol" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: test_charger_manager
+3/6 Test: test_charger_manager
+Command: "/workspaces/evtol_simulation/build/test_charger_manager"
+Directory: /workspaces/evtol_simulation/build
+"test_charger_manager" start time: May 29 05:05 UTC
+Output:
+----------------------------------------------------------
+✅ testAssignCharger passed
+❌ testUpdate failed: EVTOL is not charging when expected
+FAILED: testUpdate
+❌ 1 ChargerManager test(s) failed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"test_charger_manager" end time: May 29 05:05 UTC
+"test_charger_manager" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: test_fault_manager
+4/6 Test: test_fault_manager
+Command: "/workspaces/evtol_simulation/build/test_fault_manager"
+Directory: /workspaces/evtol_simulation/build
+"test_fault_manager" start time: May 29 05:05 UTC
+Output:
+----------------------------------------------------------
+✅ testGetAllFaults passed
+✅ testRecordFault passed
+
+✅ All FaultManager tests passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_fault_manager" end time: May 29 05:05 UTC
+"test_fault_manager" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: test_fleet_manager
+5/6 Test: test_fleet_manager
+Command: "/workspaces/evtol_simulation/build/test_fleet_manager"
+Directory: /workspaces/evtol_simulation/build
+"test_fleet_manager" start time: May 29 05:05 UTC
+Output:
+----------------------------------------------------------
+✅ testAddVehicle passed
+✅ testGetFleet passed
+
+✅ All FleetManager tests passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_fleet_manager" end time: May 29 05:05 UTC
+"test_fleet_manager" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: test_statistics_tracker
+6/6 Test: test_statistics_tracker
+Command: "/workspaces/evtol_simulation/build/test_statistics_tracker"
+Directory: /workspaces/evtol_simulation/build
+"test_statistics_tracker" start time: May 29 05:05 UTC
+Output:
+----------------------------------------------------------
+✅ testRecordFlight passed
+✅ testRecordCharge passed (verified via report)
+✅ testRecordFault passed (verified via report)
+✅ testSetSuppressOutput passed (no output expected)
+❌ testAccessors: getDistance failed
+❌ 1 test(s) failed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"test_statistics_tracker" end time: May 29 05:05 UTC
+"test_statistics_tracker" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 29 05:05 UTC

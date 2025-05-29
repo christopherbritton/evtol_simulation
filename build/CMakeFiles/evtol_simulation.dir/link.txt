@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/evtol_simulation.dir/src/main.cpp.o  -o evtol_simulation  libcore_sources.a 
+/usr/bin/c++     CMakeFiles/evtol_simulation.dir/src/main.cpp.o CMakeFiles/evtol_simulation.dir/src/ChargerManager.cpp.o CMakeFiles/evtol_simulation.dir/src/EVTOL.cpp.o CMakeFiles/evtol_simulation.dir/src/FaultManager.cpp.o CMakeFiles/evtol_simulation.dir/src/FleetManager.cpp.o CMakeFiles/evtol_simulation.dir/src/StatisticsTracker.cpp.o  -o evtol_simulation 

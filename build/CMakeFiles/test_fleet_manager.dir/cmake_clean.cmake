@@ -1,4 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/test_fleet_manager.dir/src/ChargerManager.cpp.o"
+  "CMakeFiles/test_fleet_manager.dir/src/EVTOL.cpp.o"
+  "CMakeFiles/test_fleet_manager.dir/src/FaultManager.cpp.o"
+  "CMakeFiles/test_fleet_manager.dir/src/FleetManager.cpp.o"
+  "CMakeFiles/test_fleet_manager.dir/src/StatisticsTracker.cpp.o"
   "CMakeFiles/test_fleet_manager.dir/tests/test_fleet_manager.cpp.o"
   "test_fleet_manager"
   "test_fleet_manager.pdb"
