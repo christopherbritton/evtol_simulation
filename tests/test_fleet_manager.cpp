@@ -35,7 +35,7 @@ bool testGetFleet() {
     std::default_random_engine rng;
     FleetManager fm(types, rng, profiles);
 
-    const auto& fleet = fm.getFleet();
+    const std::vector<EVTOL>& fleet = fm.getFleet();
     if (fleet.empty()) {
         std::cerr << "❌ testGetFleet failed: Fleet should not be empty\n";
         return false;

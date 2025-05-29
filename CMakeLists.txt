@@ -25,19 +25,28 @@ add_executable(evtol_simulation src/main.cpp ${SOURCES})
 
 # Unit test executables
 add_executable(test_evtol tests/test_evtol.cpp ${TEST_SOURCES})
+target_compile_definitions(test_evtol PRIVATE TEST_EVTOL=1)
+set_target_properties(test_evtol PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 add_executable(test_charger_manager tests/test_charger_manager.cpp ${TEST_SOURCES})
+set_target_properties(test_charger_manager PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 add_executable(test_fault_manager tests/test_fault_manager.cpp ${TEST_SOURCES})
+set_target_properties(test_fault_manager PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 add_executable(test_fleet_manager tests/test_fleet_manager.cpp ${TEST_SOURCES})
+set_target_properties(test_fleet_manager PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 add_executable(test_statistics_tracker tests/test_statistics_tracker.cpp ${TEST_SOURCES})
+set_target_properties(test_statistics_tracker PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 # Enable testing and register tests
 enable_testing()
-add_test(NAME evtol_simulation COMMAND evtol_simulation)
-add_test(NAME test_evtol COMMAND test_evtol)
-add_test(NAME test_charger_manager COMMAND test_charger_manager)
-add_test(NAME test_fault_manager COMMAND test_fault_manager)
-add_test(NAME test_fleet_manager COMMAND test_fleet_manager)
-add_test(NAME test_statistics_tracker COMMAND test_statistics_tracker)
+add_test(NAME test_evtol COMMAND ${CMAKE_BINARY_DIR}/test_evtol)
+add_test(NAME test_charger_manager COMMAND ${CMAKE_BINARY_DIR}/test_charger_manager)
+add_test(NAME test_fault_manager COMMAND ${CMAKE_BINARY_DIR}/test_fault_manager)
+add_test(NAME test_fleet_manager COMMAND ${CMAKE_BINARY_DIR}/test_fleet_manager)
+add_test(NAME test_statistics_tracker COMMAND ${CMAKE_BINARY_DIR}/test_statistics_tracker)
 
 # Optional: Add custom target to build and run all tests
 add_custom_target(run_all_tests ALL
@@ -49,4 +58,3 @@ add_custom_target(run_all_tests ALL
 # target_link_libraries(evtol_simulation ...)
 # target_link_libraries(test_evtol ...)
 # etc.
-

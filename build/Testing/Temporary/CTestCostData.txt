@@ -1,11 +1,9 @@
-evtol_simulation 0 0
 test_evtol 0 0
 test_charger_manager 0 0
-test_fault_manager 1 0.00637855
-test_fleet_manager 1 0.00329369
+test_fault_manager 1 0.00342012
+test_fleet_manager 1 0.00319974
 test_statistics_tracker 0 0
 ---
-evtol_simulation
 test_evtol
 test_charger_manager
 test_statistics_tracker

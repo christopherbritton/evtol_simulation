@@ -19,7 +19,7 @@ bool testSimulateStep() {
 
     // Check that simulateStep does not crash and updates state
     bool observed = e.hasFault() || e.needsCharging();
-    std::cout << "✅ testSimulateStep executed" << (observed ? ", fault/charging condition observed" : "") << "\n";
+    std::cout << "✅ testSimulateStep executed\n" << (observed ? ", fault/charging condition observed" : "") << "";
     return true;
 }
 
@@ -35,6 +35,7 @@ bool testAccessors() {
     std::cout << "✅ testAccessors passed\n";
     return true;
 }
+
 
 // Test coinFlip() returns variable results over multiple trials
 // If trueCount is 0 or 100, the result is too deterministic and indicates possible bias or implementation issue

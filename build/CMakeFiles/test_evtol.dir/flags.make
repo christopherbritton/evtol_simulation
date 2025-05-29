@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =   -std=gnu++17
 
-CXX_DEFINES = 
+CXX_DEFINES = -DTEST_EVTOL=1
 
 CXX_INCLUDES = -I/workspaces/evtol_simulation/include -I/workspaces/evtol_simulation/tests -I/workspaces/evtol_simulation/common 
 
