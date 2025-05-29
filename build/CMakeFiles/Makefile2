@@ -83,11 +83,11 @@ clean: CMakeFiles/evtol_simulation.dir/clean
 # Target rules for target CMakeFiles/run_all_tests.dir
 
 # All Build rule for target.
-CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_fault_manager.dir/all
-CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_fleet_manager.dir/all
 CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_statistics_tracker.dir/all
-CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_evtol.dir/all
+CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_fault_manager.dir/all
 CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_charger_manager.dir/all
+CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_fleet_manager.dir/all
+CMakeFiles/run_all_tests.dir/all: CMakeFiles/test_evtol.dir/all
 	$(MAKE) -f CMakeFiles/run_all_tests.dir/build.make CMakeFiles/run_all_tests.dir/depend
 	$(MAKE) -f CMakeFiles/run_all_tests.dir/build.make CMakeFiles/run_all_tests.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/evtol_simulation/build/CMakeFiles --progress-num= "Built target run_all_tests"
