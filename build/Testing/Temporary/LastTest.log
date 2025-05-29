@@ -1,10 +1,10 @@
-Start testing: May 29 06:43 UTC
+Start testing: May 29 06:48 UTC
 ----------------------------------------------------------
 1/5 Testing: test_evtol
 1/5 Test: test_evtol
 Command: "/workspaces/evtol_simulation/build/test_evtol"
 Directory: /workspaces/evtol_simulation/build
-"test_evtol" start time: May 29 06:43 UTC
+"test_evtol" start time: May 29 06:48 UTC
 Output:
 ----------------------------------------------------------
 ✅ testSimulateStep executed
@@ -17,7 +17,7 @@ FAILED: testAccessors
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Failed.
-"test_evtol" end time: May 29 06:43 UTC
+"test_evtol" end time: May 29 06:48 UTC
 "test_evtol" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -25,7 +25,7 @@ Test Failed.
 2/5 Test: test_charger_manager
 Command: "/workspaces/evtol_simulation/build/test_charger_manager"
 Directory: /workspaces/evtol_simulation/build
-"test_charger_manager" start time: May 29 06:43 UTC
+"test_charger_manager" start time: May 29 06:48 UTC
 Output:
 ----------------------------------------------------------
 ✅ testAssignCharger passed
@@ -36,7 +36,7 @@ FAILED: testUpdate
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Failed.
-"test_charger_manager" end time: May 29 06:43 UTC
+"test_charger_manager" end time: May 29 06:48 UTC
 "test_charger_manager" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -44,7 +44,7 @@ Test Failed.
 3/5 Test: test_fault_manager
 Command: "/workspaces/evtol_simulation/build/test_fault_manager"
 Directory: /workspaces/evtol_simulation/build
-"test_fault_manager" start time: May 29 06:43 UTC
+"test_fault_manager" start time: May 29 06:48 UTC
 Output:
 ----------------------------------------------------------
 ✅ testGetAllFaults passed
@@ -55,7 +55,7 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_fault_manager" end time: May 29 06:43 UTC
+"test_fault_manager" end time: May 29 06:48 UTC
 "test_fault_manager" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -63,7 +63,7 @@ Test Passed.
 4/5 Test: test_fleet_manager
 Command: "/workspaces/evtol_simulation/build/test_fleet_manager"
 Directory: /workspaces/evtol_simulation/build
-"test_fleet_manager" start time: May 29 06:43 UTC
+"test_fleet_manager" start time: May 29 06:48 UTC
 Output:
 ----------------------------------------------------------
 ✅ testAddVehicle passed
@@ -74,7 +74,7 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_fleet_manager" end time: May 29 06:43 UTC
+"test_fleet_manager" end time: May 29 06:48 UTC
 "test_fleet_manager" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -82,7 +82,7 @@ Test Passed.
 5/5 Test: test_statistics_tracker
 Command: "/workspaces/evtol_simulation/build/test_statistics_tracker"
 Directory: /workspaces/evtol_simulation/build
-"test_statistics_tracker" start time: May 29 06:43 UTC
+"test_statistics_tracker" start time: May 29 06:48 UTC
 Output:
 ----------------------------------------------------------
 ✅ testRecordFlight passed
@@ -95,8 +95,8 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Failed.
-"test_statistics_tracker" end time: May 29 06:43 UTC
+"test_statistics_tracker" end time: May 29 06:48 UTC
 "test_statistics_tracker" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 29 06:43 UTC
+End testing: May 29 06:48 UTC
