@@ -1,0 +1,4 @@
+/workspaces/evtol_simulation/build_tests/CMakeFiles/edit_cache.dir
+/workspaces/evtol_simulation/build_tests/CMakeFiles/test_evtol_methods.dir
+/workspaces/evtol_simulation/build_tests/CMakeFiles/rebuild_cache.dir
+/workspaces/evtol_simulation/build_tests/CMakeFiles/evtol_sim.dir

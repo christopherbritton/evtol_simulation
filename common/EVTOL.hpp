@@ -1,39 +1,20 @@
 #pragma once
-#include "VehicleType.hpp"
-#include "VehicleProfile.hpp"
 
-// Represents an EVTOL vehicle and its runtime state
 class EVTOL {
 public:
-    // Full constructor
-    EVTOL(int id, VehicleType type, const VehicleProfile& profile);
+    virtual ~EVTOL() = default;
 
-    void simulateStep();                   // Random state update
-    bool hasFault() const;                 // Fault state
-    bool needsCharging() const;           // Charging needed
-    bool isCharging() const;              // Actively charging
-    int getId() const;
-    VehicleType getType() const;
-    int getFaultCode() const;
-    void startCharging(int currentMinute);
+    virtual void fly(double hours) = 0;
+    virtual void charge() = 0;
+    virtual bool needsCharge() const = 0;
 
-    // New accessors
-    const VehicleProfile& getProfile() const;
-    double getCruiseSpeed() const;
-    int getPassengerCapacity() const;
+    virtual double getCruiseSpeed() const = 0;
+    virtual double getBatteryCapacity() const = 0;
+    virtual double getChargeTime() const = 0;
+    virtual double getEnergyUsePerMile() const = 0;
+    virtual int getPassengerCount() const = 0;
+    virtual double getFaultProbabilityPerHour() const = 0;
 
-    bool testCoinFlipWrapper(int odds) { return coinFlip(odds); }
-
-
-private:
-    int id;
-    VehicleType type;
-    VehicleProfile profile;
-    bool fault;
-    bool chargingNeeded;
-    int faultCode;
-
-    // Helper for randomized decisions
-    bool coinFlip(int odds);
+    virtual double getRemainingBattery() const = 0;
+    virtual void resetBattery() = 0;
 };
-

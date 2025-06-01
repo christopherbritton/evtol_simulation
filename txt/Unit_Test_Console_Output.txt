@@ -1,0 +1,37 @@
+@christopherbritton ➜ /workspaces/EVTOL_Abstraction (main) $ ./build_and_run_unit_tests.sh 
+🧹 Cleaning previous test build artifacts...
+⚙️ Configuring CMake...
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/EVTOL_Abstraction/build_tests
+🛠️ Building unit tests...
+Scanning dependencies of target test_evtol_methods
+[ 12%] Building CXX object CMakeFiles/test_evtol_methods.dir/tests/test_evtol_methods.cpp.o
+[ 25%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/AlphaEVTOL.cpp.o
+[ 37%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/BravoEVTOL.cpp.o
+[ 50%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/CharlieEVTOL.cpp.o
+[ 62%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/DeltaEVTOL.cpp.o
+[ 75%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/EchoEVTOL.cpp.o
+[ 87%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o
+[100%] Linking CXX executable test_evtol_methods
+[100%] Built target test_evtol_methods
+🚀 Running unit tests...
+Running testAlphaEVTOL... ✅ PASSED
+Running testBravoEVTOL... ✅ PASSED
+Running testCharlieEVTOL... ✅ PASSED
+Running testDeltaEVTOL... ✅ PASSED
+Running testEchoEVTOL... ✅ PASSED

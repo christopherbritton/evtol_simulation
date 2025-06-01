@@ -1,0 +1,89 @@
+@christopherbritton ➜ /workspaces/EVTOL_Abstraction (main) $ ./build_and_run_simulation.sh 
+🔄 Cleaning previous build artifacts...
+🔧 Configuring CMake...
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/EVTOL_Abstraction/build
+⚙️ Building project...
+Scanning dependencies of target evtol_sim
+Scanning dependencies of target test_vehicle
+[  9%] Building CXX object CMakeFiles/evtol_sim.dir/src/AlphaEVTOL.cpp.o
+[ 18%] Building CXX object CMakeFiles/test_vehicle.dir/tests/test_vehicle.cpp.o
+[ 27%] Building CXX object CMakeFiles/evtol_sim.dir/src/BravoEVTOL.cpp.o
+[ 36%] Building CXX object CMakeFiles/evtol_sim.dir/src/CharlieEVTOL.cpp.o
+[ 45%] Building CXX object CMakeFiles/evtol_sim.dir/src/DeltaEVTOL.cpp.o
+[ 54%] Building CXX object CMakeFiles/evtol_sim.dir/src/EchoEVTOL.cpp.o
+[ 63%] Building CXX object CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.o
+[ 72%] Building CXX object CMakeFiles/test_vehicle.dir/src/AlphaEVTOL.cpp.o
+[ 81%] Linking CXX executable test_vehicle
+[ 81%] Built target test_vehicle
+[ 90%] Building CXX object CMakeFiles/evtol_sim.dir/src/main.cpp.o
+[100%] Linking CXX executable evtol_sim
+[100%] Built target evtol_sim
+🚀 Running simulation...
+
+🛁 Fleet Composition:
+- Alpha: 4 vehicle(s)
+- Bravo: 3 vehicle(s)
+- Charlie: 6 vehicle(s)
+- Delta: 3 vehicle(s)
+- Echo: 4 vehicle(s)
+
+
+📊 Simulation Summary:
+Fleet Composition (Reconfirmed):
+- Alpha: 4 vehicle(s)
+- Bravo: 3 vehicle(s)
+- Charlie: 6 vehicle(s)
+- Delta: 3 vehicle(s)
+- Echo: 4 vehicle(s)
+
+--- Alpha ---
+Average Flight Time: 0.1 hrs
+Average Distance per Flight: 12 miles
+Average Charging Time: 0.6 hrs
+Total Faults: 1
+Total Passenger Miles: 5760
+
+--- Bravo ---
+Average Flight Time: 0.1 hrs
+Average Distance per Flight: 10 miles
+Average Charging Time: 0.2 hrs
+Total Faults: 0
+Total Passenger Miles: 4500
+
+--- Charlie ---
+Average Flight Time: 0.1 hrs
+Average Distance per Flight: 16 miles
+Average Charging Time: 0.8 hrs
+Total Faults: 1
+Total Passenger Miles: 8640
+
+--- Delta ---
+Average Flight Time: 0.1 hrs
+Average Distance per Flight: 9 miles
+Average Charging Time: 0.62 hrs
+Total Faults: 1
+Total Passenger Miles: 1620
+
+--- Echo ---
+Average Flight Time: 0.1 hrs
+Average Distance per Flight: 3 miles
+Average Charging Time: 0.3 hrs
+Total Faults: 10
+Total Passenger Miles: 720
+✅ Simulation complete.
