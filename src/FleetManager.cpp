@@ -16,7 +16,7 @@ std::string FleetManager::getTypeName(const EVTOL* vehicle) const {
 // Generates a random fleet of EVTOLs based on the number requested
 void FleetManager::generateFleet(int count) {
     std::random_device rd;
-    std::mt19937 gen(rd());
+    std::mt19937 gen(rd());                    // Mersenne Twister algo
     std::uniform_int_distribution<> dis(0, 4); // 0-4 corresponds to 5 EVTOL types
 
     for (int i = 0; i < count; ++i) {
