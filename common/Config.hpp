@@ -1,22 +1,24 @@
 #pragma once
 
 namespace Config {
+    // Structure representing vehicle performance and system characteristics
     struct VehicleSpec {
-        double cruiseSpeed;
-        double batteryCapacity;
-        double chargeTime;
-        double energyUsePerMile;
-        int    passengerCount;
-        double faultProbability;
+        double cruiseSpeed;         // [mph] Maximum cruise speed
+        double batteryCapacity;     // [kWh] Total battery capacity
+        double chargeTime;          // [hours] Time required to fully charge
+        double energyUsePerMile;    // [kWh/mile] Energy consumption rate
+        int    passengerCount;      // [count] Number of passengers
+        double faultProbability;    // [probability/hour] Likelihood of fault per flight hour
     };
 
+    // Specifications for each EVTOL type
     constexpr VehicleSpec AlphaSpec   = {120.0, 320.0, 0.6, 1.6, 4, 0.01};
     constexpr VehicleSpec BravoSpec   = {100.0, 300.0, 0.7, 1.3, 3, 0.012};
     constexpr VehicleSpec CharlieSpec = {110.0, 310.0, 0.65, 1.25, 4, 0.015};
     constexpr VehicleSpec DeltaSpec   = {115.0, 330.0, 0.55, 1.15, 5, 0.013};
     constexpr VehicleSpec EchoSpec    = {105.0, 290.0, 0.75, 1.35, 3, 0.014};
 
-    // Legacy-style aliases to support existing test_evtol_methods.cpp references
+    // Aliases to support compatibility with unit test macros and legacy calls
     constexpr double AlphaCruiseSpeed       = AlphaSpec.cruiseSpeed;
     constexpr double AlphaBatteryCapacity   = AlphaSpec.batteryCapacity;
     constexpr double AlphaChargeTime        = AlphaSpec.chargeTime;
@@ -52,8 +54,9 @@ namespace Config {
     constexpr int    EchoPassengerCount    = EchoSpec.passengerCount;
     constexpr double EchoFaultProbability  = EchoSpec.faultProbability;
 
-    constexpr int FleetSize = 20;
-    constexpr int MaxChargers = 3;
-    constexpr double SimulationDurationHours = 3.0;
-    constexpr double SimulationStepHours = 0.1;
-}
+    // Simulation constants
+    constexpr int FleetSize = 20;                         // [count] Total number of EVTOLs in fleet
+    constexpr int MaxChargers = 3;                        // [count] Charging stations available
+    constexpr double SimulationDurationHours = 3.0;       // [hours] Total time span of simulation
+    constexpr double SimulationStepHours = 0.1;           // [hours] Simulation resolution step
+} // namespace Config

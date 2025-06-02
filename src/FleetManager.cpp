@@ -1,8 +1,9 @@
 #include "FleetManager.hpp"
 #include <random>
 #include <iostream>
-#include "Config.hpp" // if you moved Config to a separate file
+#include "Config.hpp" // Provides simulation parameters and EVTOL specifications
 
+// Helper method to return the vehicle type as a string based on runtime type identification
 std::string FleetManager::getTypeName(const EVTOL* vehicle) const {
     if (dynamic_cast<const AlphaEVTOL*>(vehicle))   return "Alpha";
     if (dynamic_cast<const BravoEVTOL*>(vehicle))   return "Bravo";
@@ -12,11 +13,11 @@ std::string FleetManager::getTypeName(const EVTOL* vehicle) const {
     return "Unknown";
 }
 
-
+// Generates a random fleet of EVTOLs based on the number requested
 void FleetManager::generateFleet(int count) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(0, 4); // 0-4 for 5 types
+    std::uniform_int_distribution<> dis(0, 4); // 0-4 corresponds to 5 EVTOL types
 
     for (int i = 0; i < count; ++i) {
         int type = dis(gen);
@@ -44,6 +45,7 @@ void FleetManager::generateFleet(int count) {
         }
     }
 
+    // Output the composition of the generated fleet
     std::cout << "\n\U0001F6C1 Fleet Composition:\n";
     for (std::map<std::string, int>::const_iterator it = typeCounts.begin(); it != typeCounts.end(); ++it) {
         std::cout << "- " << it->first << ": " << it->second << " vehicle(s)\n";
@@ -51,20 +53,21 @@ void FleetManager::generateFleet(int count) {
     std::cout << std::endl;
 }
 
+// Simulates a single time step of flight and charging operations
 void FleetManager::simulateStep(double hours) {
     std::mt19937 gen(std::random_device{}());
 
     for (std::vector<std::unique_ptr<EVTOL>>::iterator it = fleet.begin(); it != fleet.end(); ++it) {
         std::unique_ptr<EVTOL>& vehicle = *it;
         std::string type = getTypeName(vehicle.get());
-        double cruiseSpeed = vehicle->getCruiseSpeed();
-        double distance = cruiseSpeed * hours;
+        double cruiseSpeed = vehicle->getCruiseSpeed();         // [mph]
+        double distance = cruiseSpeed * hours;                  // [miles] distance = speed * time
         vehicle->fly(hours);
 
         Statistics& s = stats[type];
-        s.totalFlightTime += hours;
-        s.totalDistance += distance;
-        s.totalPassengerMiles += distance * vehicle->getPassengerCount();
+        s.totalFlightTime += hours;                             // [hrs]
+        s.totalDistance += distance;                            // [miles]
+        s.totalPassengerMiles += distance * vehicle->getPassengerCount(); // [passenger-miles]
         s.flights++;
 
         std::bernoulli_distribution faultDist(vehicle->getFaultProbabilityPerHour() * hours);
@@ -75,17 +78,19 @@ void FleetManager::simulateStep(double hours) {
         }
     }
 
+    // Perform charging for as many vehicles as chargers allow
     for (int i = 0; i < Config::MaxChargers && !chargeQueue.empty(); ++i) {
         EVTOL* v = chargeQueue.front();
         chargeQueue.pop();
 
         std::string type = getTypeName(v);
-        stats[type].totalChargeTime += v->getChargeTime();
+        stats[type].totalChargeTime += v->getChargeTime();      // [hrs]
         stats[type].charges++;
         v->charge();
     }
 }
 
+// Outputs overall statistics for each vehicle type
 void FleetManager::printStatistics() const {
     std::cout << "\n\U0001F4CA Simulation Summary:\n";
     std::cout << "Fleet Composition (Reconfirmed):\n";

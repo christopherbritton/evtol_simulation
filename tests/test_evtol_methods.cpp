@@ -10,13 +10,18 @@
 int testsPassed = 0;
 int testsFailed = 0;
 
+// Utility function to deplete battery through repeated flights
+// Time complexity: O(Distance/BatteryDrainRate), Space: O(1)
 void drainBattery(EVTOL& v) {
     while (!v.needsCharge()) {
-        v.fly(0.1);
+        v.fly(0.1);  // [hours] fixed short-duration flight step
     }
     if (!v.needsCharge()) throw std::runtime_error("Battery did not drain as expected");
 }
 
+// Template for each EVTOL test block
+// Time complexity: O(1) per check, total O(K) where K is number of fields + operations
+// Space complexity: O(1) per test
 void testAlphaEVTOL() {
     std::cout << "Running testAlphaEVTOL... ";
     try {
@@ -41,6 +46,11 @@ void testAlphaEVTOL() {
         ++testsFailed;
     }
 }
+
+// Remaining test functions follow same format:
+// - Construct EVTOL
+// - Verify all parameters against Config
+// - Drain, charge, and validate resetBattery behavior
 
 void testBravoEVTOL() {
     std::cout << "Running testBravoEVTOL... ";
@@ -142,6 +152,7 @@ void testEchoEVTOL() {
     }
 }
 
+// Entry point for test runner with summary report
 int main() {
     testAlphaEVTOL();
     testBravoEVTOL();
