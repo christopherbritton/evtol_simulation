@@ -1,0 +1,63 @@
+Assumptions in eVTOL Simulation Implementation
+==============================================
+
+1. Fleet Composition
+---------------------
+- Exactly 20 vehicles are generated for each simulation run.
+- Vehicle types (Alpha, Bravo, Charlie, Delta, Echo) are selected randomly with replacement to make up these 20.
+- The selection process is uniform, i.e., each vehicle type has equal probability (1/5) of being chosen.
+
+2. Initial Conditions
+----------------------
+- Each vehicle begins with a fully charged battery.
+- Each vehicle is assumed to reach cruise speed instantaneously, so no acceleration model is included.
+
+3. Flight Simulation
+---------------------
+- Vehicles fly continuously until their battery depletes below a minimum threshold.
+- Each time step is fixed at 0.1 hours (6 minutes) and the total simulation runs for 3 hours.
+- All vehicles are assumed airborne and flying at cruise speed while active.
+
+4. Charging Behavior
+---------------------
+- When a vehicle’s battery depletes, it enters a FIFO queue for charging.
+- Only 3 chargers are available for 20 vehicles.
+- A charger can only charge one vehicle at a time and charges the battery to full instantly after the designated charge time elapses.
+- Charging duration is vehicle-specific and comes directly from the vehicle’s configuration.
+
+5. Fault Handling
+------------------
+- Each vehicle has a fixed probability of incurring a fault per flight hour.
+- Faults are independently simulated using a Bernoulli trial per vehicle per time step.
+- Faults are accumulated but do not affect vehicle functionality (i.e., no emergency landing or withdrawal from simulation).
+
+6. Statistics Collection
+-------------------------
+- Tracked statistics per vehicle type include:
+  - Average flight time per flight
+  - Average distance traveled per flight
+  - Average charging time per charge session
+  - Total number of faults
+  - Total number of passenger-miles (distance × passengers × flights)
+- Statistics are only updated after every successful flight or charge cycle.
+
+7. Object-Oriented Design
+---------------------------
+- A base `EVTOL` abstract class is used with derived classes for Alpha, Bravo, Charlie, Delta, and Echo.
+- Each vehicle class is parameterized using constants defined in `Config.hpp`.
+- The design assumes modular separation, testability, and reuse through consistent interfaces.
+
+8. Unit Testing
+-----------------
+- All core methods of each vehicle class are tested.
+- Each test checks for correct configuration values, battery depletion behavior, charge and reset functionality.
+
+9. Console Output
+------------------
+- Simulation outputs include the full statistics report per vehicle type as well as fleet composition details.
+
+10. Miscellaneous
+------------------
+- No external libraries are used for unit testing.
+- No visualization or GUI; all results are displayed in the console.
+- Random number generators are seeded with `std::random_device` for non-deterministic simulations.

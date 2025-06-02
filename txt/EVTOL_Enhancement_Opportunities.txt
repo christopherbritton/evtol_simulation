@@ -1,0 +1,53 @@
+Opportunities for Enhancement in eVTOL Simulation
+===============================================
+
+1. Visualization and UI
+------------------------
+- Add a graphical dashboard to visualize vehicle positions, battery status, and charging queues.
+- Provide live charts for fleet utilization, charge cycles, and passenger-miles over time.
+
+2. Configurability
+-------------------
+- Move all runtime parameters (fleet size, simulation duration, time step, charger count) to a config file or command-line arguments.
+- Allow vehicle class parameters (speed, capacity, charge time) to be defined in an external config (JSON/YAML).
+
+3. Advanced Fault Handling
+---------------------------
+- Model fault consequences (e.g., vehicle removal from fleet, reduced performance).
+- Simulate fault recovery strategies such as rerouting, emergency charging, or rescue dispatch.
+
+4. Realistic Energy and Charging Models
+----------------------------------------
+- Include partial battery drain and nonlinear energy usage at different speeds.
+- Model power delivery constraints at chargers (e.g., shared capacity).
+- Simulate queue delays and waiting time dynamically.
+
+5. Scalability
+---------------
+- Optimize simulation for larger fleets using multithreading.
+- Add logging support to capture long-running results in batches.
+
+6. Statistical Insights and Reporting
+--------------------------------------
+- Generate CSV or JSON output for statistics to enable post-processing.
+- Include percentile breakdowns and graphs for key metrics.
+
+7. Expanded Testing
+---------------------
+- Add integration tests for simulation loop and fault + charge behavior over time.
+- Use parameterized tests to cover edge cases across vehicle configurations.
+
+8. Simulation Extensibility
+----------------------------
+- Allow custom EVTOL types to be registered dynamically via a plugin or factory pattern.
+- Provide extension hooks for new behaviors (e.g., weather, maintenance).
+
+9. Interactivity
+-----------------
+- Enable interactive mode: pause/resume simulation, adjust parameters mid-run.
+- Allow user to inject faults or modify fleet composition live.
+
+10. Performance Metrics
+------------------------
+- Measure and report real-world runtime (CPU usage, memory footprint).
+- Profile hotspots (e.g., `simulateStep`) and optimize bottlenecks (e.g., battery drain loop).
