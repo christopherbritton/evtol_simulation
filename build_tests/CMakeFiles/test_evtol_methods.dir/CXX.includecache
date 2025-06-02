@@ -109,4 +109,6 @@ DeltaEVTOL.hpp
 /workspaces/evtol_simulation/tests/DeltaEVTOL.hpp
 EchoEVTOL.hpp
 /workspaces/evtol_simulation/tests/EchoEVTOL.hpp
+Config.hpp
+/workspaces/evtol_simulation/tests/Config.hpp
 
