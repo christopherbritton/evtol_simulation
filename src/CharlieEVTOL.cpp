@@ -1,43 +1,61 @@
 #include "CharlieEVTOL.hpp"
+#include <algorithm>
+#include <cstring>
 
-// Simulates flight by calculating distance and reducing battery based on energy usage rate
 void CharlieEVTOL::fly(double hours) {
-    double distance = spec.cruiseSpeed * hours;                 // [miles] distance = speed * time
-    battery -= distance * spec.energyUsePerMile;               // [kWh] energy consumed during flight
+    double distance = cruiseSpeed * hours;                             // [miles]
+    double energyUsed = distance * energyUsePerMile;                  // [kWh]
+    batteryLevel -= energyUsed;
+    charging = false;
 }
 
-// Charges the EVTOL to its full battery capacity
 void CharlieEVTOL::charge() {
-    battery = spec.batteryCapacity;                            // [kWh]
+    batteryLevel = batteryCapacity;                                   // Full recharge
+    charging = false;
 }
 
-// Checks if the battery level is depleted and requires charging
 bool CharlieEVTOL::needsCharge() const {
-    return battery <= 0;
+    return batteryLevel < batteryCapacity * 0.25;                     // Needs charge if < 25%
 }
 
-// Accessor methods for vehicle specification values
+double CharlieEVTOL::getCruiseSpeed() const { return cruiseSpeed; }
+double CharlieEVTOL::getBatteryCapacity() const { return batteryCapacity; }
+double CharlieEVTOL::getChargeTime() const { return chargeTime; }
+double CharlieEVTOL::getEnergyUsePerMile() const { return energyUsePerMile; }
+int CharlieEVTOL::getPassengerCount() const { return passengerCount; }
+double CharlieEVTOL::getFaultProbabilityPerHour() const { return faultProbability; }
 
-// [mph] Vehicle cruise speed
-double CharlieEVTOL::getCruiseSpeed() const { return spec.cruiseSpeed; }
+bool CharlieEVTOL::isCharging() const { return charging; }
+double CharlieEVTOL::getChargeRate() const { return chargeRate; }
+double CharlieEVTOL::getBatteryLevel() const { return batteryLevel; }
 
-// [kWh] Maximum battery capacity
-double CharlieEVTOL::getBatteryCapacity() const { return spec.batteryCapacity; }
+void CharlieEVTOL::charge(double hours) {
+    batteryLevel += chargeRate * hours;
+    if (batteryLevel >= batteryCapacity) {
+        batteryLevel = batteryCapacity;
+        charging = false;
+    } else {
+        charging = true;
+    }
+}
 
-// [hours] Time required to fully recharge the battery
-double CharlieEVTOL::getChargeTime() const { return spec.chargeTime; }
+void CharlieEVTOL::resetBattery() {
+    batteryLevel = batteryCapacity;
+    charging = false;
+}
 
-// [kWh/mile] Energy usage per mile during flight
-double CharlieEVTOL::getEnergyUsePerMile() const { return spec.energyUsePerMile; }
+int CharlieEVTOL::getPassengerCapacity() const {
+    return passengerCount;
+}
 
-// [count] Number of passengers supported
-int CharlieEVTOL::getPassengerCount() const { return spec.passengerCount; }
+const char* CharlieEVTOL::getType() const {
+    return "Charlie";
+} 
 
-// [probability/hour] Likelihood of system failure per hour
-double CharlieEVTOL::getFaultProbabilityPerHour() const { return spec.faultProbability; }
+bool CharlieEVTOL::checkForFault() const {
+    return ((double) rand() / RAND_MAX) < faultProbability;
+}
 
-// [kWh] Current remaining battery level
-double CharlieEVTOL::getRemainingBattery() const { return battery; }
-
-// Resets battery to full charge
-void CharlieEVTOL::resetBattery() { battery = spec.batteryCapacity; }
+double CharlieEVTOL::getRemainingBattery() const {
+    return batteryLevel;
+}

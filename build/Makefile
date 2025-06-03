@@ -316,6 +316,66 @@ src/FleetManager.cpp.s:
 	$(MAKE) -f CMakeFiles/evtol_sim.dir/build.make CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.s
 .PHONY : src/FleetManager.cpp.s
 
+src/Statistics.o: src/Statistics.cpp.o
+
+.PHONY : src/Statistics.o
+
+# target to build an object file
+src/Statistics.cpp.o:
+	$(MAKE) -f CMakeFiles/test_evtol_methods.dir/build.make CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o
+	$(MAKE) -f CMakeFiles/evtol_sim.dir/build.make CMakeFiles/evtol_sim.dir/src/Statistics.cpp.o
+.PHONY : src/Statistics.cpp.o
+
+src/Statistics.i: src/Statistics.cpp.i
+
+.PHONY : src/Statistics.i
+
+# target to preprocess a source file
+src/Statistics.cpp.i:
+	$(MAKE) -f CMakeFiles/test_evtol_methods.dir/build.make CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.i
+	$(MAKE) -f CMakeFiles/evtol_sim.dir/build.make CMakeFiles/evtol_sim.dir/src/Statistics.cpp.i
+.PHONY : src/Statistics.cpp.i
+
+src/Statistics.s: src/Statistics.cpp.s
+
+.PHONY : src/Statistics.s
+
+# target to generate assembly for a file
+src/Statistics.cpp.s:
+	$(MAKE) -f CMakeFiles/test_evtol_methods.dir/build.make CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.s
+	$(MAKE) -f CMakeFiles/evtol_sim.dir/build.make CMakeFiles/evtol_sim.dir/src/Statistics.cpp.s
+.PHONY : src/Statistics.cpp.s
+
+src/StatisticsReporter.o: src/StatisticsReporter.cpp.o
+
+.PHONY : src/StatisticsReporter.o
+
+# target to build an object file
+src/StatisticsReporter.cpp.o:
+	$(MAKE) -f CMakeFiles/test_evtol_methods.dir/build.make CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o
+	$(MAKE) -f CMakeFiles/evtol_sim.dir/build.make CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.o
+.PHONY : src/StatisticsReporter.cpp.o
+
+src/StatisticsReporter.i: src/StatisticsReporter.cpp.i
+
+.PHONY : src/StatisticsReporter.i
+
+# target to preprocess a source file
+src/StatisticsReporter.cpp.i:
+	$(MAKE) -f CMakeFiles/test_evtol_methods.dir/build.make CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.i
+	$(MAKE) -f CMakeFiles/evtol_sim.dir/build.make CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.i
+.PHONY : src/StatisticsReporter.cpp.i
+
+src/StatisticsReporter.s: src/StatisticsReporter.cpp.s
+
+.PHONY : src/StatisticsReporter.s
+
+# target to generate assembly for a file
+src/StatisticsReporter.cpp.s:
+	$(MAKE) -f CMakeFiles/test_evtol_methods.dir/build.make CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.s
+	$(MAKE) -f CMakeFiles/evtol_sim.dir/build.make CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.s
+.PHONY : src/StatisticsReporter.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -398,6 +458,12 @@ help:
 	@echo "... src/FleetManager.o"
 	@echo "... src/FleetManager.i"
 	@echo "... src/FleetManager.s"
+	@echo "... src/Statistics.o"
+	@echo "... src/Statistics.i"
+	@echo "... src/Statistics.s"
+	@echo "... src/StatisticsReporter.o"
+	@echo "... src/StatisticsReporter.i"
+	@echo "... src/StatisticsReporter.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -1,43 +1,61 @@
 #include "BravoEVTOL.hpp"
+#include <algorithm>
+#include <cstring>
 
-// Simulates flight by reducing battery based on speed and energy usage
 void BravoEVTOL::fly(double hours) {
-    double distance = spec.cruiseSpeed * hours;                 // [miles] distance = speed * time
-    battery -= distance * spec.energyUsePerMile;               // [kWh] battery drained by energy per mile
+    double distance = cruiseSpeed * hours;                             // [miles]
+    double energyUsed = distance * energyUsePerMile;                  // [kWh]
+    batteryLevel -= energyUsed;
+    charging = false;
 }
 
-// Charges the EVTOL to full battery capacity
 void BravoEVTOL::charge() {
-    battery = spec.batteryCapacity;                            // [kWh]
+    batteryLevel = batteryCapacity;                                   // Full recharge
+    charging = false;
 }
 
-// Checks if battery is depleted and charging is needed
 bool BravoEVTOL::needsCharge() const {
-    return battery <= 0;
+    return batteryLevel < batteryCapacity * 0.25;                     // Needs charge if < 25%
 }
 
-// Accessor methods for vehicle specification parameters
+double BravoEVTOL::getCruiseSpeed() const { return cruiseSpeed; }
+double BravoEVTOL::getBatteryCapacity() const { return batteryCapacity; }
+double BravoEVTOL::getChargeTime() const { return chargeTime; }
+double BravoEVTOL::getEnergyUsePerMile() const { return energyUsePerMile; }
+int BravoEVTOL::getPassengerCount() const { return passengerCount; }
+double BravoEVTOL::getFaultProbabilityPerHour() const { return faultProbability; }
 
-// [mph] Cruise speed of the vehicle
-double BravoEVTOL::getCruiseSpeed() const { return spec.cruiseSpeed; }
+bool BravoEVTOL::isCharging() const { return charging; }
+double BravoEVTOL::getChargeRate() const { return chargeRate; }
+double BravoEVTOL::getBatteryLevel() const { return batteryLevel; }
 
-// [kWh] Maximum battery capacity
-double BravoEVTOL::getBatteryCapacity() const { return spec.batteryCapacity; }
+void BravoEVTOL::charge(double hours) {
+    batteryLevel += chargeRate * hours;
+    if (batteryLevel >= batteryCapacity) {
+        batteryLevel = batteryCapacity;
+        charging = false;
+    } else {
+        charging = true;
+    }
+}
 
-// [hours] Time required to fully charge battery
-double BravoEVTOL::getChargeTime() const { return spec.chargeTime; }
+void BravoEVTOL::resetBattery() {
+    batteryLevel = batteryCapacity;
+    charging = false;
+}
 
-// [kWh/mile] Energy usage rate during flight
-double BravoEVTOL::getEnergyUsePerMile() const { return spec.energyUsePerMile; }
+int BravoEVTOL::getPassengerCapacity() const {
+    return passengerCount;
+}
 
-// [count] Number of passengers supported
-int BravoEVTOL::getPassengerCount() const { return spec.passengerCount; }
+const char* BravoEVTOL::getType() const {
+    return "Bravo";
+}
 
-// [probability/hour] Failure likelihood per hour of operation
-double BravoEVTOL::getFaultProbabilityPerHour() const { return spec.faultProbability; }
+bool BravoEVTOL::checkForFault() const {
+    return ((double) rand() / RAND_MAX) < faultProbability;
+}
 
-// [kWh] Current state of battery
-double BravoEVTOL::getRemainingBattery() const { return battery; }
-
-// Recharges battery to maximum capacity
-void BravoEVTOL::resetBattery() { battery = spec.batteryCapacity; }
+double BravoEVTOL::getRemainingBattery() const {
+    return batteryLevel;
+}

@@ -1,43 +1,81 @@
 #include "EchoEVTOL.hpp"
+#include <algorithm>
+#include <cstring>
 
-// Simulates a flight by reducing battery based on distance and energy use
 void EchoEVTOL::fly(double hours) {
-    double distance = spec.cruiseSpeed * hours;                 // [miles] distance = speed * time
-    battery -= distance * spec.energyUsePerMile;               // [kWh] energy consumed for the flight
+    double miles = cruiseSpeed * hours;
+    double energyUsed = miles * energyUsePerMile;
+    batteryLevel = std::max(0.0, batteryLevel - energyUsed);
+    charging = false;
 }
 
-// Fully recharges the battery
 void EchoEVTOL::charge() {
-    battery = spec.batteryCapacity;                            // [kWh]
+    charging = true;
 }
 
-// Checks if the battery has been depleted
 bool EchoEVTOL::needsCharge() const {
-    return battery <= 0;
+    return batteryLevel < (batteryCapacity * 0.1);
 }
 
-// Accessors for Echo vehicle specifications
+double EchoEVTOL::getCruiseSpeed() const {
+    return cruiseSpeed;
+}
 
-// [mph] Cruise speed of the Echo EVTOL
-double EchoEVTOL::getCruiseSpeed() const { return spec.cruiseSpeed; }
+double EchoEVTOL::getBatteryCapacity() const {
+    return batteryCapacity;
+}
 
-// [kWh] Battery storage capacity
-double EchoEVTOL::getBatteryCapacity() const { return spec.batteryCapacity; }
+double EchoEVTOL::getChargeTime() const {
+    return chargeTime;
+}
 
-// [hours] Required charging time
-double EchoEVTOL::getChargeTime() const { return spec.chargeTime; }
+double EchoEVTOL::getEnergyUsePerMile() const {
+    return energyUsePerMile;
+}
 
-// [kWh/mile] Energy consumption per mile
-double EchoEVTOL::getEnergyUsePerMile() const { return spec.energyUsePerMile; }
+int EchoEVTOL::getPassengerCount() const {
+    return passengerCount;
+}
 
-// [count] Number of passengers supported
-int EchoEVTOL::getPassengerCount() const { return spec.passengerCount; }
+double EchoEVTOL::getFaultProbabilityPerHour() const {
+    return faultProbability;
+}
 
-// [probability/hour] Chance of failure per hour
-double EchoEVTOL::getFaultProbabilityPerHour() const { return spec.faultProbability; }
+bool EchoEVTOL::isCharging() const {
+    return charging;
+}
 
-// [kWh] Remaining battery charge
-double EchoEVTOL::getRemainingBattery() const { return battery; }
+double EchoEVTOL::getChargeRate() const {
+    return chargeRate;
+}
 
-// Resets the battery to full charge
-void EchoEVTOL::resetBattery() { battery = spec.batteryCapacity; }
+double EchoEVTOL::getBatteryLevel() const {
+    return batteryLevel;
+}
+
+void EchoEVTOL::charge(double hours) {
+    if (charging) {
+        batteryLevel = std::min(batteryCapacity, batteryLevel + chargeRate * hours);
+    }
+}
+
+void EchoEVTOL::resetBattery() {
+    batteryLevel = batteryCapacity;
+    charging = false;
+}
+
+int EchoEVTOL::getPassengerCapacity() const {
+    return passengerCount;
+}
+
+const char* EchoEVTOL::getType() const {
+    return "Echo";
+}
+
+bool EchoEVTOL::checkForFault() const {
+    return ((double) rand() / RAND_MAX) < faultProbability;
+}
+
+double EchoEVTOL::getRemainingBattery() const {
+    return batteryLevel;
+}

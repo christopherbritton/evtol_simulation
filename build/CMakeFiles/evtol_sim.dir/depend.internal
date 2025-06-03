@@ -3,26 +3,21 @@
 
 CMakeFiles/evtol_sim.dir/src/AlphaEVTOL.cpp.o
  ../common/AlphaEVTOL.hpp
- ../common/Config.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/AlphaEVTOL.cpp
 CMakeFiles/evtol_sim.dir/src/BravoEVTOL.cpp.o
  ../common/BravoEVTOL.hpp
- ../common/Config.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/BravoEVTOL.cpp
 CMakeFiles/evtol_sim.dir/src/CharlieEVTOL.cpp.o
  ../common/CharlieEVTOL.hpp
- ../common/Config.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/CharlieEVTOL.cpp
 CMakeFiles/evtol_sim.dir/src/DeltaEVTOL.cpp.o
- ../common/Config.hpp
  ../common/DeltaEVTOL.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/DeltaEVTOL.cpp
 CMakeFiles/evtol_sim.dir/src/EchoEVTOL.cpp.o
- ../common/Config.hpp
  ../common/EVTOL.hpp
  ../common/EchoEVTOL.hpp
  /workspaces/evtol_simulation/src/EchoEVTOL.cpp
@@ -35,14 +30,21 @@ CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.o
  ../common/EVTOL.hpp
  ../common/EchoEVTOL.hpp
  ../common/FleetManager.hpp
+ ../common/Statistics.hpp
+ ../common/StatisticsReporter.hpp
  /workspaces/evtol_simulation/src/FleetManager.cpp
-CMakeFiles/evtol_sim.dir/src/main.cpp.o
- ../common/AlphaEVTOL.hpp
- ../common/BravoEVTOL.hpp
- ../common/CharlieEVTOL.hpp
- ../common/Config.hpp
- ../common/DeltaEVTOL.hpp
+CMakeFiles/evtol_sim.dir/src/Statistics.cpp.o
  ../common/EVTOL.hpp
- ../common/EchoEVTOL.hpp
+ ../common/Statistics.hpp
+ /workspaces/evtol_simulation/src/Statistics.cpp
+CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.o
+ ../common/EVTOL.hpp
+ ../common/Statistics.hpp
+ ../common/StatisticsReporter.hpp
+ /workspaces/evtol_simulation/src/StatisticsReporter.cpp
+CMakeFiles/evtol_sim.dir/src/main.cpp.o
+ ../common/Config.hpp
+ ../common/EVTOL.hpp
  ../common/FleetManager.hpp
+ ../common/Statistics.hpp
  /workspaces/evtol_simulation/src/main.cpp

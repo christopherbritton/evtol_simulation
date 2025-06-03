@@ -1,19 +1,27 @@
 #pragma once
+
 #include "EVTOL.hpp"
-#include "Config.hpp"
 
 class CharlieEVTOL : public EVTOL {
 private:
-    double battery;
-    const Config::VehicleSpec spec;
+    double cruiseSpeed = 105.0;              // [mph]
+    double batteryCapacity = 95.0;           // [kWh]
+    double chargeTime = 0.4;                 // [hrs]
+    double energyUsePerMile = 1.6;           // [kWh/mile]
+    int passengerCount = 4;
+    double faultProbability = 0.07;          // [prob/hr]
+
+    double batteryLevel = batteryCapacity;   // [kWh]
+    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
+    bool charging = false;
 
 public:
-    CharlieEVTOL() : battery(Config::CharlieSpec.batteryCapacity), spec(Config::CharlieSpec) {}
-
+    // Core behaviors
     void fly(double hours) override;
     void charge() override;
     bool needsCharge() const override;
 
+    // Accessors
     double getCruiseSpeed() const override;
     double getBatteryCapacity() const override;
     double getChargeTime() const override;
@@ -21,6 +29,15 @@ public:
     int getPassengerCount() const override;
     double getFaultProbabilityPerHour() const override;
 
-    double getRemainingBattery() const override;
+    // Interface extensions
+    bool isCharging() const override;
+    double getChargeRate() const override;
+    double getBatteryLevel() const override;
+    void charge(double hours) override;
+
     void resetBattery() override;
+    int getPassengerCapacity() const override;
+    const char* getType() const override;
+    bool checkForFault() const override;
+    double getRemainingBattery() const override;
 };

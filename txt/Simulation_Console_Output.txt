@@ -1,4 +1,4 @@
-@christopherbritton ➜ /workspaces/EVTOL_Abstraction (main) $ ./build_and_run_simulation.sh 
+@christopherbritton ➜ /workspaces/evtol_simulation (main) $ ./build_and_run_simulation.sh 
 🔄 Cleaning previous build artifacts...
 🔧 Configuring CMake...
 -- The C compiler identification is GNU 9.4.0
@@ -17,73 +17,95 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /workspaces/EVTOL_Abstraction/build
+-- Build files have been written to: /workspaces/evtol_simulation/build
 ⚙️ Building project...
+Scanning dependencies of target test_evtol_methods
 Scanning dependencies of target evtol_sim
-Scanning dependencies of target test_vehicle
-[  9%] Building CXX object CMakeFiles/evtol_sim.dir/src/AlphaEVTOL.cpp.o
-[ 18%] Building CXX object CMakeFiles/test_vehicle.dir/tests/test_vehicle.cpp.o
-[ 27%] Building CXX object CMakeFiles/evtol_sim.dir/src/BravoEVTOL.cpp.o
-[ 36%] Building CXX object CMakeFiles/evtol_sim.dir/src/CharlieEVTOL.cpp.o
-[ 45%] Building CXX object CMakeFiles/evtol_sim.dir/src/DeltaEVTOL.cpp.o
-[ 54%] Building CXX object CMakeFiles/evtol_sim.dir/src/EchoEVTOL.cpp.o
-[ 63%] Building CXX object CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.o
-[ 72%] Building CXX object CMakeFiles/test_vehicle.dir/src/AlphaEVTOL.cpp.o
-[ 81%] Linking CXX executable test_vehicle
-[ 81%] Built target test_vehicle
+[  5%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o
+[ 10%] Building CXX object CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.o
+[ 15%] Building CXX object CMakeFiles/evtol_sim.dir/src/Statistics.cpp.o
+[ 20%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o
+[ 25%] Building CXX object CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.o
+[ 30%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o
+[ 35%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/AlphaEVTOL.cpp.o
+[ 40%] Building CXX object CMakeFiles/evtol_sim.dir/src/AlphaEVTOL.cpp.o
+[ 45%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/BravoEVTOL.cpp.o
+[ 50%] Building CXX object CMakeFiles/evtol_sim.dir/src/BravoEVTOL.cpp.o
+[ 55%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/CharlieEVTOL.cpp.o
+[ 60%] Building CXX object CMakeFiles/evtol_sim.dir/src/CharlieEVTOL.cpp.o
+[ 65%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/DeltaEVTOL.cpp.o
+[ 70%] Building CXX object CMakeFiles/evtol_sim.dir/src/DeltaEVTOL.cpp.o
+[ 75%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/EchoEVTOL.cpp.o
+[ 80%] Building CXX object CMakeFiles/evtol_sim.dir/src/EchoEVTOL.cpp.o
+[ 85%] Building CXX object CMakeFiles/test_evtol_methods.dir/tests/test_evtol_methods.cpp.o
 [ 90%] Building CXX object CMakeFiles/evtol_sim.dir/src/main.cpp.o
+[ 95%] Linking CXX executable test_evtol_methods
+[ 95%] Built target test_evtol_methods
 [100%] Linking CXX executable evtol_sim
 [100%] Built target evtol_sim
 🚀 Running simulation...
 
-🛁 Fleet Composition:
-- Alpha: 4 vehicle(s)
-- Bravo: 3 vehicle(s)
-- Charlie: 6 vehicle(s)
-- Delta: 3 vehicle(s)
-- Echo: 4 vehicle(s)
+Fleet Composition Summary:
+- Alpha: 8 vehicles
+- Bravo: 2 vehicles
+- Charlie: 2 vehicles
+- Delta: 5 vehicles
+- Echo: 3 vehicles
 
+Simulation Statistics Summary:
 
-📊 Simulation Summary:
-Fleet Composition (Reconfirmed):
-- Alpha: 4 vehicle(s)
-- Bravo: 3 vehicle(s)
-- Charlie: 6 vehicle(s)
-- Delta: 3 vehicle(s)
-- Echo: 4 vehicle(s)
+Vehicle Type: Alpha
+  Total Flights       : 183
+  Total Charges       : 21
+  Faults Encountered  : 45
+  Avg Flight Time     : 4.37 minutes
+  Avg Charge Time     : 133.71 minutes
+  Total Flight Time   : 800.00 minutes
+  Total Distance      : 1600.00 miles
+  Total Charge Time   : 2808.00 minutes
+  Total Passenger Miles: 6400.00
 
---- Alpha ---
-Average Flight Time: 0.1 hrs
-Average Distance per Flight: 12 miles
-Average Charging Time: 0.6 hrs
-Total Faults: 1
-Total Passenger Miles: 5760
+Vehicle Type: Bravo
+  Total Flights       : 60
+  Total Charges       : 11
+  Faults Encountered  : 4
+  Avg Flight Time     : 3.77 minutes
+  Avg Charge Time     : 12.00 minutes
+  Total Flight Time   : 226.00 minutes
+  Total Distance      : 376.67 miles
+  Total Charge Time   : 132.00 minutes
+  Total Passenger Miles: 1883.33
 
---- Bravo ---
-Average Flight Time: 0.1 hrs
-Average Distance per Flight: 10 miles
-Average Charging Time: 0.2 hrs
-Total Faults: 0
-Total Passenger Miles: 4500
+Vehicle Type: Charlie
+  Total Flights       : 60
+  Total Charges       : 11
+  Faults Encountered  : 2
+  Avg Flight Time     : 3.86 minutes
+  Avg Charge Time     : 24.00 minutes
+  Total Flight Time   : 231.71 minutes
+  Total Distance      : 405.50 miles
+  Total Charge Time   : 264.00 minutes
+  Total Passenger Miles: 1622.00
 
---- Charlie ---
-Average Flight Time: 0.1 hrs
-Average Distance per Flight: 16 miles
-Average Charging Time: 0.8 hrs
-Total Faults: 1
-Total Passenger Miles: 8640
+Vehicle Type: Delta
+  Total Flights       : 150
+  Total Charges       : 29
+  Faults Encountered  : 12
+  Avg Flight Time     : 4.23 minutes
+  Avg Charge Time     : 30.00 minutes
+  Total Flight Time   : 634.25 minutes
+  Total Distance      : 1215.65 miles
+  Total Charge Time   : 870.00 minutes
+  Total Passenger Miles: 4862.59
 
---- Delta ---
-Average Flight Time: 0.1 hrs
-Average Distance per Flight: 9 miles
-Average Charging Time: 0.62 hrs
-Total Faults: 1
-Total Passenger Miles: 1620
-
---- Echo ---
-Average Flight Time: 0.1 hrs
-Average Distance per Flight: 3 miles
-Average Charging Time: 0.3 hrs
-Total Faults: 10
-Total Passenger Miles: 720
+Vehicle Type: Echo
+  Total Flights       : 18
+  Total Charges       : 6
+  Faults Encountered  : 0
+  Avg Flight Time     : 4.63 minutes
+  Avg Charge Time     : 468.00 minutes
+  Total Flight Time   : 83.37 minutes
+  Total Distance      : 173.68 miles
+  Total Charge Time   : 2808.00 minutes
+  Total Passenger Miles: 868.42
 ✅ Simulation complete.

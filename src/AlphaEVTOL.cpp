@@ -1,43 +1,81 @@
 #include "AlphaEVTOL.hpp"
+#include <algorithm>
+#include <cstring>
 
-// Simulates flight for a given duration by consuming energy based on cruise speed and energy usage rate
 void AlphaEVTOL::fly(double hours) {
-    double distance = spec.cruiseSpeed * hours;                 // [miles] distance = speed * time
-    battery -= distance * spec.energyUsePerMile;               // [kWh] battery drained by energy per mile
+    double miles = cruiseSpeed * hours;
+    double energyUsed = miles * energyUsePerMile;
+    batteryLevel = std::max(0.0, batteryLevel - energyUsed);
+    charging = false;
 }
 
-// Charges the EVTOL to full battery capacity
 void AlphaEVTOL::charge() {
-    battery = spec.batteryCapacity;                            // [kWh]
+    charging = true;
 }
 
-// Checks whether the battery is depleted and charging is required
 bool AlphaEVTOL::needsCharge() const {
-    return battery <= 0;
+    return batteryLevel < (batteryCapacity * 0.1);
 }
 
-// Accessor methods for vehicle specification parameters
+double AlphaEVTOL::getCruiseSpeed() const {
+    return cruiseSpeed;
+}
 
-// [mph] Cruise speed of the vehicle
-double AlphaEVTOL::getCruiseSpeed() const { return spec.cruiseSpeed; }
+double AlphaEVTOL::getBatteryCapacity() const {
+    return batteryCapacity;
+}
 
-// [kWh] Maximum battery capacity
-double AlphaEVTOL::getBatteryCapacity() const { return spec.batteryCapacity; }
+double AlphaEVTOL::getChargeTime() const {
+    return chargeTime;
+}
 
-// [hours] Time required to charge from 0 to 100%
-double AlphaEVTOL::getChargeTime() const { return spec.chargeTime; }
+double AlphaEVTOL::getEnergyUsePerMile() const {
+    return energyUsePerMile;
+}
 
-// [kWh/mile] Energy usage rate while flying
-double AlphaEVTOL::getEnergyUsePerMile() const { return spec.energyUsePerMile; }
+int AlphaEVTOL::getPassengerCount() const {
+    return passengerCount;
+}
 
-// [count] Number of passengers supported
-int AlphaEVTOL::getPassengerCount() const { return spec.passengerCount; }
+double AlphaEVTOL::getFaultProbabilityPerHour() const {
+    return faultProbability;
+}
 
-// [probability/hour] Likelihood of failure per flight hour
-double AlphaEVTOL::getFaultProbabilityPerHour() const { return spec.faultProbability; }
+bool AlphaEVTOL::isCharging() const {
+    return charging;
+}
 
-// [kWh] Current battery level
-double AlphaEVTOL::getRemainingBattery() const { return battery; }
+double AlphaEVTOL::getChargeRate() const {
+    return chargeRate;
+}
 
-// Resets battery to full capacity
-void AlphaEVTOL::resetBattery() { battery = spec.batteryCapacity; }
+double AlphaEVTOL::getBatteryLevel() const {
+    return batteryLevel;
+}
+
+void AlphaEVTOL::charge(double hours) {
+    if (charging) {
+        batteryLevel = std::min(batteryCapacity, batteryLevel + chargeRate * hours);
+    }
+}
+
+void AlphaEVTOL::resetBattery() {
+    batteryLevel = batteryCapacity;
+    charging = false;
+}
+
+int AlphaEVTOL::getPassengerCapacity() const {
+    return passengerCount;
+}
+
+const char* AlphaEVTOL::getType() const {
+    return "Alpha";
+}
+
+bool AlphaEVTOL::checkForFault() const {
+    return ((double) rand() / RAND_MAX) < faultProbability;
+}
+
+double AlphaEVTOL::getRemainingBattery() const {
+    return batteryLevel;
+}

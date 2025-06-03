@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/evtol_simulation/src/DeltaEVTOL.cpp" "/workspaces/evtol_simulation/build/CMakeFiles/test_evtol_methods.dir/src/DeltaEVTOL.cpp.o"
   "/workspaces/evtol_simulation/src/EchoEVTOL.cpp" "/workspaces/evtol_simulation/build/CMakeFiles/test_evtol_methods.dir/src/EchoEVTOL.cpp.o"
   "/workspaces/evtol_simulation/src/FleetManager.cpp" "/workspaces/evtol_simulation/build/CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o"
+  "/workspaces/evtol_simulation/src/Statistics.cpp" "/workspaces/evtol_simulation/build/CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o"
+  "/workspaces/evtol_simulation/src/StatisticsReporter.cpp" "/workspaces/evtol_simulation/build/CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o"
   "/workspaces/evtol_simulation/tests/test_evtol_methods.cpp" "/workspaces/evtol_simulation/build/CMakeFiles/test_evtol_methods.dir/tests/test_evtol_methods.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

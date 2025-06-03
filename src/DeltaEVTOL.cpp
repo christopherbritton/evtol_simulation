@@ -1,43 +1,80 @@
 #include "DeltaEVTOL.hpp"
+#include <algorithm>
+#include <cstring>
 
-// Simulates flight by reducing battery based on cruise speed and energy usage rate
 void DeltaEVTOL::fly(double hours) {
-    double distance = spec.cruiseSpeed * hours;                 // [miles] distance = speed * time
-    battery -= distance * spec.energyUsePerMile;               // [kWh] battery drained based on distance
+    double energyUsed = hours * cruiseSpeed * energyUsePerMile;
+    batteryLevel = std::max(0.0, batteryLevel - energyUsed);
+    charging = false;
 }
 
-// Charges the EVTOL to its full battery capacity
 void DeltaEVTOL::charge() {
-    battery = spec.batteryCapacity;                            // [kWh]
+    batteryLevel = batteryCapacity;
+    charging = false;
 }
 
-// Determines if the battery needs charging
 bool DeltaEVTOL::needsCharge() const {
-    return battery <= 0;
+    return batteryLevel < (0.2 * batteryCapacity);
 }
 
-// Accessor methods for vehicle characteristics
+double DeltaEVTOL::getCruiseSpeed() const {
+    return cruiseSpeed;
+}
 
-// [mph] Maximum cruise speed
-double DeltaEVTOL::getCruiseSpeed() const { return spec.cruiseSpeed; }
+double DeltaEVTOL::getBatteryCapacity() const {
+    return batteryCapacity;
+}
 
-// [kWh] Total battery storage capacity
-double DeltaEVTOL::getBatteryCapacity() const { return spec.batteryCapacity; }
+double DeltaEVTOL::getChargeTime() const {
+    return chargeTime;
+}
 
-// [hours] Time needed to fully charge
-double DeltaEVTOL::getChargeTime() const { return spec.chargeTime; }
+double DeltaEVTOL::getEnergyUsePerMile() const {
+    return energyUsePerMile;
+}
 
-// [kWh/mile] Energy usage per mile during operation
-double DeltaEVTOL::getEnergyUsePerMile() const { return spec.energyUsePerMile; }
+int DeltaEVTOL::getPassengerCount() const {
+    return passengerCount;
+}
 
-// [count] Passenger capacity
-int DeltaEVTOL::getPassengerCount() const { return spec.passengerCount; }
+double DeltaEVTOL::getFaultProbabilityPerHour() const {
+    return faultProbability;
+}
 
-// [probability/hour] Probability of fault occurrence per flight hour
-double DeltaEVTOL::getFaultProbabilityPerHour() const { return spec.faultProbability; }
+bool DeltaEVTOL::isCharging() const {
+    return charging;
+}
 
-// [kWh] Remaining battery level
-double DeltaEVTOL::getRemainingBattery() const { return battery; }
+double DeltaEVTOL::getChargeRate() const {
+    return chargeRate;
+}
 
-// Resets battery to its full capacity
-void DeltaEVTOL::resetBattery() { battery = spec.batteryCapacity; }
+double DeltaEVTOL::getBatteryLevel() const {
+    return batteryLevel;
+}
+
+void DeltaEVTOL::charge(double hours) {
+    batteryLevel = std::min(batteryCapacity, batteryLevel + hours * chargeRate);
+    charging = true;
+}
+
+void DeltaEVTOL::resetBattery() {
+    batteryLevel = batteryCapacity;
+    charging = false;
+}
+
+int DeltaEVTOL::getPassengerCapacity() const {
+    return passengerCount;
+}
+
+const char* DeltaEVTOL::getType() const {
+    return "Delta";
+}
+
+bool DeltaEVTOL::checkForFault() const {
+    return ((double) rand() / RAND_MAX) < faultProbability;
+}
+
+double DeltaEVTOL::getRemainingBattery() const {
+    return batteryLevel;
+}

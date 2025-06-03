@@ -17,4 +17,20 @@ public:
 
     virtual double getRemainingBattery() const = 0;
     virtual void resetBattery() = 0;
+
+    // New functions needed for simulation
+    virtual bool isCharging() const = 0;
+    virtual double getChargeRate() const = 0;
+    virtual double getBatteryLevel() const = 0;
+    virtual void charge(double hours) = 0;
+
+    // New functions to retrieve the vehicle type and capacity
+    virtual const char* getType() const = 0;
+    virtual int getPassengerCapacity() const = 0;
+
+    // New function to check if vehicle experienced a fault
+    virtual bool checkForFault() const = 0;
+
+    // Add default constructor if needed for make_unique
+    EVTOL() = default;
 };
