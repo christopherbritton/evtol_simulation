@@ -4,14 +4,14 @@
 
 class CharlieEVTOL : public EVTOL {
 private:
-    double cruiseSpeed = 105.0;              // [mph]
-    double batteryCapacity = 95.0;           // [kWh]
-    double chargeTime = 0.4;                 // [hrs]
-    double energyUsePerMile = 1.6;           // [kWh/mile]
-    int passengerCount = 4;
-    double faultProbability = 0.07;          // [prob/hr]
+    const double cruiseSpeed = 105.0;              // [mph]
+    const double batteryCapacity = 95.0;           // [kWh]
+    const double chargeTime = 0.4;                 // [hrs]
+    const double energyUsePerMile = 1.6;           // [kWh/mile]
+    const int passengerCount = 4;
+    const double faultProbability = 0.07;          // [prob/hr]
 
-    double batteryLevel = batteryCapacity;   // [kWh]
+    double batteryLevel = batteryCapacity;            // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
     bool charging = false;
 

@@ -4,14 +4,14 @@
 
 class BravoEVTOL : public EVTOL {
 private:
-    double cruiseSpeed = 100.0;              // [mph]
-    double batteryCapacity = 100.0;          // [kWh]
-    double chargeTime = 0.2;                 // [hrs]
-    double energyUsePerMile = 1.5;           // [kWh/mile]
-    int passengerCount = 5;
-    double faultProbability = 0.10;          // [prob/hr]
+    const double cruiseSpeed = 100.0;              // [mph]
+    const double batteryCapacity = 100.0;          // [kWh]
+    const double chargeTime = 0.2;                 // [hrs]
+    const double energyUsePerMile = 1.5;           // [kWh/mile]
+    const int passengerCount = 5;
+    const double faultProbability = 0.10;          // [prob/hr]
 
-    double batteryLevel = batteryCapacity;   // [kWh]
+    double batteryLevel = batteryCapacity;            // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
     bool charging = false;
 

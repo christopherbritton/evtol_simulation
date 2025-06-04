@@ -4,14 +4,14 @@
 
 class EchoEVTOL : public EVTOL {
 private:
-    double cruiseSpeed = 125.0;              // [mph]
-    double batteryCapacity = 110.0;          // [kWh]
-    double chargeTime = 0.6;                 // [hrs]
-    double energyUsePerMile = 1.9;           // [kWh/mile]
-    int passengerCount = 5;
-    double faultProbability = 0.09;          // [prob/hr]
+    const double cruiseSpeed = 125.0;         // [mph]
+    const double batteryCapacity = 110.0;     // [kWh]
+    const double chargeTime = 0.6;            // [hrs]
+    const double energyUsePerMile = 1.9;      // [kWh/mile]
+    const int passengerCount = 5;
+    const double faultProbability = 0.09;     // [prob/hr]
 
-    double batteryLevel = batteryCapacity;   // [kWh]
+    double batteryLevel = batteryCapacity;            // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
     bool charging = false;
 

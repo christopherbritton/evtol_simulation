@@ -11,7 +11,7 @@ private:
     const int passengerCount = 4;
     const double faultProbability = 0.25;     // [prob/hr]
 
-    double batteryLevel = batteryCapacity;    // [kWh]
+    double batteryLevel = batteryCapacity;            // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
     bool charging = false;
 

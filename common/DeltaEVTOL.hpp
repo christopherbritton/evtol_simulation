@@ -4,14 +4,14 @@
 
 class DeltaEVTOL : public EVTOL {
 private:
-    double cruiseSpeed = 115.0;              // [mph]
-    double batteryCapacity = 105.0;          // [kWh]
-    double chargeTime = 0.5;                 // [hrs]
-    double energyUsePerMile = 1.7;           // [kWh/mile]
-    int passengerCount = 4;
-    double faultProbability = 0.08;          // [prob/hr]
+    const double cruiseSpeed = 115.0;              // [mph]
+    const double batteryCapacity = 105.0;          // [kWh]
+    const double chargeTime = 0.5;                 // [hrs]
+    const double energyUsePerMile = 1.7;           // [kWh/mile]
+    const int passengerCount = 4;
+    const double faultProbability = 0.08;          // [prob/hr]
 
-    double batteryLevel = batteryCapacity;   // [kWh]
+    double batteryLevel = batteryCapacity;            // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
     bool charging = false;
 
