@@ -3,7 +3,6 @@
 #include <cstring>
 
 // Simulates flight for a given duration.
-// Time complexity: O(1), Space complexity: O(1)
 // hours: time in flight [hours]
 void EchoEVTOL::fly(double hours) {
     double miles = cruiseSpeed * hours;                      // [miles] = [mph] * [hr]
@@ -13,13 +12,11 @@ void EchoEVTOL::fly(double hours) {
 }
 
 // Flags the vehicle as charging.
-// Time complexity: O(1), Space complexity: O(1)
 void EchoEVTOL::charge() {
     charging = true;
 }
 
 // Checks if the battery level is below 10% of capacity.
-// Time complexity: O(1), Space complexity: O(1)
 bool EchoEVTOL::needsCharge() const {
     return batteryLevel < (batteryCapacity * 0.1);           // Threshold: 10% of capacity
 }

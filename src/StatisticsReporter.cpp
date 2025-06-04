@@ -8,8 +8,8 @@
 // Space Complexity: O(1)
 void StatisticsReporter::printFleetSummary(const std::map<std::string, int>& typeCounts) {
     std::cout << "\nFleet Composition Summary:\n";
-    for (const std::pair<const std::string, int>& entry : typeCounts) {
-        std::cout << "- " << entry.first << ": " << entry.second << " vehicles\n";
+    for (std::map<std::string, int>::const_iterator entry = typeCounts.begin(); entry != typeCounts.end(); ++entry) {
+        std::cout << "- " << entry->first << ": " << entry->second << " vehicles\n";
     }
 }
 
@@ -19,9 +19,10 @@ void StatisticsReporter::printFleetSummary(const std::map<std::string, int>& typ
 // If inMinutes is true, all time-based outputs are converted from hours to minutes
 void StatisticsReporter::printStatisticsDetails(const std::map<std::string, Statistics>& stats, bool inMinutes) {
     std::cout << "\nSimulation Statistics Summary:\n";
-    for (const std::pair<const std::string, Statistics>& entry : stats) {
-        const std::string& type = entry.first;
-        const Statistics& stat = entry.second;
+    for (std::map<std::string, Statistics>::const_iterator entry = stats.begin(); entry != stats.end(); ++entry) {
+        const std::string& type = entry->first;
+        const Statistics& stat = entry->second;
+
 
         double avgFlightTime = (stat.flights > 0) ? (stat.totalFlightTime / stat.flights) : 0.0;
         double avgChargeTime = (stat.charges > 0) ? (stat.totalChargeTime / stat.charges) : 0.0;

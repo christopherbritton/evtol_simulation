@@ -3,8 +3,6 @@
 #include <cstring>
 
 // Simulates flight for a given number of hours.
-// Time complexity: O(1)
-// Space complexity: O(1)
 // Energy used = cruiseSpeed * hours * energyUsePerMile [kWh], Distance = cruiseSpeed * hours [miles]
 void CharlieEVTOL::fly(double hours) {
     double distance = cruiseSpeed * hours;                             // [miles]
@@ -14,16 +12,12 @@ void CharlieEVTOL::fly(double hours) {
 }
 
 // Fully recharges the EVTOL battery.
-// Time complexity: O(1)
-// Space complexity: O(1)
 void CharlieEVTOL::charge() {
     batteryLevel = batteryCapacity;                                   // Full recharge
     charging = false;
 }
 
 // Checks if charge is needed (battery < 25% of capacity).
-// Time complexity: O(1)
-// Space complexity: O(1)
 bool CharlieEVTOL::needsCharge() const {
     return batteryLevel < batteryCapacity * 0.25;                     // Needs charge if < 25%
 }
@@ -41,8 +35,6 @@ double CharlieEVTOL::getChargeRate() const { return chargeRate; }               
 double CharlieEVTOL::getBatteryLevel() const { return batteryLevel; }           // [kWh]
 
 // Partial charging method for simulating time-based recharging.
-// Time complexity: O(1)
-// Space complexity: O(1)
 void CharlieEVTOL::charge(double hours) {
     batteryLevel += chargeRate * hours;
     if (batteryLevel >= batteryCapacity) {
@@ -54,8 +46,6 @@ void CharlieEVTOL::charge(double hours) {
 }
 
 // Resets the battery to full state.
-// Time complexity: O(1)
-// Space complexity: O(1)
 void CharlieEVTOL::resetBattery() {
     batteryLevel = batteryCapacity;
     charging = false;
@@ -72,8 +62,6 @@ const char* CharlieEVTOL::getType() const {
 } 
 
 // Simulates fault based on fault probability.
-// Time complexity: O(1)
-// Space complexity: O(1)
 bool CharlieEVTOL::checkForFault() const {
     return ((double) rand() / RAND_MAX) < faultProbability;
 }

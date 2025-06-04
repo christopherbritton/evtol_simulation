@@ -34,7 +34,7 @@ void FleetManager::generateFleet(int size) {
 
 // Simulates the fleet for a given total duration, broken into discrete steps
 // Time complexity: O(t * n), where t = number of steps, n = fleet size
-// Space complexity: O(1) additional
+// Space complexity: O(1)
 void FleetManager::simulate(double totalDurationHours, double stepHours) {
     int steps = static_cast<int>(totalDurationHours / stepHours);
     for (int i = 0; i < steps; ++i) {
@@ -46,29 +46,29 @@ void FleetManager::simulate(double totalDurationHours, double stepHours) {
 // Time complexity: O(n), where n = fleet size
 // Space complexity: O(n), temporary queue of charging vehicles
 void FleetManager::simulateStep(double hours) {
-    for (const auto& vehiclePtr : fleet) {
-        EVTOL* vehicle = vehiclePtr.get();  // raw pointer access for vehicle logic
+    for (std::vector<std::unique_ptr<EVTOL>>::const_iterator vehiclePtr = fleet.begin(); vehiclePtr != fleet.end(); ++vehiclePtr) {
+        EVTOL* vehicle = vehiclePtr->get();                         // raw pointer access for vehicle logic
         std::string type = vehicle->getType();
 
         if (vehicle->isCharging()) {
-            double chargeTime = vehicle->getChargeTime(); // hours
+            double chargeTime = vehicle->getChargeTime();           // hours
             stats[type].totalChargeTime += chargeTime;
             continue;
         }
 
-        double availableEnergy = vehicle->getBatteryLevel();     // kWh
-        double cruiseSpeed = vehicle->getCruiseSpeed();          // mph
-        double energyUsePerMile = vehicle->getEnergyUsePerMile(); // kWh per mile
+        double availableEnergy = vehicle->getBatteryLevel();        // kWh
+        double cruiseSpeed = vehicle->getCruiseSpeed();             // mph
+        double energyUsePerMile = vehicle->getEnergyUsePerMile();   // kWh per mile
         double maxFlightRange = availableEnergy / energyUsePerMile; // miles
         double maxFlightTime = maxFlightRange / cruiseSpeed;        // hours
         double flightTime = std::min(hours, maxFlightTime);         // hours
 
-        double distanceFlown = cruiseSpeed * flightTime;  // miles
+        double distanceFlown = cruiseSpeed * flightTime;            // miles
         vehicle->fly(flightTime);
 
         stats[type].flights++;
-        stats[type].totalFlightTime += flightTime;  // hours
-        stats[type].totalDistance += distanceFlown; // miles
+        stats[type].totalFlightTime += flightTime;                                       // hours
+        stats[type].totalDistance += distanceFlown;                                      // miles
         stats[type].totalPassengerMiles += distanceFlown * vehicle->getPassengerCount(); // passenger-miles
 
         if (vehicle->checkForFault()) {
@@ -93,9 +93,8 @@ void FleetManager::simulateStep(double hours) {
 
 // Prints fleet summary and optionally detailed statistics
 // Time complexity: O(k), where k = number of EVTOL types
-// Space complexity: O(1)
 void FleetManager::printStatistics(bool detailed) const {
     StatisticsReporter reporter;
-    reporter.printFleetSummary(typeCounts);  // outputs number of vehicles per type
-    reporter.printStatisticsDetails(stats, detailed); // outputs performance stats per type
+    reporter.printFleetSummary(typeCounts);            // outputs number of vehicles per type
+    reporter.printStatisticsDetails(stats, detailed);  // outputs performance stats per type
 }

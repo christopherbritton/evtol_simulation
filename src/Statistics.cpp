@@ -2,8 +2,6 @@
 #include <random>
 
 // Resets all tracked statistics to initial state
-// Time Complexity: O(1)
-// Space Complexity: O(1)
 void Statistics::reset() {
     totalFlightTime = 0.0;            // hours
     totalDistance = 0.0;              // miles
@@ -15,8 +13,6 @@ void Statistics::reset() {
 }
 
 // Updates the provided Statistics object based on the current EVTOL's flight
-// Time Complexity: O(1) per call
-// Space Complexity: O(1)
 // Parameters:
 //   - s: statistics object being updated
 //   - v: pointer to the EVTOL vehicle

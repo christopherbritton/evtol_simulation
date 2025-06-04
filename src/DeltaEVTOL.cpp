@@ -4,7 +4,6 @@
 
 // Simulates flight for the given duration in hours.
 // Energy consumed is cruiseSpeed [mph] * energyUsePerMile [kWh/mile] * time [hr] = energyUsed [kWh]
-// Time complexity: O(1), Space complexity: O(1)
 void DeltaEVTOL::fly(double hours) {
     double energyUsed = hours * cruiseSpeed * energyUsePerMile;
     batteryLevel = std::max(0.0, batteryLevel - energyUsed);
@@ -12,14 +11,12 @@ void DeltaEVTOL::fly(double hours) {
 }
 
 // Fully charges the battery.
-// Time complexity: O(1), Space complexity: O(1)
 void DeltaEVTOL::charge() {
     batteryLevel = batteryCapacity;
     charging = false;
 }
 
 // Determines whether a charge is needed based on 20% threshold.
-// Time complexity: O(1), Space complexity: O(1)
 bool DeltaEVTOL::needsCharge() const {
     return batteryLevel < (0.2 * batteryCapacity);
 }
