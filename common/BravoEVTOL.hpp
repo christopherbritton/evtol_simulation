@@ -4,16 +4,16 @@
 
 class BravoEVTOL : public EVTOL {
 private:
-    const double cruiseSpeed = 100.0;              // [mph]
-    const double batteryCapacity = 100.0;          // [kWh]
-    const double chargeTime = 0.2;                 // [hrs]
-    const double energyUsePerMile = 1.5;           // [kWh/mile]
-    const int passengerCount = 5;
-    const double faultProbability = 0.10;          // [prob/hr]
+    const double cruiseSpeed = 100.0;           // [mph]
+    const double batteryCapacity = 100.0;       // [kWh]
+    const double chargeTime = 0.2;              // [hrs]
+    const double energyUsePerMile = 1.5;        // [kWh/mile]
+    const int passengerCount = 5;               // [count]
+    const double faultProbability = 0.10;       // [prob/hr]
 
-    double batteryLevel = batteryCapacity;            // [kWh]
-    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
-    bool charging = false;
+    double batteryLevel = batteryCapacity;      // [kWh] - initial full charge
+    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr] - constant rate
+    bool charging = false;                      // [bool] - charging state flag
 
 public:
     // Core behaviors
@@ -29,12 +29,10 @@ public:
     int getPassengerCount() const override;
     double getFaultProbabilityPerHour() const override;
 
-    // New interface extensions
     bool isCharging() const override;
     double getChargeRate() const override;
     double getBatteryLevel() const override;
     void charge(double hours) override;
-
     void resetBattery() override;
     int getPassengerCapacity() const override;
     const char* getType() const override;

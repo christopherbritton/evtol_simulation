@@ -4,16 +4,18 @@
 
 class EchoEVTOL : public EVTOL {
 private:
-    const double cruiseSpeed = 125.0;         // [mph]
-    const double batteryCapacity = 110.0;     // [kWh]
-    const double chargeTime = 0.6;            // [hrs]
-    const double energyUsePerMile = 1.9;      // [kWh/mile]
-    const int passengerCount = 5;
-    const double faultProbability = 0.09;     // [prob/hr]
+    // Vehicle specifications with physical units
+    const double cruiseSpeed = 30.0;          // [mph] - Maximum cruising speed
+    const double batteryCapacity = 150.0;      // [kWh] - Maximum energy storage
+    const double chargeTime = 0.3;             // [hrs] - Time to full charge
+    const double energyUsePerMile = 5.8;       // [kWh/mile] - Energy consumption per mile
+    const int passengerCount = 2;              // [count] - Seating capacity
+    const double faultProbability = 0.61;      // [prob/hr] - Probability of failure per flight hour
 
-    double batteryLevel = batteryCapacity;            // [kWh]
-    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
-    bool charging = false;
+    // Runtime operational state
+    double batteryLevel = batteryCapacity;     // [kWh] - Current energy remaining
+    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr] - Charging rate
+    bool charging = false;                     // [flag] - Whether currently charging
 
 public:
     // Core behaviors
@@ -35,6 +37,7 @@ public:
     double getBatteryLevel() const override;
     void charge(double hours) override;
 
+    // Reset and utility
     void resetBattery() override;
     int getPassengerCapacity() const override;
     const char* getType() const override;

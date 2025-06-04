@@ -4,40 +4,43 @@
 
 class DeltaEVTOL : public EVTOL {
 private:
-    const double cruiseSpeed = 115.0;              // [mph]
-    const double batteryCapacity = 105.0;          // [kWh]
-    const double chargeTime = 0.5;                 // [hrs]
-    const double energyUsePerMile = 1.7;           // [kWh/mile]
-    const int passengerCount = 4;
-    const double faultProbability = 0.08;          // [prob/hr]
+    // Vehicle specification parameters (all constants)
+    const double cruiseSpeed = 90.0;        // [mph]
+    const double batteryCapacity = 120.0;    // [kWh]
+    const double chargeTime = 0.62;           // [hrs]
+    const double energyUsePerMile = 0.8;     // [kWh/mile]
+    const int passengerCount = 2;            // [count]
+    const double faultProbability = 0.22;    // [prob/hr]
 
-    double batteryLevel = batteryCapacity;            // [kWh]
+    // Internal state variables
+    double batteryLevel = batteryCapacity;   // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
-    bool charging = false;
+    bool charging = false;                   // Charging state flag
 
 public:
     // Core behaviors
-    void fly(double hours) override;
-    void charge() override;
-    bool needsCharge() const override;
+    void fly(double hours) override;         // Simulate flight
+    void charge() override;                  // Initiate charging
+    bool needsCharge() const override;       // Determine if charging is needed
 
     // Accessors
-    double getCruiseSpeed() const override;
-    double getBatteryCapacity() const override;
-    double getChargeTime() const override;
-    double getEnergyUsePerMile() const override;
-    int getPassengerCount() const override;
-    double getFaultProbabilityPerHour() const override;
+    double getCruiseSpeed() const override;              // [mph]
+    double getBatteryCapacity() const override;          // [kWh]
+    double getChargeTime() const override;               // [hrs]
+    double getEnergyUsePerMile() const override;         // [kWh/mile]
+    int getPassengerCount() const override;              // [count]
+    double getFaultProbabilityPerHour() const override;  // [prob/hr]
 
     // Interface extensions
-    bool isCharging() const override;
-    double getChargeRate() const override;
-    double getBatteryLevel() const override;
-    void charge(double hours) override;
+    bool isCharging() const override;                    // Charging state
+    double getChargeRate() const override;               // [kWh/hr]
+    double getBatteryLevel() const override;             // [kWh]
+    void charge(double hours) override;                  // Charge for a duration
 
-    void resetBattery() override;
-    int getPassengerCapacity() const override;
-    const char* getType() const override;
-    bool checkForFault() const override;
-    double getRemainingBattery() const override;
+    // Maintenance & reporting
+    void resetBattery() override;                        // Reset battery to full
+    int getPassengerCapacity() const override;           // Alias for getPassengerCount
+    const char* getType() const override;                // Return vehicle type string
+    bool checkForFault() const override;                 // Simulate fault occurrence
+    double getRemainingBattery() const override;         // [kWh] remaining capacity
 };
