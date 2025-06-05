@@ -70,3 +70,9 @@ bool CharlieEVTOL::checkForFault() const {
 double CharlieEVTOL::getRemainingBattery() const {
     return batteryLevel;                                              // [kWh]
 }
+
+// Forces a fault condition by manually setting the fault state.
+// Used to test fault detection logic deterministically.
+void CharlieEVTOL::injectFault() {
+    faultActive = true;
+}

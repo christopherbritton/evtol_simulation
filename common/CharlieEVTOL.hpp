@@ -14,6 +14,7 @@ private:
     double batteryLevel = batteryCapacity;       // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
     bool charging = false;
+    bool faultActive = false;                 // Forces fault condition
 
 public:
     // Core behaviors
@@ -38,4 +39,5 @@ public:
     const char* getType() const override;
     bool checkForFault() const override;
     double getRemainingBattery() const override;
+    void injectFault() override;
 };

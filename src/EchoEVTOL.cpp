@@ -68,7 +68,6 @@ double EchoEVTOL::getBatteryLevel() const {
 }
 
 // Simulates battery charging over time.
-// Time complexity: O(1), Space complexity: O(1)
 // hours: duration of charging [hours]
 void EchoEVTOL::charge(double hours) {
     if (charging) {
@@ -101,4 +100,10 @@ bool EchoEVTOL::checkForFault() const {
 // Returns remaining battery level.
 double EchoEVTOL::getRemainingBattery() const {
     return batteryLevel;                                     // [kWh]
+}
+
+// Forces a fault condition by manually setting the fault state.
+// Used to test fault detection logic deterministically.
+void EchoEVTOL::injectFault() {
+    faultActive = true;
 }

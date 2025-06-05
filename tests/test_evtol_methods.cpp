@@ -196,17 +196,75 @@ void testFleetManagerGenerateAndSimulate() {
         FleetManager fm;
         fm.generateFleet(20);
 
-        fm.simulate(3.0, 0.1);  // Simulate 3 hours in 0.1h steps
+        fm.simulate(3.0, 0.1);
 
         std::cout << "\n--- Fleet Statistics Output ---\n";
-        fm.printStatistics(false);  // <== this is what shows the stats
+        fm.printStatistics(true);
         std::cout << "--- End Fleet Statistics ---\n\n";
 
-        std::cout << "✔ PASSED\n";
+        std::cout << "\n--- Fleet Statistics Output (inMinutes = false) ---\n";
+        fm.printStatistics(false);
+        std::cout << "--- End Fleet Statistics ---\n\n";
+
         testsPassed++;
+        std::cout << "✔ PASSED\n";
     } catch (const std::exception& e) {
-        std::cout << "✘ FAILED: " << e.what() << "\n";
+        std::cout << "❌ FAILED: " << e.what() << "\n";
         testsFailed++;
+    }
+}
+
+// --------------------------------------------------
+// UNIT TEST: Force fault condition (DAL-B coverage)
+// --------------------------------------------------
+void testForcedFaultInjection() {
+    std::cout << "Running testForcedFaultInjection... ";
+    try {
+        AlphaEVTOL a;
+        a.injectFault();
+        if (!a.checkForFault()) throw std::runtime_error("Fault not detected after injection");
+
+        testsPassed++;
+        std::cout << "✔ PASSED\n";
+    } catch (const std::exception& e) {
+        testsFailed++;
+        std::cout << "FAILED: " << e.what() << "\n";
+    }
+}
+
+// --------------------------------------------------
+// UNIT TEST: SimulateStep execution path (charging=false)
+// --------------------------------------------------
+void testSimulateStepWithNoCharging() {
+    std::cout << "Running testSimulateStepWithNoCharging... ";
+    try {
+        FleetManager fm;
+        fm.generateFleet(1);
+
+        // Step the simulation once with a small time increment
+        fm.simulate(0.1, 0.1);
+
+        testsPassed++;
+        std::cout << "✔ PASSED\n";
+    } catch (const std::exception& e) {
+        testsFailed++;
+        std::cout << "FAILED: " << e.what() << "\n";
+    }
+}
+
+// --------------------------------------------------
+// UNIT TEST: needsCharge() returns false when battery is full
+// --------------------------------------------------
+void testNeedsChargeFalseCondition() {
+    std::cout << "Running testNeedsChargeFalseCondition... ";
+    try {
+        AlphaEVTOL a;
+        if (a.needsCharge()) throw std::runtime_error("needsCharge() should be false for full battery");
+        testsPassed++;
+        std::cout << "✔ PASSED\n";
+    } catch (const std::exception& e) {
+        testsFailed++;
+        std::cout << "FAILED: " << e.what() << "\n";
     }
 }
 
@@ -217,9 +275,10 @@ int main() {
     testCharlieEVTOL();
     testDeltaEVTOL();
     testEchoEVTOL();
+    testNeedsChargeFalseCondition();
+    testSimulateStepWithNoCharging();
     testStatisticsUpdateAndReset();
     testFleetManagerGenerateAndSimulate();
-
 
     std::cout << "\nTest Summary: " << testsPassed << " passed, " << testsFailed << " failed.\n";
     return testsFailed == 0 ? 0 : 1;

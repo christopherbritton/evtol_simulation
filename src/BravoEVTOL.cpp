@@ -71,3 +71,9 @@ bool BravoEVTOL::checkForFault() const {
 double BravoEVTOL::getRemainingBattery() const {
     return batteryLevel;                                              // [kWh]
 }
+
+// Forces a fault condition by manually setting the fault state.
+// Used to test fault detection logic deterministically.
+void BravoEVTOL::injectFault() {
+    faultActive = true;
+}

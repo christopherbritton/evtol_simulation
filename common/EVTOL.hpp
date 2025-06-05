@@ -63,4 +63,8 @@ public:
 
     // Get remaining battery energy in kWh
     virtual double getRemainingBattery() const = 0;
+
+    
+    virtual void injectFault() = 0;
+
 };

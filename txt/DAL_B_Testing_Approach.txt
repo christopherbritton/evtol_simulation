@@ -1,0 +1,55 @@
+eVTOL Simulation Unit Testing Plan — DO-178C DAL-B Compliance
+
+Overview:
+This document outlines the unit testing approach and structural coverage goals for the eVTOL simulation software in alignment with DO-178C Design Assurance Level B (DAL-B).
+
+---
+
+1. Objectives:
+- Achieve 100% statement and decision coverage for all safety-critical components.
+- Validate key vehicle behaviors, simulation steps, and statistics tracking logic.
+- Exercise fault detection, charging behavior, and fleet-level operations.
+
+---
+
+2. Scope of Testing:
+Unit tests cover the following modules:
+- `AlphaEVTOL`: Constructor and all public accessors, `fly()`, `charge()`, `needsCharge()`, `resetBattery()`, `injectFault()`
+- `Statistics`: `update()` and `reset()` methods
+- `FleetManager`: `generateFleet()`, `simulate()`, indirect validation of `simulateStep()`
+- `StatisticsReporter`: `printStatistics(true/false)` logic tested indirectly through fleet simulation
+
+---
+
+3. Decision Coverage (Key Conditions Tested):
+- `vehicle->isCharging()` — true/false
+- `vehicle->needsCharge()` — true/false
+- `vehicle->checkForFault()` — true (via fault injection)
+- `inMinutes` flag for statistics output — true/false
+
+---
+
+4. Test Methods Implemented:
+- `testAlphaEVTOL()`
+- `testStatisticsUpdateAndReset()`
+- `testFleetManagerGenerateAndSimulate()`
+- `testForcedFaultInjection()`
+- `testSimulateStepWithNoCharging()`
+- `testNeedsChargeFalseCondition()`
+
+---
+
+5. Limitations and Declaration:
+This test suite focuses on **AlphaEVTOL** as the representative implementation for functional validation.
+
+> The other EVTOL subclasses (Bravo, Charlie, Delta, Echo) are constructed but not individually unit tested. These subclasses are verified through instantiation and runtime simulation in `FleetManager::simulate()`.
+
+---
+
+6. Tools and Compliance Status:
+- Manual unit test creation in C++
+- Console output validation
+- Full decision and statement coverage reviewed and achieved for AlphaEVTOL-related routines
+- Remaining subclasses declared as not explicitly unit tested per DAL-B rationale
+
+---

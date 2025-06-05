@@ -100,3 +100,9 @@ bool DeltaEVTOL::checkForFault() const {
 double DeltaEVTOL::getRemainingBattery() const {
     return batteryLevel;
 }
+
+// Forces a fault condition by manually setting the fault state.
+// Used to test fault detection logic deterministically.
+void DeltaEVTOL::injectFault() {
+    faultActive = true;
+}

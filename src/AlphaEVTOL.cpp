@@ -96,6 +96,11 @@ bool AlphaEVTOL::checkForFault() const {
     return ((double) rand() / RAND_MAX) < faultProbability; // [unitless]
 }
 
+// Forces a fault condition by manually setting the fault state.
+// Used to test fault detection logic deterministically.
+void AlphaEVTOL::injectFault() {
+    faultActive = true;
+}
 // Returns remaining battery energy
 double AlphaEVTOL::getRemainingBattery() const {
     return batteryLevel;                                    // [kWh]

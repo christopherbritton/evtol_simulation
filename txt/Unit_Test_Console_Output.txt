@@ -37,76 +37,146 @@ Running testBravoEVTOL... ✔ PASSED
 Running testCharlieEVTOL... ✔ PASSED
 Running testDeltaEVTOL... ✔ PASSED
 Running testEchoEVTOL... ✔ PASSED
+Running testNeedsChargeFalseCondition... ✔ PASSED
+Running testSimulateStepWithNoCharging... ✔ PASSED
 Running testStatisticsUpdateAndReset... ✔ PASSED
 Running testFleetManagerGenerateAndSimulate... 
 
 --- Fleet Statistics Output ---
 
 Fleet Composition Summary:
-- Alpha: 3 vehicles
-- Bravo: 5 vehicles
-- Charlie: 2 vehicles
-- Delta: 6 vehicles
-- Echo: 4 vehicles
+- Alpha: 2 vehicles
+- Bravo: 6 vehicles
+- Charlie: 5 vehicles
+- Delta: 5 vehicles
+- Echo: 2 vehicles
 
 Simulation Statistics Summary:
 
 Vehicle Type: Alpha
-  Total Flights       : 90
-  Total Charges       : 12
-  Faults Encountered  : 21
-  Avg Flight Time     : 0.09 hours
-  Avg Charge Time     : 0.60 hours
-  Total Flight Time   : 8.20 hours
-  Total Distance      : 984.00 miles
-  Total Charge Time   : 7.20 hours
-  Total Passenger Miles: 3936.00
+  Total Flights       : 60
+  Total Charges       : 2
+  Faults Encountered  : 17
+  Avg Flight Time     : 3.63 minutes
+  Avg Charge Time     : 36.00 minutes
+  Total Flight Time   : 218.00 minutes
+  Total Distance      : 436.00 miles
+  Total Charge Time   : 72.00 minutes
+  Total Passenger Miles: 1744.00
 
 Vehicle Type: Bravo
-  Total Flights       : 150
-  Total Charges       : 22
-  Faults Encountered  : 8
-  Avg Flight Time     : 0.08 hours
-  Avg Charge Time     : 0.20 hours
-  Total Flight Time   : 11.73 hours
-  Total Distance      : 1173.33 miles
-  Total Charge Time   : 4.40 hours
-  Total Passenger Miles: 5866.67
+  Total Flights       : 180
+  Total Charges       : 24
+  Faults Encountered  : 15
+  Avg Flight Time     : 4.04 minutes
+  Avg Charge Time     : 12.00 minutes
+  Total Flight Time   : 728.00 minutes
+  Total Distance      : 1213.33 miles
+  Total Charge Time   : 288.00 minutes
+  Total Passenger Miles: 6066.67
 
 Vehicle Type: Charlie
-  Total Flights       : 60
-  Total Charges       : 9
-  Faults Encountered  : 2
-  Avg Flight Time     : 0.09 hours
-  Avg Charge Time     : 0.80 hours
-  Total Flight Time   : 5.17 hours
-  Total Distance      : 828.00 miles
-  Total Charge Time   : 7.20 hours
-  Total Passenger Miles: 2484.00
+  Total Flights       : 150
+  Total Charges       : 28
+  Faults Encountered  : 3
+  Avg Flight Time     : 4.80 minutes
+  Avg Charge Time     : 48.00 minutes
+  Total Flight Time   : 720.00 minutes
+  Total Distance      : 1920.00 miles
+  Total Charge Time   : 1344.00 minutes
+  Total Passenger Miles: 5760.00
 
 Vehicle Type: Delta
-  Total Flights       : 180
-  Total Charges       : 10
-  Faults Encountered  : 34
-  Avg Flight Time     : 0.10 hours
-  Avg Charge Time     : 0.62 hours
-  Total Flight Time   : 18.00 hours
-  Total Distance      : 1620.00 miles
-  Total Charge Time   : 6.20 hours
-  Total Passenger Miles: 3240.00
+  Total Flights       : 150
+  Total Charges       : 16
+  Faults Encountered  : 31
+  Avg Flight Time     : 5.17 minutes
+  Avg Charge Time     : 37.20 minutes
+  Total Flight Time   : 776.00 minutes
+  Total Distance      : 1164.00 miles
+  Total Charge Time   : 595.20 minutes
+  Total Passenger Miles: 2328.00
 
 Vehicle Type: Echo
-  Total Flights       : 120
-  Total Charges       : 19
-  Faults Encountered  : 65
+  Total Flights       : 60
+  Total Charges       : 8
+  Faults Encountered  : 33
+  Avg Flight Time     : 4.45 minutes
+  Avg Charge Time     : 18.00 minutes
+  Total Flight Time   : 266.90 minutes
+  Total Distance      : 133.45 miles
+  Total Charge Time   : 144.00 minutes
+  Total Passenger Miles: 266.90
+--- End Fleet Statistics ---
+
+
+--- Fleet Statistics Output (inMinutes = false) ---
+
+Fleet Composition Summary:
+- Alpha: 2 vehicles
+- Bravo: 6 vehicles
+- Charlie: 5 vehicles
+- Delta: 5 vehicles
+- Echo: 2 vehicles
+
+Simulation Statistics Summary:
+
+Vehicle Type: Alpha
+  Total Flights       : 60
+  Total Charges       : 2
+  Faults Encountered  : 17
+  Avg Flight Time     : 0.06 hours
+  Avg Charge Time     : 0.60 hours
+  Total Flight Time   : 3.63 hours
+  Total Distance      : 436.00 miles
+  Total Charge Time   : 1.20 hours
+  Total Passenger Miles: 1744.00
+
+Vehicle Type: Bravo
+  Total Flights       : 180
+  Total Charges       : 24
+  Faults Encountered  : 15
+  Avg Flight Time     : 0.07 hours
+  Avg Charge Time     : 0.20 hours
+  Total Flight Time   : 12.13 hours
+  Total Distance      : 1213.33 miles
+  Total Charge Time   : 4.80 hours
+  Total Passenger Miles: 6066.67
+
+Vehicle Type: Charlie
+  Total Flights       : 150
+  Total Charges       : 28
+  Faults Encountered  : 3
+  Avg Flight Time     : 0.08 hours
+  Avg Charge Time     : 0.80 hours
+  Total Flight Time   : 12.00 hours
+  Total Distance      : 1920.00 miles
+  Total Charge Time   : 22.40 hours
+  Total Passenger Miles: 5760.00
+
+Vehicle Type: Delta
+  Total Flights       : 150
+  Total Charges       : 16
+  Faults Encountered  : 31
   Avg Flight Time     : 0.09 hours
+  Avg Charge Time     : 0.62 hours
+  Total Flight Time   : 12.93 hours
+  Total Distance      : 1164.00 miles
+  Total Charge Time   : 9.92 hours
+  Total Passenger Miles: 2328.00
+
+Vehicle Type: Echo
+  Total Flights       : 60
+  Total Charges       : 8
+  Faults Encountered  : 33
+  Avg Flight Time     : 0.07 hours
   Avg Charge Time     : 0.30 hours
-  Total Flight Time   : 10.37 hours
-  Total Distance      : 311.17 miles
-  Total Charge Time   : 5.70 hours
-  Total Passenger Miles: 622.34
+  Total Flight Time   : 4.45 hours
+  Total Distance      : 133.45 miles
+  Total Charge Time   : 2.40 hours
+  Total Passenger Miles: 266.90
 --- End Fleet Statistics ---
 
 ✔ PASSED
 
-Test Summary: 7 passed, 0 failed.
+Test Summary: 9 passed, 0 failed.
