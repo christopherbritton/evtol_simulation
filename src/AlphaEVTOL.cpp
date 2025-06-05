@@ -13,7 +13,8 @@ void AlphaEVTOL::fly(double hours) {
 
 // Initiates charging state
 void AlphaEVTOL::charge() {
-    charging = true;
+    batteryLevel = batteryCapacity;
+    charging = false;
 }
 
 // Checks if battery level is below 10% of full capacity

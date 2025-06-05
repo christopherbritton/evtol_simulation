@@ -1,4 +1,4 @@
-@christopherbritton ➜ /workspaces/EVTOL_Abstraction (main) $ ./build_and_run_unit_tests.sh 
+@christopherbritton ➜ /workspaces/evtol_simulation (main) $ ./build_and_run_unit_tests.sh 
 🧹 Cleaning previous test build artifacts...
 ⚙️ Configuring CMake...
 -- The C compiler identification is GNU 9.4.0
@@ -17,21 +17,96 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /workspaces/EVTOL_Abstraction/build_tests
+-- Build files have been written to: /workspaces/evtol_simulation/build_tests
 🛠️ Building unit tests...
 Scanning dependencies of target test_evtol_methods
-[ 12%] Building CXX object CMakeFiles/test_evtol_methods.dir/tests/test_evtol_methods.cpp.o
-[ 25%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/AlphaEVTOL.cpp.o
-[ 37%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/BravoEVTOL.cpp.o
-[ 50%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/CharlieEVTOL.cpp.o
-[ 62%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/DeltaEVTOL.cpp.o
-[ 75%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/EchoEVTOL.cpp.o
-[ 87%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o
+[ 10%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o
+[ 20%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o
+[ 30%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o
+[ 40%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/AlphaEVTOL.cpp.o
+[ 50%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/BravoEVTOL.cpp.o
+[ 60%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/CharlieEVTOL.cpp.o
+[ 70%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/DeltaEVTOL.cpp.o
+[ 80%] Building CXX object CMakeFiles/test_evtol_methods.dir/src/EchoEVTOL.cpp.o
+[ 90%] Building CXX object CMakeFiles/test_evtol_methods.dir/tests/test_evtol_methods.cpp.o
 [100%] Linking CXX executable test_evtol_methods
 [100%] Built target test_evtol_methods
 🚀 Running unit tests...
-Running testAlphaEVTOL... ✅ PASSED
-Running testBravoEVTOL... ✅ PASSED
-Running testCharlieEVTOL... ✅ PASSED
-Running testDeltaEVTOL... ✅ PASSED
-Running testEchoEVTOL... ✅ PASSED
+Running testAlphaEVTOL... ✔ PASSED
+Running testBravoEVTOL... ✔ PASSED
+Running testCharlieEVTOL... ✔ PASSED
+Running testDeltaEVTOL... ✔ PASSED
+Running testEchoEVTOL... ✔ PASSED
+Running testStatisticsUpdateAndReset... ✔ PASSED
+Running testFleetManagerGenerateAndSimulate... 
+
+--- Fleet Statistics Output ---
+
+Fleet Composition Summary:
+- Alpha: 3 vehicles
+- Bravo: 5 vehicles
+- Charlie: 2 vehicles
+- Delta: 6 vehicles
+- Echo: 4 vehicles
+
+Simulation Statistics Summary:
+
+Vehicle Type: Alpha
+  Total Flights       : 90
+  Total Charges       : 12
+  Faults Encountered  : 21
+  Avg Flight Time     : 0.09 hours
+  Avg Charge Time     : 0.60 hours
+  Total Flight Time   : 8.20 hours
+  Total Distance      : 984.00 miles
+  Total Charge Time   : 7.20 hours
+  Total Passenger Miles: 3936.00
+
+Vehicle Type: Bravo
+  Total Flights       : 150
+  Total Charges       : 22
+  Faults Encountered  : 8
+  Avg Flight Time     : 0.08 hours
+  Avg Charge Time     : 0.20 hours
+  Total Flight Time   : 11.73 hours
+  Total Distance      : 1173.33 miles
+  Total Charge Time   : 4.40 hours
+  Total Passenger Miles: 5866.67
+
+Vehicle Type: Charlie
+  Total Flights       : 60
+  Total Charges       : 9
+  Faults Encountered  : 2
+  Avg Flight Time     : 0.09 hours
+  Avg Charge Time     : 0.80 hours
+  Total Flight Time   : 5.17 hours
+  Total Distance      : 828.00 miles
+  Total Charge Time   : 7.20 hours
+  Total Passenger Miles: 2484.00
+
+Vehicle Type: Delta
+  Total Flights       : 180
+  Total Charges       : 10
+  Faults Encountered  : 34
+  Avg Flight Time     : 0.10 hours
+  Avg Charge Time     : 0.62 hours
+  Total Flight Time   : 18.00 hours
+  Total Distance      : 1620.00 miles
+  Total Charge Time   : 6.20 hours
+  Total Passenger Miles: 3240.00
+
+Vehicle Type: Echo
+  Total Flights       : 120
+  Total Charges       : 19
+  Faults Encountered  : 65
+  Avg Flight Time     : 0.09 hours
+  Avg Charge Time     : 0.30 hours
+  Total Flight Time   : 10.37 hours
+  Total Distance      : 311.17 miles
+  Total Charge Time   : 5.70 hours
+  Total Passenger Miles: 622.34
+--- End Fleet Statistics ---
+
+✔ PASSED
+
+Test Summary: 7 passed, 0 failed.

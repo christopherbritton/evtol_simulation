@@ -13,7 +13,8 @@ void EchoEVTOL::fly(double hours) {
 
 // Flags the vehicle as charging.
 void EchoEVTOL::charge() {
-    charging = true;
+    batteryLevel = batteryCapacity;
+    charging = false;
 }
 
 // Checks if the battery level is below 10% of capacity.

@@ -12,11 +12,11 @@ namespace Config {
     };
 
     // Specifications for each EVTOL type
-    constexpr VehicleSpec AlphaSpec   = {120.0, 320.0, 0.6, 1.6, 4, 0.01};
-    constexpr VehicleSpec BravoSpec   = {100.0, 300.0, 0.7, 1.3, 3, 0.012};
-    constexpr VehicleSpec CharlieSpec = {110.0, 310.0, 0.65, 1.25, 4, 0.015};
-    constexpr VehicleSpec DeltaSpec   = {115.0, 330.0, 0.55, 1.15, 5, 0.013};
-    constexpr VehicleSpec EchoSpec    = {105.0, 290.0, 0.75, 1.35, 3, 0.014};
+    constexpr VehicleSpec AlphaSpec   = {120.0, 320.0, 0.6, 1.6, 4, 0.25};
+    constexpr VehicleSpec BravoSpec   = {100.0, 100.0, 0.2, 1.5, 5, 0.1};
+    constexpr VehicleSpec CharlieSpec = {160.0, 220.0, 0.8, 2.2, 3, 0.05};
+    constexpr VehicleSpec DeltaSpec   = {90.0, 120.0, 0.62, 0.8, 2, 0.22};
+    constexpr VehicleSpec EchoSpec    = {30.0, 150.0, 0.3, 5.8, 2, 0.61};
 
     // Aliases to support compatibility with unit test macros and legacy calls
     constexpr double AlphaCruiseSpeed       = AlphaSpec.cruiseSpeed;

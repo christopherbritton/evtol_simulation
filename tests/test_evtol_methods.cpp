@@ -1,5 +1,9 @@
 #include <iostream>
 #include <stdexcept>
+#include <random>
+#include "Statistics.hpp"
+#include "StatisticsReporter.hpp"
+#include "FleetManager.hpp"
 #include "AlphaEVTOL.hpp"
 #include "BravoEVTOL.hpp"
 #include "CharlieEVTOL.hpp"
@@ -21,7 +25,6 @@ void drainBattery(EVTOL& v) {
 
 // Template for each EVTOL test block
 // Time complexity: O(1) per check, total O(K) where K is number of fields + operations
-// Space complexity: O(1) per test
 void testAlphaEVTOL() {
     std::cout << "Running testAlphaEVTOL... ";
     try {
@@ -39,10 +42,10 @@ void testAlphaEVTOL() {
         a.resetBattery();
         if (a.getRemainingBattery() != a.getBatteryCapacity()) throw std::runtime_error("Reset failed");
 
-        std::cout << "✅ PASSED\n";
+        std::cout << "✔ PASSED\n";
         ++testsPassed;
     } catch (const std::exception& e) {
-        std::cerr << "❌ FAILED: " << e.what() << "\n";
+        std::cerr << "✘ FAILED: " << e.what() << "\n";
         ++testsFailed;
     }
 }
@@ -69,10 +72,10 @@ void testBravoEVTOL() {
         b.resetBattery();
         if (b.getRemainingBattery() != b.getBatteryCapacity()) throw std::runtime_error("Reset failed");
 
-        std::cout << "✅ PASSED\n";
+        std::cout << "✔ PASSED\n";
         ++testsPassed;
     } catch (const std::exception& e) {
-        std::cerr << "❌ FAILED: " << e.what() << "\n";
+        std::cerr << "✘ FAILED: " << e.what() << "\n";
         ++testsFailed;
     }
 }
@@ -94,10 +97,10 @@ void testCharlieEVTOL() {
         c.resetBattery();
         if (c.getRemainingBattery() != c.getBatteryCapacity()) throw std::runtime_error("Reset failed");
 
-        std::cout << "✅ PASSED\n";
+        std::cout << "✔ PASSED\n";
         ++testsPassed;
     } catch (const std::exception& e) {
-        std::cerr << "❌ FAILED: " << e.what() << "\n";
+        std::cerr << "✘ FAILED: " << e.what() << "\n";
         ++testsFailed;
     }
 }
@@ -119,10 +122,10 @@ void testDeltaEVTOL() {
         d.resetBattery();
         if (d.getRemainingBattery() != d.getBatteryCapacity()) throw std::runtime_error("Reset failed");
 
-        std::cout << "✅ PASSED\n";
+        std::cout << "✔ PASSED\n";
         ++testsPassed;
     } catch (const std::exception& e) {
-        std::cerr << "❌ FAILED: " << e.what() << "\n";
+        std::cerr << "✘ FAILED: " << e.what() << "\n";
         ++testsFailed;
     }
 }
@@ -144,11 +147,66 @@ void testEchoEVTOL() {
         e.resetBattery();
         if (e.getRemainingBattery() != e.getBatteryCapacity()) throw std::runtime_error("Reset failed");
 
-        std::cout << "✅ PASSED\n";
+        std::cout << "✔ PASSED\n";
         ++testsPassed;
     } catch (const std::exception& e) {
-        std::cerr << "❌ FAILED: " << e.what() << "\n";
+        std::cerr << "✘ FAILED: " << e.what() << "\n";
         ++testsFailed;
+    }
+}
+
+// --------------------------------------------------
+// UNIT TEST: Statistics::reset and Statistics::update
+// --------------------------------------------------
+void testStatisticsUpdateAndReset() {
+    std::cout << "Running testStatisticsUpdateAndReset... ";
+    try {
+        Statistics s;
+        AlphaEVTOL testVehicle;
+        std::mt19937 rng(42);
+
+        // Simulate flight update
+        double flightHours = 3.0;
+        Statistics::update(s, &testVehicle, flightHours, rng);
+
+        // Check that at least one stat was updated
+        if (s.totalFlightTime <= 0.0) throw std::runtime_error("Flight time not updated");
+        if (s.totalDistance <= 0.0) throw std::runtime_error("Distance not updated");
+        if (s.flights != 1) throw std::runtime_error("Flights not incremented");
+
+        // Reset and verify all fields are zeroed
+        s.reset();
+        if (s.totalFlightTime != 0.0 || s.totalDistance != 0.0 || s.totalFaults != 0 || s.flights != 0)
+            throw std::runtime_error("Reset did not clear statistics");
+
+        testsPassed++;
+        std::cout << "✔ PASSED\n";
+    } catch (const std::exception& e) {
+        testsFailed++;
+        std::cout << "✘ FAILED: " << e.what() << "\n";
+    }
+}
+
+// --------------------------------------------------
+// UNIT TEST: FleetManager::generateFleet and simulate
+// --------------------------------------------------
+void testFleetManagerGenerateAndSimulate() {
+    std::cout << "Running testFleetManagerGenerateAndSimulate... \n";
+    try {
+        FleetManager fm;
+        fm.generateFleet(20);
+
+        fm.simulate(3.0, 0.1);  // Simulate 3 hours in 0.1h steps
+
+        std::cout << "\n--- Fleet Statistics Output ---\n";
+        fm.printStatistics(false);  // <== this is what shows the stats
+        std::cout << "--- End Fleet Statistics ---\n\n";
+
+        std::cout << "✔ PASSED\n";
+        testsPassed++;
+    } catch (const std::exception& e) {
+        std::cout << "✘ FAILED: " << e.what() << "\n";
+        testsFailed++;
     }
 }
 
@@ -159,6 +217,9 @@ int main() {
     testCharlieEVTOL();
     testDeltaEVTOL();
     testEchoEVTOL();
+    testStatisticsUpdateAndReset();
+    testFleetManagerGenerateAndSimulate();
+
 
     std::cout << "\nTest Summary: " << testsPassed << " passed, " << testsFailed << " failed.\n";
     return testsFailed == 0 ? 0 : 1;

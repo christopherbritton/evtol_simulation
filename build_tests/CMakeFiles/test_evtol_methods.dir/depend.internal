@@ -3,26 +3,21 @@
 
 CMakeFiles/test_evtol_methods.dir/src/AlphaEVTOL.cpp.o
  ../common/AlphaEVTOL.hpp
- ../common/Config.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/AlphaEVTOL.cpp
 CMakeFiles/test_evtol_methods.dir/src/BravoEVTOL.cpp.o
  ../common/BravoEVTOL.hpp
- ../common/Config.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/BravoEVTOL.cpp
 CMakeFiles/test_evtol_methods.dir/src/CharlieEVTOL.cpp.o
  ../common/CharlieEVTOL.hpp
- ../common/Config.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/CharlieEVTOL.cpp
 CMakeFiles/test_evtol_methods.dir/src/DeltaEVTOL.cpp.o
- ../common/Config.hpp
  ../common/DeltaEVTOL.hpp
  ../common/EVTOL.hpp
  /workspaces/evtol_simulation/src/DeltaEVTOL.cpp
 CMakeFiles/test_evtol_methods.dir/src/EchoEVTOL.cpp.o
- ../common/Config.hpp
  ../common/EVTOL.hpp
  ../common/EchoEVTOL.hpp
  /workspaces/evtol_simulation/src/EchoEVTOL.cpp
@@ -55,4 +50,7 @@ CMakeFiles/test_evtol_methods.dir/tests/test_evtol_methods.cpp.o
  ../common/DeltaEVTOL.hpp
  ../common/EVTOL.hpp
  ../common/EchoEVTOL.hpp
+ ../common/FleetManager.hpp
+ ../common/Statistics.hpp
+ ../common/StatisticsReporter.hpp
  /workspaces/evtol_simulation/tests/test_evtol_methods.cpp
