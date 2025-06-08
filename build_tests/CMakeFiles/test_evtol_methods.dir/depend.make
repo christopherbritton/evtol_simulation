@@ -38,10 +38,12 @@ CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o: ../common/Statistics.h
 CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o: ../common/StatisticsReporter.hpp
 CMakeFiles/test_evtol_methods.dir/src/FleetManager.cpp.o: ../src/FleetManager.cpp
 
+CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o: ../common/Config.hpp
 CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o: ../common/EVTOL.hpp
 CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o: ../common/Statistics.hpp
 CMakeFiles/test_evtol_methods.dir/src/Statistics.cpp.o: ../src/Statistics.cpp
 
+CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o: ../common/Config.hpp
 CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o: ../common/EVTOL.hpp
 CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o: ../common/Statistics.hpp
 CMakeFiles/test_evtol_methods.dir/src/StatisticsReporter.cpp.o: ../common/StatisticsReporter.hpp

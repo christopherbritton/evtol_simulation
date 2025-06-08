@@ -1,78 +1,54 @@
 #include "CharlieEVTOL.hpp"
-#include <algorithm>
-#include <cstring>
 
-// Simulates flight for a given number of hours.
-// Energy used = cruiseSpeed * hours * energyUsePerMile [kWh], Distance = cruiseSpeed * hours [miles]
+CharlieEVTOL::CharlieEVTOL() {
+    batteryLevel = getBatteryCapacity();
+}
+
 void CharlieEVTOL::fly(double hours) {
-    double distance = cruiseSpeed * hours;                             // [miles]
-    double energyUsed = distance * energyUsePerMile;                  // [kWh]
-    batteryLevel -= energyUsed;
-    charging = false;
-}
-
-// Fully recharges the EVTOL battery.
-void CharlieEVTOL::charge() {
-    batteryLevel = batteryCapacity;                                   // Full recharge
-    charging = false;
-}
-
-// Checks if charge is needed (battery < 25% of capacity).
-bool CharlieEVTOL::needsCharge() const {
-    return batteryLevel < batteryCapacity * 0.25;                     // Needs charge if < 25%
-}
-
-// Accessor methods to expose vehicle characteristics.
-double CharlieEVTOL::getCruiseSpeed() const { return cruiseSpeed; }             // [mph]
-double CharlieEVTOL::getBatteryCapacity() const { return batteryCapacity; }     // [kWh]
-double CharlieEVTOL::getChargeTime() const { return chargeTime; }               // [hours]
-double CharlieEVTOL::getEnergyUsePerMile() const { return energyUsePerMile; }   // [kWh/mile]
-int CharlieEVTOL::getPassengerCount() const { return passengerCount; }          // [people]
-double CharlieEVTOL::getFaultProbabilityPerHour() const { return faultProbability; } // [0-1]
-
-bool CharlieEVTOL::isCharging() const { return charging; }
-double CharlieEVTOL::getChargeRate() const { return chargeRate; }               // [kWh/hour]
-double CharlieEVTOL::getBatteryLevel() const { return batteryLevel; }           // [kWh]
-
-// Partial charging method for simulating time-based recharging.
-void CharlieEVTOL::charge(double hours) {
-    batteryLevel += chargeRate * hours;
-    if (batteryLevel >= batteryCapacity) {
-        batteryLevel = batteryCapacity;
-        charging = false;
-    } else {
-        charging = true;
+    if (!faultActive && !isCharging()) {
+        double energyUsed = hours * getCruiseSpeed() * getEnergyUsePerMile();
+        batteryLevel -= energyUsed;
+        if (batteryLevel < 0) batteryLevel = 0;
     }
 }
 
-// Resets the battery to full state.
-void CharlieEVTOL::resetBattery() {
-    batteryLevel = batteryCapacity;
+void CharlieEVTOL::charge() {
+    batteryLevel = getBatteryCapacity();
     charging = false;
 }
 
-// Returns passenger capacity of this EVTOL model.
-int CharlieEVTOL::getPassengerCapacity() const {
-    return passengerCount;
+bool CharlieEVTOL::needsCharge() const {
+    return batteryLevel < getBatteryCapacity() * 0.25;
 }
 
-// Returns type of this EVTOL model.
+double CharlieEVTOL::getCruiseSpeed() const {
+    return Config::CharlieSpec.cruiseSpeed;
+}
+
+double CharlieEVTOL::getBatteryCapacity() const {
+    return Config::CharlieSpec.batteryCapacity;
+}
+
+double CharlieEVTOL::getChargeTime() const {
+    return Config::CharlieSpec.chargeTime;
+}
+
+double CharlieEVTOL::getEnergyUsePerMile() const {
+    return Config::CharlieSpec.energyUsePerMile;
+}
+
+int CharlieEVTOL::getPassengerCount() const {
+    return Config::CharlieSpec.passengerCount;
+}
+
+double CharlieEVTOL::getFaultProbabilityPerHour() const {
+    return Config::CharlieSpec.faultProbability;
+}
+
 const char* CharlieEVTOL::getType() const {
     return "Charlie";
-} 
-
-// Simulates fault based on fault probability.
-bool CharlieEVTOL::checkForFault() const {
-    return ((double) rand() / RAND_MAX) < faultProbability;
 }
 
-// Returns remaining battery energy.
-double CharlieEVTOL::getRemainingBattery() const {
-    return batteryLevel;                                              // [kWh]
-}
-
-// Forces a fault condition by manually setting the fault state.
-// Used to test fault detection logic deterministically.
 void CharlieEVTOL::injectFault() {
     faultActive = true;
 }

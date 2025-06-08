@@ -38,10 +38,12 @@ CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.o: ../common/Statistics.hpp
 CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.o: ../common/StatisticsReporter.hpp
 CMakeFiles/evtol_sim.dir/src/FleetManager.cpp.o: ../src/FleetManager.cpp
 
+CMakeFiles/evtol_sim.dir/src/Statistics.cpp.o: ../common/Config.hpp
 CMakeFiles/evtol_sim.dir/src/Statistics.cpp.o: ../common/EVTOL.hpp
 CMakeFiles/evtol_sim.dir/src/Statistics.cpp.o: ../common/Statistics.hpp
 CMakeFiles/evtol_sim.dir/src/Statistics.cpp.o: ../src/Statistics.cpp
 
+CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.o: ../common/Config.hpp
 CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.o: ../common/EVTOL.hpp
 CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.o: ../common/Statistics.hpp
 CMakeFiles/evtol_sim.dir/src/StatisticsReporter.cpp.o: ../common/StatisticsReporter.hpp

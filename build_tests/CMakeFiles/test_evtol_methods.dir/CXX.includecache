@@ -7,38 +7,42 @@
 #IncludeRegexTransform: 
 
 ../common/AlphaEVTOL.hpp
-Config.hpp
-../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
+Config.hpp
+../common/Config.hpp
 
 ../common/BravoEVTOL.hpp
-Config.hpp
-../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
+Config.hpp
+../common/Config.hpp
 
 ../common/CharlieEVTOL.hpp
-Config.hpp
-../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
+Config.hpp
+../common/Config.hpp
 
 ../common/Config.hpp
 
 ../common/DeltaEVTOL.hpp
-Config.hpp
-../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
+Config.hpp
+../common/Config.hpp
 
 ../common/EVTOL.hpp
+random
+-
+Config.hpp
+../common/Config.hpp
 
 ../common/EchoEVTOL.hpp
-Config.hpp
-../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
+Config.hpp
+../common/Config.hpp
 
 ../common/FleetManager.hpp
 EVTOL.hpp
@@ -75,42 +79,22 @@ Statistics.hpp
 /workspaces/evtol_simulation/src/AlphaEVTOL.cpp
 AlphaEVTOL.hpp
 /workspaces/evtol_simulation/src/AlphaEVTOL.hpp
-algorithm
--
-cstring
--
 
 /workspaces/evtol_simulation/src/BravoEVTOL.cpp
 BravoEVTOL.hpp
 /workspaces/evtol_simulation/src/BravoEVTOL.hpp
-algorithm
--
-cstring
--
 
 /workspaces/evtol_simulation/src/CharlieEVTOL.cpp
 CharlieEVTOL.hpp
 /workspaces/evtol_simulation/src/CharlieEVTOL.hpp
-algorithm
--
-cstring
--
 
 /workspaces/evtol_simulation/src/DeltaEVTOL.cpp
 DeltaEVTOL.hpp
 /workspaces/evtol_simulation/src/DeltaEVTOL.hpp
-algorithm
--
-cstring
--
 
 /workspaces/evtol_simulation/src/EchoEVTOL.cpp
 EchoEVTOL.hpp
 /workspaces/evtol_simulation/src/EchoEVTOL.hpp
-algorithm
--
-cstring
--
 
 /workspaces/evtol_simulation/src/FleetManager.cpp
 FleetManager.hpp
