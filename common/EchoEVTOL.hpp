@@ -1,22 +1,22 @@
 #pragma once
-
+#include "Config.hpp"
 #include "EVTOL.hpp"
 
 class EchoEVTOL : public EVTOL {
 private:
     // Vehicle specifications with physical units
-    const double cruiseSpeed = 30.0;          // [mph] - Maximum cruising speed
-    const double batteryCapacity = 150.0;      // [kWh] - Maximum energy storage
-    const double chargeTime = 0.3;             // [hrs] - Time to full charge
-    const double energyUsePerMile = 5.8;       // [kWh/mile] - Energy consumption per mile
-    const int passengerCount = 2;              // [count] - Seating capacity
-    const double faultProbability = 0.61;      // [prob/hr] - Probability of failure per flight hour
+    const double cruiseSpeed = Config::EchoSpec.cruiseSpeed;                 // [mph] - Maximum cruising speed
+    const double batteryCapacity = Config::EchoSpec.batteryCapacity;         // [kWh] - Maximum energy storage
+    const double chargeTime = Config::EchoSpec.chargeTime;                   // [hrs] - Time to full charge
+    const double energyUsePerMile = Config::EchoSpec.energyUsePerMile;       // [kWh/mile] - Energy consumption per mile
+    const int passengerCount = Config::EchoSpec.passengerCount;              // [count] - Seating capacity
+    const double faultProbability = Config::EchoSpec.faultProbability;       // [prob/hr] - Probability of failure per flight hour
 
     // Runtime operational state
-    double batteryLevel = batteryCapacity;     // [kWh] - Current energy remaining
-    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr] - Charging rate
-    bool charging = false;                     // [flag] - Whether currently charging
-    bool faultActive = false;                 // Forces fault condition
+    double batteryLevel = batteryCapacity;                                   // [kWh] - Current energy remaining
+    double chargeRate = batteryCapacity / chargeTime;                        // [kWh/hr] - Charging rate
+    bool charging = false;                                                   // [flag] - Whether currently charging
+    bool faultActive = false;                                                // Forces fault condition
 
 public:
     // Core behaviors

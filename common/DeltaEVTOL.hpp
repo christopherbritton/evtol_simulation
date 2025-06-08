@@ -1,22 +1,22 @@
 #pragma once
-
+#include "Config.hpp"
 #include "EVTOL.hpp"
 
 class DeltaEVTOL : public EVTOL {
 private:
     // Vehicle specification parameters (all constants)
-    const double cruiseSpeed = 90.0;          // [mph]
-    const double batteryCapacity = 120.0;     // [kWh]
-    const double chargeTime = 0.62;           // [hrs]
-    const double energyUsePerMile = 0.8;      // [kWh/mile]
-    const int passengerCount = 2;             // [count]
-    const double faultProbability = 0.22;     // [prob/hr]
+    const double cruiseSpeed = Config::DeltaSpec.cruiseSpeed;                // [mph]
+    const double batteryCapacity = Config::DeltaSpec.batteryCapacity;        // [kWh]
+    const double chargeTime = Config::DeltaSpec.chargeTime;                  // [hrs]
+    const double energyUsePerMile = Config::DeltaSpec.energyUsePerMile;      // [kWh/mile]
+    const int passengerCount = Config::DeltaSpec.passengerCount;             // [count]
+    const double faultProbability = Config::DeltaSpec.faultProbability;      // [prob/hr]
 
     // Internal state variables
     double batteryLevel = batteryCapacity;            // [kWh]
     double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
     bool charging = false;                            // Charging state flag
-    bool faultActive = false;                 // Forces fault condition
+    bool faultActive = false;                         // Forces fault condition
 
 public:
     // Core behaviors

@@ -1,20 +1,20 @@
 #pragma once
-
+#include "Config.hpp"
 #include "EVTOL.hpp"
 
 class BravoEVTOL : public EVTOL {
 private:
-    const double cruiseSpeed = 100.0;           // [mph]
-    const double batteryCapacity = 100.0;       // [kWh]
-    const double chargeTime = 0.2;              // [hrs]
-    const double energyUsePerMile = 1.5;        // [kWh/mile]
-    const int passengerCount = 5;               // [count]
-    const double faultProbability = 0.10;       // [prob/hr]
+    const double cruiseSpeed = Config::BravoSpec.cruiseSpeed;                  // [mph]
+    const double batteryCapacity = Config::BravoSpec.batteryCapacity;          // [kWh]
+    const double chargeTime = Config::BravoSpec.chargeTime;                    // [hrs]
+    const double energyUsePerMile = Config::BravoSpec.energyUsePerMile;        // [kWh/mile]
+    const int passengerCount = Config::BravoSpec.passengerCount;               // [count]
+    const double faultProbability = Config::BravoSpec.faultProbability;        // [prob/hr]
 
-    double batteryLevel = batteryCapacity;      // [kWh] - initial full charge
-    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr] - constant rate
-    bool charging = false;                      // [bool] - charging state flag
-    bool faultActive = false;                 // Forces fault condition
+    double batteryLevel = batteryCapacity;                                     // [kWh] - initial full charge
+    double chargeRate = batteryCapacity / chargeTime;                          // [kWh/hr] - constant rate
+    bool charging = false;                                                     // [bool] - charging state flag
+    bool faultActive = false;                                                  // Forces fault condition
 
 public:
     // Core behaviors

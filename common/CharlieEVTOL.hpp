@@ -1,20 +1,20 @@
 #pragma once
-
+#include "Config.hpp"
 #include "EVTOL.hpp"
 
 class CharlieEVTOL : public EVTOL {
 private:
-    const double cruiseSpeed = 160.0;            // [mph]
-    const double batteryCapacity = 220.0;        // [kWh]
-    const double chargeTime = 0.8;               // [hrs]
-    const double energyUsePerMile = 2.2;         // [kWh/mile]
-    const int passengerCount = 3;                // [count]
-    const double faultProbability = 0.05;        // [prob/hr]
+    const double cruiseSpeed = Config::CharlieSpec.cruiseSpeed;                // [mph]
+    const double batteryCapacity = Config::CharlieSpec.batteryCapacity;        // [kWh]
+    const double chargeTime = Config::CharlieSpec.chargeTime;                  // [hrs]
+    const double energyUsePerMile = Config::CharlieSpec.energyUsePerMile;      // [kWh/mile]
+    const int passengerCount = Config::CharlieSpec.passengerCount;             // [count]
+    const double faultProbability = Config::CharlieSpec.faultProbability;      // [prob/hr]
 
-    double batteryLevel = batteryCapacity;       // [kWh]
-    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr]
+    double batteryLevel = batteryCapacity;                                     // [kWh]
+    double chargeRate = batteryCapacity / chargeTime;                          // [kWh/hr]
     bool charging = false;
-    bool faultActive = false;                 // Forces fault condition
+    bool faultActive = false;                                                  // Forces fault condition
 
 public:
     // Core behaviors

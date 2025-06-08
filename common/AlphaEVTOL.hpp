@@ -1,20 +1,20 @@
 #pragma once
-
+#include "Config.hpp"
 #include "EVTOL.hpp"
 
 class AlphaEVTOL : public EVTOL {
 private:
-    const double cruiseSpeed = 120.0;         // [mph]    - Max cruise speed
-    const double batteryCapacity = 320.0;     // [kWh]    - Max battery energy
-    const double chargeTime = 0.6;            // [hrs]    - Time to charge fully
-    const double energyUsePerMile = 1.6;      // [kWh/mile] - Energy consumption rate
-    const int passengerCount = 4;             // [count]  - Max passengers
-    const double faultProbability = 0.25;     // [prob/hr] - Fault probability per flight hour
+    const double cruiseSpeed = Config::AlphaSpec.cruiseSpeed;                // [mph]    - Max cruise speed
+    const double batteryCapacity = Config::AlphaSpec.batteryCapacity;        // [kWh]    - Max battery energy
+    const double chargeTime = Config::AlphaSpec.chargeTime;                  // [hrs]    - Time to charge fully
+    const double energyUsePerMile = Config::AlphaSpec.energyUsePerMile;      // [kWh/mile] - Energy consumption rate
+    const int passengerCount = Config::AlphaSpec.passengerCount;             // [count]  - Max passengers
+    const double faultProbability = Config::AlphaSpec.faultProbability;      // [prob/hr] - Fault probability per flight hour
 
-    double batteryLevel = batteryCapacity;    // [kWh]    - Current battery energy
-    double chargeRate = batteryCapacity / chargeTime; // [kWh/hr] - Charging rate
-    bool charging = false;                    // [bool]   - Charging state
-    bool faultActive = false;                 // Forces fault condition
+    double batteryLevel = batteryCapacity;                                   // [kWh]    - Current battery energy
+    double chargeRate = batteryCapacity / chargeTime;                        // [kWh/hr] - Charging rate
+    bool charging = false;                                                   // [bool]   - Charging state
+    bool faultActive = false;                                                // Forces fault condition
 
 public:
     // Core behaviors

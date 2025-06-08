@@ -7,26 +7,36 @@
 #IncludeRegexTransform: 
 
 ../common/AlphaEVTOL.hpp
+Config.hpp
+../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
 
 ../common/BravoEVTOL.hpp
+Config.hpp
+../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
 
 ../common/CharlieEVTOL.hpp
+Config.hpp
+../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
 
 ../common/Config.hpp
 
 ../common/DeltaEVTOL.hpp
+Config.hpp
+../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
 
 ../common/EVTOL.hpp
 
 ../common/EchoEVTOL.hpp
+Config.hpp
+../common/Config.hpp
 EVTOL.hpp
 ../common/EVTOL.hpp
 
