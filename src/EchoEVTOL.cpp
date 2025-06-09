@@ -22,27 +22,27 @@ bool EchoEVTOL::needsCharge() const {
 }
 
 double EchoEVTOL::getCruiseSpeed() const {
-    return Config::EchoSpec.cruiseSpeed;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)].cruiseSpeed;
 }
 
 double EchoEVTOL::getBatteryCapacity() const {
-    return Config::EchoSpec.batteryCapacity;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)].batteryCapacity;
 }
 
 double EchoEVTOL::getChargeTime() const {
-    return Config::EchoSpec.chargeTime;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)].chargeTime;
 }
 
 double EchoEVTOL::getEnergyUsePerMile() const {
-    return Config::EchoSpec.energyUsePerMile;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)].energyUsePerMile;
 }
 
 int EchoEVTOL::getPassengerCount() const {
-    return Config::EchoSpec.passengerCount;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)].passengerCount;
 }
 
 double EchoEVTOL::getFaultProbabilityPerHour() const {
-    return Config::EchoSpec.faultProbability;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)].faultProbability;
 }
 
 const char* EchoEVTOL::getType() const {

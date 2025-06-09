@@ -49,7 +49,7 @@ void FleetManager::simulateStep(double hours) {
     for (std::vector<std::unique_ptr<EVTOL>>::const_iterator vehiclePtr = fleet.begin(); vehiclePtr != fleet.end(); ++vehiclePtr) {
         EVTOL* vehicle = vehiclePtr->get();                         // raw pointer access for vehicle logic
         std::string type = vehicle->getType();
-
+        //booking time that already occcured? Or booking time that has yet to come (time added at conclusion of step? Time leading up to the step or time leading up to the step?)
         if (vehicle->isCharging()) {
             double chargeTime = vehicle->getChargeTime();           // hours
             stats[type].totalChargeTime += chargeTime;
@@ -85,7 +85,7 @@ void FleetManager::simulateStep(double hours) {
         chargeQueue.pop();
 
         std::string type = v->getType();
-        stats[type].totalChargeTime += v->getChargeTime(); // hours
+        stats[type].totalChargeTime += v->getChargeTime(); // hours (double booking?)
         stats[type].charges++;
         v->charge();
     }

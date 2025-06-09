@@ -1,4 +1,5 @@
 #include "AlphaEVTOL.hpp"
+#include "Config.hpp"
 
 AlphaEVTOL::AlphaEVTOL() {
     batteryLevel = getBatteryCapacity();
@@ -22,27 +23,27 @@ bool AlphaEVTOL::needsCharge() const {
 }
 
 double AlphaEVTOL::getCruiseSpeed() const {
-    return Config::AlphaSpec.cruiseSpeed;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].cruiseSpeed;
 }
 
 double AlphaEVTOL::getBatteryCapacity() const {
-    return Config::AlphaSpec.batteryCapacity;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].batteryCapacity;
 }
 
 double AlphaEVTOL::getChargeTime() const {
-    return Config::AlphaSpec.chargeTime;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].chargeTime;
 }
 
 double AlphaEVTOL::getEnergyUsePerMile() const {
-    return Config::AlphaSpec.energyUsePerMile;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].energyUsePerMile;
 }
 
 int AlphaEVTOL::getPassengerCount() const {
-    return Config::AlphaSpec.passengerCount;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].passengerCount;
 }
 
 double AlphaEVTOL::getFaultProbabilityPerHour() const {
-    return Config::AlphaSpec.faultProbability;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].faultProbability;
 }
 
 const char* AlphaEVTOL::getType() const {

@@ -14,27 +14,23 @@
 int testsPassed = 0;
 int testsFailed = 0;
 
-// Utility function to deplete battery through repeated flights
-// Time complexity: O(Distance/BatteryDrainRate), Space: O(1)
-void drainBattery(EVTOL& v) {
-    while (!v.needsCharge()) {
-        v.fly(0.1);  // [hours] fixed short-duration flight step
+void drainBattery(EVTOL& e) {
+    while (!e.needsCharge()) {
+        e.fly(0.1);
     }
-    if (!v.needsCharge()) throw std::runtime_error("Battery did not drain as expected");
 }
 
-// Template for each EVTOL test block
-// Time complexity: O(1) per check, total O(K) where K is number of fields + operations
 void testAlphaEVTOL() {
     std::cout << "Running testAlphaEVTOL... ";
     try {
         AlphaEVTOL a;
-        if (a.getCruiseSpeed() != Config::AlphaCruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
-        if (a.getBatteryCapacity() != Config::AlphaBatteryCapacity) throw std::runtime_error("Battery capacity mismatch");
-        if (a.getChargeTime() != Config::AlphaChargeTime) throw std::runtime_error("Charge time mismatch");
-        if (a.getEnergyUsePerMile() != Config::AlphaEnergyUsePerMile) throw std::runtime_error("Energy use mismatch");
-        if (a.getPassengerCount() != Config::AlphaPassengerCount) throw std::runtime_error("Passenger count mismatch");
-        if (a.getFaultProbabilityPerHour() != Config::AlphaFaultProbability) throw std::runtime_error("Fault probability mismatch");
+        const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)];
+        if (a.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
+        if (a.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
+        if (a.getChargeTime() != spec.chargeTime) throw std::runtime_error("Charge time mismatch");
+        if (a.getEnergyUsePerMile() != spec.energyUsePerMile) throw std::runtime_error("Energy use mismatch");
+        if (a.getPassengerCount() != spec.passengerCount) throw std::runtime_error("Passenger count mismatch");
+        if (a.getFaultProbabilityPerHour() != spec.faultProbability) throw std::runtime_error("Fault probability mismatch");
 
         drainBattery(a);
         a.charge();
@@ -50,21 +46,17 @@ void testAlphaEVTOL() {
     }
 }
 
-// Remaining test functions follow same format:
-// - Construct EVTOL
-// - Verify all parameters against Config
-// - Drain, charge, and validate resetBattery behavior
-
 void testBravoEVTOL() {
     std::cout << "Running testBravoEVTOL... ";
     try {
         BravoEVTOL b;
-        if (b.getCruiseSpeed() != Config::BravoCruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
-        if (b.getBatteryCapacity() != Config::BravoBatteryCapacity) throw std::runtime_error("Battery capacity mismatch");
-        if (b.getChargeTime() != Config::BravoChargeTime) throw std::runtime_error("Charge time mismatch");
-        if (b.getEnergyUsePerMile() != Config::BravoEnergyUsePerMile) throw std::runtime_error("Energy use mismatch");
-        if (b.getPassengerCount() != Config::BravoPassengerCount) throw std::runtime_error("Passenger count mismatch");
-        if (b.getFaultProbabilityPerHour() != Config::BravoFaultProbability) throw std::runtime_error("Fault probability mismatch");
+        const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)];
+        if (b.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
+        if (b.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
+        if (b.getChargeTime() != spec.chargeTime) throw std::runtime_error("Charge time mismatch");
+        if (b.getEnergyUsePerMile() != spec.energyUsePerMile) throw std::runtime_error("Energy use mismatch");
+        if (b.getPassengerCount() != spec.passengerCount) throw std::runtime_error("Passenger count mismatch");
+        if (b.getFaultProbabilityPerHour() != spec.faultProbability) throw std::runtime_error("Fault probability mismatch");
 
         drainBattery(b);
         b.charge();
@@ -84,12 +76,13 @@ void testCharlieEVTOL() {
     std::cout << "Running testCharlieEVTOL... ";
     try {
         CharlieEVTOL c;
-        if (c.getCruiseSpeed() != Config::CharlieCruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
-        if (c.getBatteryCapacity() != Config::CharlieBatteryCapacity) throw std::runtime_error("Battery capacity mismatch");
-        if (c.getChargeTime() != Config::CharlieChargeTime) throw std::runtime_error("Charge time mismatch");
-        if (c.getEnergyUsePerMile() != Config::CharlieEnergyUsePerMile) throw std::runtime_error("Energy use mismatch");
-        if (c.getPassengerCount() != Config::CharliePassengerCount) throw std::runtime_error("Passenger count mismatch");
-        if (c.getFaultProbabilityPerHour() != Config::CharlieFaultProbability) throw std::runtime_error("Fault probability mismatch");
+        const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Charlie)];
+        if (c.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
+        if (c.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
+        if (c.getChargeTime() != spec.chargeTime) throw std::runtime_error("Charge time mismatch");
+        if (c.getEnergyUsePerMile() != spec.energyUsePerMile) throw std::runtime_error("Energy use mismatch");
+        if (c.getPassengerCount() != spec.passengerCount) throw std::runtime_error("Passenger count mismatch");
+        if (c.getFaultProbabilityPerHour() != spec.faultProbability) throw std::runtime_error("Fault probability mismatch");
 
         drainBattery(c);
         c.charge();
@@ -109,12 +102,13 @@ void testDeltaEVTOL() {
     std::cout << "Running testDeltaEVTOL... ";
     try {
         DeltaEVTOL d;
-        if (d.getCruiseSpeed() != Config::DeltaCruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
-        if (d.getBatteryCapacity() != Config::DeltaBatteryCapacity) throw std::runtime_error("Battery capacity mismatch");
-        if (d.getChargeTime() != Config::DeltaChargeTime) throw std::runtime_error("Charge time mismatch");
-        if (d.getEnergyUsePerMile() != Config::DeltaEnergyUsePerMile) throw std::runtime_error("Energy use mismatch");
-        if (d.getPassengerCount() != Config::DeltaPassengerCount) throw std::runtime_error("Passenger count mismatch");
-        if (d.getFaultProbabilityPerHour() != Config::DeltaFaultProbability) throw std::runtime_error("Fault probability mismatch");
+        const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)];
+        if (d.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
+        if (d.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
+        if (d.getChargeTime() != spec.chargeTime) throw std::runtime_error("Charge time mismatch");
+        if (d.getEnergyUsePerMile() != spec.energyUsePerMile) throw std::runtime_error("Energy use mismatch");
+        if (d.getPassengerCount() != spec.passengerCount) throw std::runtime_error("Passenger count mismatch");
+        if (d.getFaultProbabilityPerHour() != spec.faultProbability) throw std::runtime_error("Fault probability mismatch");
 
         drainBattery(d);
         d.charge();
@@ -134,12 +128,13 @@ void testEchoEVTOL() {
     std::cout << "Running testEchoEVTOL... ";
     try {
         EchoEVTOL e;
-        if (e.getCruiseSpeed() != Config::EchoCruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
-        if (e.getBatteryCapacity() != Config::EchoBatteryCapacity) throw std::runtime_error("Battery capacity mismatch");
-        if (e.getChargeTime() != Config::EchoChargeTime) throw std::runtime_error("Charge time mismatch");
-        if (e.getEnergyUsePerMile() != Config::EchoEnergyUsePerMile) throw std::runtime_error("Energy use mismatch");
-        if (e.getPassengerCount() != Config::EchoPassengerCount) throw std::runtime_error("Passenger count mismatch");
-        if (e.getFaultProbabilityPerHour() != Config::EchoFaultProbability) throw std::runtime_error("Fault probability mismatch");
+        const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)];
+        if (e.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
+        if (e.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
+        if (e.getChargeTime() != spec.chargeTime) throw std::runtime_error("Charge time mismatch");
+        if (e.getEnergyUsePerMile() != spec.energyUsePerMile) throw std::runtime_error("Energy use mismatch");
+        if (e.getPassengerCount() != spec.passengerCount) throw std::runtime_error("Passenger count mismatch");
+        if (e.getFaultProbabilityPerHour() != spec.faultProbability) throw std::runtime_error("Fault probability mismatch");
 
         drainBattery(e);
         e.charge();

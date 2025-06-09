@@ -25,6 +25,8 @@ Config.hpp
 ../common/Config.hpp
 
 ../common/Config.hpp
+array
+-
 
 ../common/DeltaEVTOL.hpp
 EVTOL.hpp
@@ -79,6 +81,8 @@ Statistics.hpp
 /workspaces/evtol_simulation/src/AlphaEVTOL.cpp
 AlphaEVTOL.hpp
 /workspaces/evtol_simulation/src/AlphaEVTOL.hpp
+Config.hpp
+/workspaces/evtol_simulation/src/Config.hpp
 
 /workspaces/evtol_simulation/src/BravoEVTOL.cpp
 BravoEVTOL.hpp

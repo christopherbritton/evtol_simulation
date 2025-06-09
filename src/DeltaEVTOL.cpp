@@ -22,27 +22,27 @@ bool DeltaEVTOL::needsCharge() const {
 }
 
 double DeltaEVTOL::getCruiseSpeed() const {
-    return Config::DeltaSpec.cruiseSpeed;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)].cruiseSpeed;
 }
 
 double DeltaEVTOL::getBatteryCapacity() const {
-    return Config::DeltaSpec.batteryCapacity;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)].batteryCapacity;
 }
 
 double DeltaEVTOL::getChargeTime() const {
-    return Config::DeltaSpec.chargeTime;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)].chargeTime;
 }
 
 double DeltaEVTOL::getEnergyUsePerMile() const {
-    return Config::DeltaSpec.energyUsePerMile;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)].energyUsePerMile;
 }
 
 int DeltaEVTOL::getPassengerCount() const {
-    return Config::DeltaSpec.passengerCount;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)].passengerCount;
 }
 
 double DeltaEVTOL::getFaultProbabilityPerHour() const {
-    return Config::DeltaSpec.faultProbability;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)].faultProbability;
 }
 
 const char* DeltaEVTOL::getType() const {

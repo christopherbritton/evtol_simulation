@@ -23,27 +23,27 @@ bool BravoEVTOL::needsCharge() const {
 }
 
 double BravoEVTOL::getCruiseSpeed() const {
-    return Config::BravoSpec.cruiseSpeed;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)].cruiseSpeed;
 }
 
 double BravoEVTOL::getBatteryCapacity() const {
-    return Config::BravoSpec.batteryCapacity;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)].batteryCapacity;
 }
 
 double BravoEVTOL::getChargeTime() const {
-    return Config::BravoSpec.chargeTime;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)].chargeTime;
 }
 
 double BravoEVTOL::getEnergyUsePerMile() const {
-    return Config::BravoSpec.energyUsePerMile;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)].energyUsePerMile;
 }
 
 int BravoEVTOL::getPassengerCount() const {
-    return Config::BravoSpec.passengerCount;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)].passengerCount;
 }
 
 double BravoEVTOL::getFaultProbabilityPerHour() const {
-    return Config::BravoSpec.faultProbability;
+    return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)].faultProbability;
 }
 
 const char* BravoEVTOL::getType() const {
