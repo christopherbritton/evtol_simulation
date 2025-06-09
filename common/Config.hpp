@@ -40,8 +40,8 @@ inline constexpr std::array<VehicleSpec, static_cast<size_t>(VehicleType::Count)
 }};
 
 // Simulation constants
-constexpr int FleetSize = 20;    // [count] Total number of EVTOLs
-constexpr int MaxChargers = 3;   // [count] Charging stations available
+constexpr int FleetSize = 20;                         // [count] Total number of EVTOLs
+constexpr int MaxChargers = 3;                        // [count] Charging stations available
 constexpr double SimulationDurationHours = 3.0;       // [hours] Total time span of simulation
 constexpr double SimulationStepHours = 0.1;           // [hours] Simulation resolution step
 } // namespace Config

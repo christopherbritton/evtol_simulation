@@ -19,8 +19,11 @@ private:
     std::map<std::string, Statistics> stats;                  
     std::queue<EVTOL*> chargeQueue;                           
 
-    // Retrieves the vehicle type name using RTTI (dynamic_cast)
-    std::string getTypeName(const EVTOL* vehicle) const;
+    // Retrieves the vehicle type name 
+    std::string getTypeName(const EVTOL* vehicle) const {
+        return vehicle->getType(); 
+}
+
 
     // Runs simulation step for all vehicles in the fleet
     void simulateStep(double hours);

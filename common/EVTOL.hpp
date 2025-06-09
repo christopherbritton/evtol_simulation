@@ -5,7 +5,7 @@
 
 class EVTOL {
 protected:
-    double batteryLevel;
+    double batteryLevel = 0;
     bool charging = false;
     bool faultActive = false;
 
