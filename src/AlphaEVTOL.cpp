@@ -1,6 +1,7 @@
 // AlphaEVTOL.cpp - Implementation of the Alpha EVTOL derived class
 #include "AlphaEVTOL.hpp"
 
+// Constructor initializes AlphaEVTOL with its unique ID and AlphaSpec
 AlphaEVTOL::AlphaEVTOL(int id)
     : EVTOL(id, Config::VehicleType::Alpha, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)]) {}
 
@@ -12,14 +13,18 @@ void AlphaEVTOL::fly(double hours) {
     }
 }
 
+// Fully recharges the battery and exits charging state
 void AlphaEVTOL::charge() {
     batteryLevel = getBatteryCapacity();
     charging = false;
 }
 
+// Returns true if battery level falls below 25% capacity
 bool AlphaEVTOL::needsCharge() const {
     return batteryLevel < getBatteryCapacity() * 0.25;
 }
+
+// Accessors pulling from Alpha vehicle specification
 
 double AlphaEVTOL::getCruiseSpeed() const {
     return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].cruiseSpeed;
@@ -45,10 +50,12 @@ double AlphaEVTOL::getFaultProbabilityPerHour() const {
     return Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)].faultProbability;
 }
 
+// Returns string identifier of the vehicle type
 const char* AlphaEVTOL::getType() const {
     return "Alpha";
 }
 
+// Activates fault flag for this vehicle
 void AlphaEVTOL::injectFault() {
     faultActive = true;
 }
