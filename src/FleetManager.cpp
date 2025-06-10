@@ -51,7 +51,7 @@ void FleetManager::simulateStep(double hours) {
         std::string type = vehicle->getType();
         
         if (vehicle->isCharging()) {
-            continue;                       //Onlhy perform simulation if not charging
+            continue;                       //Only perform simulation if not charging
         }
 
         double availableEnergy = vehicle->getBatteryLevel();        // kWh

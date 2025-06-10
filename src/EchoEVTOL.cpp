@@ -4,7 +4,7 @@ EchoEVTOL::EchoEVTOL(int id)
     : EVTOL(id, Config::VehicleType::Echo, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)]) {}
 
 void EchoEVTOL::fly(double hours) {
-    if (!faultActive && !isCharging()) {
+    if (!isCharging()) {
         double energyUsed = hours * getCruiseSpeed() * getEnergyUsePerMile();
         batteryLevel -= energyUsed;
         if (batteryLevel < 0) batteryLevel = 0;

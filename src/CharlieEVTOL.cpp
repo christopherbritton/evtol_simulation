@@ -4,7 +4,7 @@ CharlieEVTOL::CharlieEVTOL(int id)
     : EVTOL(id, Config::VehicleType::Charlie, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Charlie)]) {}
 
 void CharlieEVTOL::fly(double hours) {
-    if (!faultActive && !isCharging()) {
+    if (!isCharging()) {
         double energyUsed = hours * getCruiseSpeed() * getEnergyUsePerMile();
         batteryLevel -= energyUsed;
         if (batteryLevel < 0) batteryLevel = 0;  

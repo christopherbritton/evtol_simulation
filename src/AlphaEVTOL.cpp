@@ -5,7 +5,7 @@ AlphaEVTOL::AlphaEVTOL(int id)
     : EVTOL(id, Config::VehicleType::Alpha, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)]) {}
 
 void AlphaEVTOL::fly(double hours) {
-    if (!faultActive && !isCharging()) {
+    if (!isCharging()) {            //Could add conditional logic if fault is severe enough to discontinue flight
         double energyUsed = hours * getCruiseSpeed() * getEnergyUsePerMile();
         batteryLevel -= energyUsed;
         if (batteryLevel < 0) batteryLevel = 0;

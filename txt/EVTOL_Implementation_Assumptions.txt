@@ -15,7 +15,7 @@ Assumptions in eVTOL Simulation Implementation
 3. Flight Simulation
 ---------------------
 - Vehicles fly continuously until their battery depletes below a minimum threshold.
-- Each time step is fixed at 0.1 hours (6 minutes) and the total simulation runs for 3 hours.
+- Each time step is fixed at 0.1 hours (6 minutes)  (configurable) and the total simulation runs for 3 hours.
 - All vehicles are assumed airborne and flying at cruise speed while active.
 
 4. Charging Behavior

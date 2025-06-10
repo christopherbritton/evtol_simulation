@@ -4,7 +4,7 @@ DeltaEVTOL::DeltaEVTOL(int id)
     : EVTOL(id, Config::VehicleType::Delta, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)]) {}
 
 void DeltaEVTOL::fly(double hours) {
-    if (!faultActive && !isCharging()) {
+    if (!isCharging()) {
         double energyUsed = hours * getCruiseSpeed() * getEnergyUsePerMile();
         batteryLevel -= energyUsed;
         if (batteryLevel < 0) batteryLevel = 0;
