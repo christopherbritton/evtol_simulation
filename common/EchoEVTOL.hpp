@@ -5,7 +5,7 @@
 
 class EchoEVTOL : public EVTOL {
 public:
-    EchoEVTOL();
+    EchoEVTOL(int id);
 
     void fly(double hours) override;
     void charge() override;

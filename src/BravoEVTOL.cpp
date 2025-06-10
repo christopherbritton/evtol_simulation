@@ -1,9 +1,8 @@
 #include "BravoEVTOL.hpp"
 
 // Constructor initializes battery to full
-BravoEVTOL::BravoEVTOL() {
-    batteryLevel = getBatteryCapacity();
-}
+BravoEVTOL::BravoEVTOL(int id)
+    : EVTOL(id, Config::VehicleType::Bravo, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)]) {}
 
 void BravoEVTOL::fly(double hours) {
     if (!faultActive && !isCharging()) {

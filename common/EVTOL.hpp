@@ -5,9 +5,13 @@
 
 class EVTOL {
 protected:
-    double batteryLevel = 0;
-    bool charging = false;
-    bool faultActive = false;
+    int id;                                       // Unique vehicle identifier
+    Config::VehicleType type;                     // Enum type of the vehicle (Alpha, Bravo, etc.)
+    Config::VehicleSpec spec;                     // Configuration spec containing performance parameters
+
+    double batteryLevel = 0;                      // Current battery level in kWh
+    bool charging = false;                        // Charging status flag
+    bool faultActive = false;                     // Fault status flag
 
     // Mersenne Twister RNG
     static std::mt19937& getGenerator() {
@@ -21,6 +25,9 @@ protected:
     }
 
 public:
+// Constructor initializing the EVTOL with ID, type, and performance spec
+    EVTOL(int id, Config::VehicleType type, const Config::VehicleSpec& spec);
+
     virtual ~EVTOL() = default;
 
     // Core behavior
@@ -48,3 +55,7 @@ public:
         return getDistribution()(getGenerator()) < getFaultProbabilityPerHour();
     }
 };
+
+// Definition moved outside class to avoid inline initialization of spec object
+inline EVTOL::EVTOL(int id, Config::VehicleType type, const Config::VehicleSpec& spec)
+    : id(id), type(type), spec(spec), batteryLevel(spec.batteryCapacity) {}

@@ -23,7 +23,7 @@ void drainBattery(EVTOL& e) {
 void testAlphaEVTOL() {
     std::cout << "Running testAlphaEVTOL... ";
     try {
-        AlphaEVTOL a;
+        AlphaEVTOL a(0);
         const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)];
         if (a.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
         if (a.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
@@ -49,7 +49,7 @@ void testAlphaEVTOL() {
 void testBravoEVTOL() {
     std::cout << "Running testBravoEVTOL... ";
     try {
-        BravoEVTOL b;
+        BravoEVTOL b(1);
         const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Bravo)];
         if (b.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
         if (b.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
@@ -75,7 +75,7 @@ void testBravoEVTOL() {
 void testCharlieEVTOL() {
     std::cout << "Running testCharlieEVTOL... ";
     try {
-        CharlieEVTOL c;
+        CharlieEVTOL c(2);
         const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Charlie)];
         if (c.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
         if (c.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
@@ -101,7 +101,7 @@ void testCharlieEVTOL() {
 void testDeltaEVTOL() {
     std::cout << "Running testDeltaEVTOL... ";
     try {
-        DeltaEVTOL d;
+        DeltaEVTOL d(3);
         const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)];
         if (d.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
         if (d.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
@@ -127,7 +127,7 @@ void testDeltaEVTOL() {
 void testEchoEVTOL() {
     std::cout << "Running testEchoEVTOL... ";
     try {
-        EchoEVTOL e;
+        EchoEVTOL e(4);
         const auto& spec = Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)];
         if (e.getCruiseSpeed() != spec.cruiseSpeed) throw std::runtime_error("Cruise speed mismatch");
         if (e.getBatteryCapacity() != spec.batteryCapacity) throw std::runtime_error("Battery capacity mismatch");
@@ -157,7 +157,7 @@ void testStatisticsUpdateAndReset() {
     std::cout << "Running testStatisticsUpdateAndReset... ";
     try {
         Statistics s;
-        AlphaEVTOL testVehicle;
+        AlphaEVTOL testVehicle(0);
         std::mt19937 rng(42);
 
         // Simulate flight update
@@ -215,7 +215,7 @@ void testFleetManagerGenerateAndSimulate() {
 void testForcedFaultInjection() {
     std::cout << "Running testForcedFaultInjection... ";
     try {
-        AlphaEVTOL a;
+        AlphaEVTOL a(0);
         a.injectFault();
         if (!a.checkForFault()) throw std::runtime_error("Fault not detected after injection");
 
@@ -253,7 +253,7 @@ void testSimulateStepWithNoCharging() {
 void testNeedsChargeFalseCondition() {
     std::cout << "Running testNeedsChargeFalseCondition... ";
     try {
-        AlphaEVTOL a;
+        AlphaEVTOL a(0);
         if (a.needsCharge()) throw std::runtime_error("needsCharge() should be false for full battery");
         testsPassed++;
         std::cout << "✔ PASSED\n";

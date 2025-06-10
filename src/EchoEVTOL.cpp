@@ -1,8 +1,7 @@
 #include "EchoEVTOL.hpp"
 
-EchoEVTOL::EchoEVTOL() {
-    batteryLevel = getBatteryCapacity();
-}
+EchoEVTOL::EchoEVTOL(int id)
+    : EVTOL(id, Config::VehicleType::Echo, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Echo)]) {}
 
 void EchoEVTOL::fly(double hours) {
     if (!faultActive && !isCharging()) {

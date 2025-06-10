@@ -39,7 +39,7 @@ Assumptions in eVTOL Simulation Implementation
   - Average charging time per charge session
   - Total number of faults
   - Total number of passenger-miles (distance × passengers × flights)
-- Statistics are only updated after every successful flight or charge cycle.
+- Statistics are only updated after every successful flight or charge cycle. Booking of data is reactive and not predictive.
 
 7. Object-Oriented Design
 ---------------------------

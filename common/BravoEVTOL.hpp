@@ -5,7 +5,7 @@
 
 class BravoEVTOL : public EVTOL {
 public:
-    BravoEVTOL();
+    BravoEVTOL(int id);
 
     void fly(double hours) override;
     void charge() override;

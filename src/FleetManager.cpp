@@ -23,11 +23,11 @@ void FleetManager::generateFleet(int size) {
     for (int i = 0; i < size; ++i) {
         int type = dis(gen);
         switch (type) {
-            case 0: fleet.push_back(std::make_unique<AlphaEVTOL>()); typeCounts["Alpha"]++; break;
-            case 1: fleet.push_back(std::make_unique<BravoEVTOL>()); typeCounts["Bravo"]++; break;
-            case 2: fleet.push_back(std::make_unique<CharlieEVTOL>()); typeCounts["Charlie"]++; break;
-            case 3: fleet.push_back(std::make_unique<DeltaEVTOL>()); typeCounts["Delta"]++; break;
-            case 4: fleet.push_back(std::make_unique<EchoEVTOL>()); typeCounts["Echo"]++; break;
+            case 0: fleet.push_back(std::make_unique<AlphaEVTOL>(i)); typeCounts["Alpha"]++; break;
+            case 1: fleet.push_back(std::make_unique<BravoEVTOL>(i)); typeCounts["Bravo"]++; break;
+            case 2: fleet.push_back(std::make_unique<CharlieEVTOL>(i)); typeCounts["Charlie"]++; break;
+            case 3: fleet.push_back(std::make_unique<DeltaEVTOL>(i)); typeCounts["Delta"]++; break;
+            case 4: fleet.push_back(std::make_unique<EchoEVTOL>(i)); typeCounts["Echo"]++; break;
         }
     }
 }

@@ -6,48 +6,78 @@ Opportunities for Enhancement in eVTOL Simulation
 - Add a graphical dashboard to visualize vehicle positions, battery status, and charging queues.
 - Provide live charts for fleet utilization, charge cycles, and passenger-miles over time.
 
-2. Configurability
--------------------
-- Move all runtime parameters (fleet size, simulation duration, time step, charger count) to a config file or command-line arguments.
-- Allow vehicle class parameters (speed, capacity, charge time) to be defined in an external config (JSON/YAML).
-
-3. Advanced Fault Handling
+2. Advanced Fault Handling
 ---------------------------
 - Model fault consequences (e.g., vehicle removal from fleet, reduced performance).
 - Simulate fault recovery strategies such as rerouting, emergency charging, or rescue dispatch.
 
-4. Realistic Energy and Charging Models
+3. Realistic Energy and Charging Models
 ----------------------------------------
 - Include partial battery drain and nonlinear energy usage at different speeds.
 - Model power delivery constraints at chargers (e.g., shared capacity).
 - Simulate queue delays and waiting time dynamically.
 
-5. Scalability
----------------
-- Optimize simulation for larger fleets using multithreading.
-- Add logging support to capture long-running results in batches.
+4. Codebase Scalability for Large Fleets / Extensibility
+------------------------------------------------
+- Reduce Duplication Across Vehicle Variants: Rather than maintaining a separate `.hpp/.cpp` pair for each EVTOL subclass, centralize shared behaviors and constants into parameterized profiles or config mappings.
+- Adopt Data-Driven Initialization: Load variant specifications (e.g., speed, energy profile, fault rates) from external configuration files (YAML/JSON), and instantiate all vehicle types using a single base class with injected parameters.
+- Factory Pattern or Registry System: Replace hardcoded subclass instantiations with a flexible factory function that constructs an `EVTOL` using a `VehicleProfile` keyed by type. This supports dynamically scaling to N variants without code changes.
+- Benefits:
+  - Greatly simplifies code maintenance and avoids bloated class hierarchies.
+  - Enhances support for runtime configuration and testing of new variants.
+  - Reduces compile-time and potential redundancy in logic duplication.
 
-6. Statistical Insights and Reporting
+  a) Create parameterized GenericEVTOL:
+
+  class GenericEVTOL : public EVTOL {
+public:
+    GenericEVTOL(const std::string& typeName, const VehicleSpec& spec);
+
+    void fly(double hours) override;
+    void charge() override;
+    bool needsCharge() const override;
+    double getCruiseSpeed() const override;
+    // ... override other accessors
+
+    const char* getType() const override { return type.c_str(); }
+private:
+    std::string type;
+    VehicleSpec spec;
+    double batteryLevel;
+    bool charging;
+    bool faultActive;
+};
+
+b) Replace hardcoded .cpp files with a vehicle factory
+std::unique_ptr<EVTOL> VehicleFactory::createEVTOL(const std::string& typeName) {
+    const VehicleProfile& spec = Config::getSpecFor(typeName); // Lookup from map
+    return std::make_unique<GenericEVTOL>(typeName, spec);
+}
+
+Example: 
+for (int i = 0; i < fleetSize; ++i) {
+    std::string type = randomlySelectType();
+    std::unique_ptr<EVTOL> ev = VehicleFactory::createEVTOL(type);
+    fleet.push_back(std::move(ev));     //append a new unique pointer to an EVTOL object into that vector
+}
+
+
+5. Statistical Insights and Reporting
 --------------------------------------
 - Generate CSV or JSON output for statistics to enable post-processing.
 - Include percentile breakdowns and graphs for key metrics.
 
-7. Expanded Testing
+6. Expanded Testing
 ---------------------
 - Add integration tests for simulation loop and fault + charge behavior over time.
 - Use parameterized tests to cover edge cases across vehicle configurations.
 
-8. Simulation Extensibility
-----------------------------
-- Allow custom EVTOL types to be registered dynamically via a plugin or factory pattern.
-- Provide extension hooks for new behaviors (e.g., weather, maintenance).
-
-9. Interactivity
+8. Interactivity
 -----------------
 - Enable interactive mode: pause/resume simulation, adjust parameters mid-run.
 - Allow user to inject faults or modify fleet composition live.
 
-10. Performance Metrics
+9. Performance Metrics
 ------------------------
 - Measure and report real-world runtime (CPU usage, memory footprint).
 - Profile hotspots (e.g., `simulateStep`) and optimize bottlenecks (e.g., battery drain loop).

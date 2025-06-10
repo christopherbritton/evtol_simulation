@@ -1,8 +1,7 @@
 #include "DeltaEVTOL.hpp"
 
-DeltaEVTOL::DeltaEVTOL() {
-    batteryLevel = getBatteryCapacity();
-}
+DeltaEVTOL::DeltaEVTOL(int id)
+    : EVTOL(id, Config::VehicleType::Delta, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Delta)]) {}
 
 void DeltaEVTOL::fly(double hours) {
     if (!faultActive && !isCharging()) {

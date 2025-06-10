@@ -5,7 +5,7 @@
 
 class DeltaEVTOL : public EVTOL {
 public:
-    DeltaEVTOL();
+    DeltaEVTOL(int id);
 
     void fly(double hours) override;
     void charge() override;

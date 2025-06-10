@@ -64,8 +64,8 @@ This document defines the coding standards and guidance followed in the EVTOL si
 ---
 
 ### 9. Static Analysis
-- For certification, **Polyspace Code Prover** recommended:
-  - Confirms absence of overflow, dead code, uninitialized variables
+- For certification, **Polyspace Code Prover/LDRA** recommended:
+  - Confirms absence of overflow, dead code, uninitialized variables, Run-Time Type Information (RTTI), etc.
   - Supports DO-330 qualification if needed
 
 ---
@@ -94,5 +94,5 @@ This document defines the coding standards and guidance followed in the EVTOL si
 
 ---
 
-**Maintained by:** EVTOL Simulation Compliance Team  
+**Maintained by:** EVTOL Simulation Compliance Team (Christopher Britton) 
 **Date:** 6/5/2025

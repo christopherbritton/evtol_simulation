@@ -1,9 +1,8 @@
+// AlphaEVTOL.cpp - Implementation of the Alpha EVTOL derived class
 #include "AlphaEVTOL.hpp"
-#include "Config.hpp"
 
-AlphaEVTOL::AlphaEVTOL() {
-    batteryLevel = getBatteryCapacity();
-}
+AlphaEVTOL::AlphaEVTOL(int id)
+    : EVTOL(id, Config::VehicleType::Alpha, Config::VehicleSpecs[static_cast<int>(Config::VehicleType::Alpha)]) {}
 
 void AlphaEVTOL::fly(double hours) {
     if (!faultActive && !isCharging()) {
